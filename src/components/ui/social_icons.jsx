@@ -1,143 +1,121 @@
-// src/components/UI/SocialIcons.jsx
 import React from 'react';
+import { Row, Col, Button, Grid } from 'antd';
 import { Facebook, Instagram, Linkedin, Youtube, Send, MessageCircle } from 'lucide-react';
 
+const { useBreakpoint } = Grid;
+
 const SocialIcons = ({ variant = 'large' }) => {
-  // Different icon sets for different sections
-  const topSocialIcons = [
-    { icon: Facebook },
-    { icon: Instagram },
-    { icon: Linkedin }
-  ];
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
 
-  const followUsIcons = [
-    { icon: Facebook },
-    { icon: Linkedin },
-    { icon: Instagram },
-    { icon: Youtube },
-    { icon: Send },
-    { icon: MessageCircle }
-  ];
-
-  const getIcons = () => {
-    switch (variant) {
-      case 'footer-top':
-        return topSocialIcons;
-      case 'footer-follow':
-        return followUsIcons;
-      case 'large':
-        return topSocialIcons;
-      case 'small':
-        return followUsIcons;
-      default:
-        return topSocialIcons;
-    }
+  const iconSets = {
+    top: [{ icon: Facebook }, { icon: Instagram }, { icon: Linkedin }],
+    follow: [{ icon: Facebook }, { icon: Linkedin }, { icon: Instagram }, { icon: Youtube }, { icon: Send }, { icon: MessageCircle }]
   };
 
-  const getStyles = () => {
-    switch (variant) {
-      case 'footer-top':
-        return {
-          containerStyle: { display: 'flex', gap: '1rem' },
-          iconWrapperStyle: {
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease'
-          },
-          iconSize: 24,
-          hoverScale: 'scale(1.2)'
-        };
-      
-      case 'footer-follow':
-        return {
-          containerStyle: { display: 'flex', gap: '8px', flexWrap: 'wrap' },
-          iconWrapperStyle: {
-            width: '32px',
-            height: '32px',
-            backgroundColor: 'transparent',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease',
-            border: '1px solid white'
-          },
-          iconSize: 14,
-          hoverScale: 'scale(1.1)'
-        };
-      
-      case 'large':
-        return {
-          containerStyle: { display: 'flex', gap: '1rem' },
-          iconWrapperStyle: {
-            width: '40px',
-            height: '40px',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease'
-          },
-          iconSize: 20,
-          hoverScale: 'scale(1.1)'
-        };
-      
-      case 'small':
-        return {
-          containerStyle: { display: 'flex', gap: '8px' },
-          iconWrapperStyle: {
-            width: '32px',
-            height: '32px',
-            borderRadius: '4px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease'
-          },
-          iconSize: 16,
-          hoverScale: 'scale(1.1)'
-        };
-      
-      default:
-        return {
-          containerStyle: { display: 'flex', gap: '1rem' },
-          iconWrapperStyle: {
-            width: '40px',
-            height: '40px',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease'
-          },
-          iconSize: 20,
-          hoverScale: 'scale(1.1)'
-        };
-    }
+  const getIcons = () => {
+    const sets = {
+      'footer-top': iconSets.top,
+      'footer-follow': iconSets.follow,
+      'large': iconSets.top,
+      'small': iconSets.follow
+    };
+    return sets[variant] || iconSets.top;
+  };
+
+  const getConfig = () => {
+    const baseStyle = {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      border: 'none'
+    };
+
+    const configs = {
+      'footer-top': {
+        gutter: isMobile ? 8 : 16,
+        iconSize: isMobile ? 20 : 24,
+        buttonSize: 'middle',
+        buttonStyle: {
+          ...baseStyle,
+          width: isMobile ? '36px' : '40px',
+          height: isMobile ? '36px' : '40px',
+          borderRadius: '8px',
+          backgroundColor: 'transparent',
+          color: 'white'
+        }
+      },
+      'footer-follow': {
+        gutter: 8,
+        iconSize: 14,
+        buttonSize: 'small',
+        buttonStyle: {
+          ...baseStyle,
+          width: '32px',
+          height: '32px',
+          borderRadius: '50%',
+          backgroundColor: 'transparent',
+          border: '1px solid white',
+          color: 'white'
+        }
+      },
+      'large': {
+        gutter: isMobile ? 12 : 16,
+        iconSize: isMobile ? 18 : 20,
+        buttonSize: 'middle',
+        buttonStyle: {
+          ...baseStyle,
+          width: isMobile ? '36px' : '40px',
+          height: isMobile ? '36px' : '40px',
+          borderRadius: '8px',
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          color: 'white'
+        }
+      },
+      'small': {
+        gutter: 8,
+        iconSize: 16,
+        buttonSize: 'small',
+        buttonStyle: {
+          ...baseStyle,
+          width: '32px',
+          height: '32px',
+          borderRadius: '4px',
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          color: 'white'
+        }
+      }
+    };
+
+    return configs[variant] || configs.large;
   };
 
   const icons = getIcons();
-  const styles = getStyles();
+  const config = getConfig();
 
   return (
-    <div style={styles.containerStyle}>
+    <Row gutter={config.gutter} justify="start" align="middle">
       {icons.map((social, index) => {
         const IconComponent = social.icon;
         return (
-          <div
-            key={index}
-            style={styles.iconWrapperStyle}
-            onMouseOver={(e) => e.target.style.transform = styles.hoverScale}
-            onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
-          >
-            <IconComponent size={styles.iconSize} color="white" />
-          </div>
+          <Col key={index}>
+            <Button
+              type="text"
+              size={config.buttonSize}
+              style={config.buttonStyle}
+              icon={<IconComponent size={config.iconSize} />}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.1)';
+                e.target.style.transition = 'transform 0.2s ease';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+              }}
+            />
+          </Col>
         );
       })}
-    </div>
+    </Row>
   );
 };
 

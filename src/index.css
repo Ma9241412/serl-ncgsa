@@ -1,10 +1,148 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Remove default Ant Design margins */
+.ant-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.ant-layout-header {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.ant-layout-header > .ant-row > .ant-col {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Navigation item styling */
+.header-nav-item {
+  margin-right: 40px !important;
+  display: inline-block !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  padding-bottom: 0px !important;
+  line-height: 1.4 !important;
+}
+
+.header-nav-item:last-child {
+  margin-right: 0 !important;
+}
+
+.header-nav-item[href="/resources"] {
+  margin-right: 40px !important;
+}
+
+/* Responsive spacing for tighter screens */
+@media (min-width: 1200px) and (max-width: 1300px) {
+  .header-nav-item {
+    margin-right: 32px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Show mobile menu below 1200px */
+@media (max-width: 1199px) {
+  .header-nav-item {
+    display: none !important;
+  }
+  .hamburger-icon {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hamburger-icon {
+    display: none !important;
+  }
+}
+
+/* Yellow underline hover effect */
+.header-nav-item:hover {
+  color: #FFFFFF !important;
+}
+
+.header-nav-item:hover::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background-color: #FF9500 !important;
+  transition: all 0.3s ease !important;
+  z-index: 1 !important;
+}
+
+.header-nav-item.active::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background-color: #FF9500 !important;
+  z-index: 1 !important;
+}
+
+/* Logo positioning adjustment */
+.ant-layout-header .ant-col:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  transform: translateX(-4px);
+}
+
+/* Mobile Drawer Styles */
+.mobile-drawer .ant-drawer-content {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 1001 !important;
+}
+
+.mobile-drawer.ant-drawer-open .ant-drawer-content {
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.mobile-drawer .ant-drawer-mask {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 1000 !important;
+}
+
+.mobile-drawer {
+  z-index: 1001 !important;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 code {

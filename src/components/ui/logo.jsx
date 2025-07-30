@@ -1,52 +1,37 @@
-// src/components/UI/Logo.jsx
 import React, { useState } from 'react';
-import { Image } from 'antd';
-
-// Import the logo images from src/assets
+import { Image, Grid } from 'antd';
 import serlLogo from '../../assets/images/serl-logo.png';
 import ncgsaLogo from '../../assets/images/ncgsa-logo.png';
 
+const { useBreakpoint } = Grid;
+
 const Logo = ({ size = 'default', variant = 'serl' }) => {
   const [imageError, setImageError] = useState(false);
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
 
-  const sizeClasses = {
-    small: { width: 50, height: 40, textSize: '8px' },
-    default: { width: 70, height: 50, textSize: '9px' },
-    large: { width: 90, height: 65, textSize: '10px' },
-    ncgsa: { width: 80, height: 80, textSize: '10px' }
+  const getSizeConfig = () => {
+    const sizes = {
+      small: { width: isMobile ? 45 : 50, height: isMobile ? 35 : 40, textSize: isMobile ? '7px' : '8px' },
+      default: { width: isMobile ? 60 : 70, height: isMobile ? 40 : 50, textSize: isMobile ? '8px' : '9px' },
+      large: { width: isMobile ? 80 : 90, height: isMobile ? 55 : 65, textSize: isMobile ? '9px' : '10px' },
+      ncgsa: { width: isMobile ? 70 : 80, height: isMobile ? 70 : 80, textSize: isMobile ? '9px' : '10px' }
+    };
+    return sizes[size] || sizes.default;
   };
 
-  const currentSize = sizeClasses[size] || sizeClasses.default;
+  const currentSize = getSizeConfig();
 
-  const handleImageError = () => {
-    console.log(`Failed to load ${variant} logo image`);
-    setImageError(true);
-  };
-
-  const handleImageLoad = () => {
-    console.log(`Successfully loaded ${variant} logo image`);
-    setImageError(false);
-  };
-
-  // Get logo source and alt text based on variant
   const getLogoProps = () => {
     if (variant === 'ncgsa') {
-      return {
-        src: ncgsaLogo,
-        alt: 'NCGSA Logo',
-        fallbackText: 'NCGSA'
-      };
+      return { src: ncgsaLogo, alt: 'NCGSA Logo', fallbackText: 'NCGSA' };
     }
-    return {
-      src: serlLogo,
-      alt: 'SERL Logo',
-      fallbackText: 'SERL'
-    };
+    return { src: serlLogo, alt: 'SERL Logo', fallbackText: 'SERL' };
   };
 
   const logoProps = getLogoProps();
 
-  // NCGSA Logo variant for footer (circular)
+  // NCGSA circular logo for footer
   if (variant === 'ncgsa') {
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -57,15 +42,11 @@ const Logo = ({ size = 'default', variant = 'serl' }) => {
             width={currentSize.width}
             height={currentSize.height}
             preview={false}
-            style={{
-              borderRadius: '50%',
-              objectFit: 'contain'
-            }}
-            onError={handleImageError}
-            onLoad={handleImageLoad}
+            style={{ borderRadius: '50%', objectFit: 'contain' }}
+            onError={() => setImageError(true)}
+            onLoad={() => setImageError(false)}
           />
         ) : (
-          /* Fallback circle if image fails */
           <div style={{
             width: currentSize.width,
             height: currentSize.height,
@@ -75,10 +56,10 @@ const Logo = ({ size = 'default', variant = 'serl' }) => {
             alignItems: 'center',
             justifyContent: 'center',
             color: 'white',
-            fontSize: '12px',
+            fontSize: isMobile ? '10px' : '12px',
             fontWeight: '700',
             flexShrink: 0,
-            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+            fontFamily: 'Inter'
           }}>
             {logoProps.fallbackText}
           </div>
@@ -87,24 +68,23 @@ const Logo = ({ size = 'default', variant = 'serl' }) => {
     );
   }
 
-  // Default SERL Logo for header
+  // Default SERL logo for header
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <div style={{ position: 'relative' }}>
-        {/* SERL Logo Image using Ant Design */}
         {!imageError && (
           <Image
-            src={serlLogo}  // Using imported image
+            src={serlLogo}
             alt="SERL Logo"
-            width={200}
+            width={isMobile ? 160 : 200}
+            height={isMobile ? 80 : 100}
             preview={false}
-            height={100}
-            onError={handleImageError}
-            onLoad={handleImageLoad}
+            onError={() => setImageError(true)}
+            onLoad={() => setImageError(false)}
+            style={{ objectFit: 'contain' }}
           />
         )}
         
-        {/* Fallback text logo */}
         {imageError && (
           <div style={{
             width: currentSize.width,
@@ -128,37 +108,14 @@ const Logo = ({ size = 'default', variant = 'serl' }) => {
             <span style={{
               position: 'relative',
               color: 'white',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              fontSize: '16px',
+              fontFamily: 'Inter',
+              fontSize: isMobile ? '14px' : '16px',
               fontWeight: '800',
               letterSpacing: '1.5px',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
               {logoProps.fallbackText}
             </span>
-          </div>
-        )}
-        
-        {/* Subtitle - Only for SERL logo */}
-        {variant === 'serl' && (
-          <div style={{ 
-            position: 'absolute', 
-            bottom: '-18px', 
-            left: '0', 
-            right: '0',
-            textAlign: 'center'
-          }}>
-            <p style={{
-              color: '#D1D5DB',
-              fontSize: currentSize.textSize,
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              fontWeight: '500',
-              letterSpacing: '0.5px',
-              margin: 0,
-              whiteSpace: 'nowrap',
-              textTransform: 'uppercase'
-            }}>
-            </p>
           </div>
         )}
       </div>

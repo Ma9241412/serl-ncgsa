@@ -1,5 +1,7 @@
-// src/components/UI/Button.jsx
 import React from 'react';
+import { Button as AntButton, Grid } from 'antd';
+
+const { useBreakpoint } = Grid;
 
 const Button = ({ 
   text, 
@@ -7,113 +9,117 @@ const Button = ({
   variant = 'primary', 
   size = 'medium', 
   className = '',
-  disabled = false 
+  disabled = false,
+  style = {}
 }) => {
-  
-  const baseStyle = {
-    fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    fontWeight: '700',
-    letterSpacing: '0.5px',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: disabled ? 'not-allowed' : 'pointer',
-    transition: 'all 0.2s ease',
-    textTransform: 'uppercase',
-    display: 'inline-block',
-    textAlign: 'center',
-    outline: 'none'
-  };
-  
-  const variants = {
-    primary: {
-      backgroundColor: '#F97316',
-      color: '#000000',
-      boxShadow: '0 2px 4px rgba(249, 115, 22, 0.2)'
-    },
-    secondary: {
-      backgroundColor: '#6B7280',
-      color: 'white',
-      boxShadow: '0 2px 4px rgba(107, 114, 128, 0.2)'
-    },
-    outline: {
-      backgroundColor: 'transparent',
-      color: '#F97316',
-      border: '2px solid #F97316'
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
+
+  const getButtonProps = () => {
+    const baseStyle = {
+      fontFamily: 'Inter',
+      fontWeight: '700',
+      letterSpacing: '0.5px',
+      textTransform: 'uppercase',
+      borderRadius: '4px',
+      height: 'auto'
+    };
+
+    switch (variant) {
+      case 'primary':
+        return {
+          type: 'primary',
+          style: {
+            ...baseStyle,
+            backgroundColor: '#FF9500',
+            borderColor: '#FF9500',
+            color: '#000000',
+            boxShadow: '0 2px 4px rgba(255, 149, 0, 0.2)'
+          }
+        };
+      
+      case 'secondary':
+        return {
+          type: 'default',
+          style: {
+            ...baseStyle,
+            backgroundColor: '#6B7280',
+            borderColor: '#6B7280',
+            color: 'white',
+            boxShadow: '0 2px 4px rgba(107, 114, 128, 0.2)'
+          }
+        };
+      
+      case 'outline':
+        return {
+          type: 'default',
+          style: {
+            ...baseStyle,
+            backgroundColor: 'transparent',
+            borderColor: '#F97316',
+            color: '#F97316',
+            border: '2px solid #F97316'
+          }
+        };
+      
+      default:
+        return {
+          type: 'primary',
+          style: baseStyle
+        };
     }
   };
 
-  const sizes = {
-    small: {
-      padding: '8px 16px',
-      fontSize: '12px'
-    },
-    medium: {
-      padding: '12px 24px',
-      fontSize: '13px'
-    },
-    large: {
-      padding: '16px 32px',
-      fontSize: '14px'
-    },
-    full: {
-      padding: '12px 24px',
-      fontSize: '13px',
-      width: '100%'
-    }
+  const getSizeProps = () => {
+    const basePadding = {
+      small: isMobile ? '6px 12px' : '8px 16px',
+      medium: isMobile ? '10px 20px' : '12px 24px',
+      large: isMobile ? '14px 28px' : '16px 32px',
+      full: isMobile ? '10px 20px' : '12px 24px'
+    };
+
+    const sizes = {
+      small: { size: 'small', style: { padding: basePadding.small, fontSize: '12px' }},
+      medium: { size: 'middle', style: { padding: basePadding.medium, fontSize: '13px' }},
+      large: { size: 'large', style: { padding: basePadding.large, fontSize: '14px' }},
+      full: { size: 'middle', block: true, style: { padding: basePadding.full, fontSize: '13px', width: '100%' }}
+    };
+
+    return sizes[size] || sizes.medium;
   };
 
-  const disabledStyle = disabled 
-    ? { 
-        opacity: 0.5, 
-        cursor: 'not-allowed',
-        transform: 'none'
-      } 
-    : {};
-
-  const combinedStyle = {
-    ...baseStyle,
-    ...variants[variant],
-    ...sizes[size],
-    ...disabledStyle
-  };
-
-  const handleMouseOver = (e) => {
-    if (!disabled) {
-      if (variant === 'primary') {
-        e.target.style.backgroundColor = '#EA580C';
-        e.target.style.transform = 'translateY(-1px)';
-        e.target.style.boxShadow = '0 4px 8px rgba(249, 115, 22, 0.3)';
-      } else if (variant === 'outline') {
-        e.target.style.backgroundColor = '#F97316';
-        e.target.style.color = '#000000';
-      }
-    }
-  };
-
-  const handleMouseOut = (e) => {
-    if (!disabled) {
-      if (variant === 'primary') {
-        e.target.style.backgroundColor = '#F97316';
-        e.target.style.transform = 'translateY(0)';
-        e.target.style.boxShadow = '0 2px 4px rgba(249, 115, 22, 0.2)';
-      } else if (variant === 'outline') {
-        e.target.style.backgroundColor = 'transparent';
-        e.target.style.color = '#F97316';
-      }
-    }
-  };
+  const buttonProps = getButtonProps();
+  const sizeProps = getSizeProps();
 
   return (
-    <button
+    <AntButton
       onClick={onClick}
       disabled={disabled}
-      style={combinedStyle}
       className={className}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
+      {...buttonProps}
+      {...sizeProps}
+      style={{
+        ...buttonProps.style,
+        ...sizeProps.style,
+        ...style
+      }}
+      onMouseEnter={(e) => {
+        if (!disabled && variant === 'primary') {
+          e.target.style.backgroundColor = '#E6850E';
+          e.target.style.transform = 'translateY(-1px)';
+          e.target.style.boxShadow = '0 4px 8px rgba(255, 149, 0, 0.3)';
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (!disabled && variant === 'primary') {
+          e.target.style.backgroundColor = '#FF9500';
+          e.target.style.transform = 'translateY(0)';
+          e.target.style.boxShadow = '0 2px 4px rgba(255, 149, 0, 0.2)';
+        }
+      }}
     >
       {text}
-    </button>
+    </AntButton>
   );
 };
 

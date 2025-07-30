@@ -1,16 +1,29 @@
 import React from 'react';
+import { Layout as AntLayout, Grid } from 'antd';
 import Header from './header';
 import Footer from './footer';
 
+const { Content } = AntLayout;
+const { useBreakpoint } = Grid;
+
 const Layout = ({ children, activeNavItem = 'HOME' }) => {
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
+
   return (
-    <div className="min-h-screen bg-black">
+    <AntLayout style={{ 
+      minHeight: '100vh', 
+      backgroundColor: '#000' 
+    }}>
       <Header activeNavItem={activeNavItem} />
-      <main className="min-h-screen">
+      <Content style={{ 
+        minHeight: '100vh',
+        padding: 0
+      }}>
         {children}
-      </main>
+      </Content>
       <Footer />
-    </div>
+    </AntLayout>
   );
 };
 

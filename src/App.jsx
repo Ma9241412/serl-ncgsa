@@ -1,35 +1,76 @@
 import React from 'react';
+import { Row, Col, Typography, Grid } from 'antd';
 import Layout from './components/layouts/layout';
-import { Typography, Row, Col } from 'antd';
 
-// Temporary Home Page Content
+const { Title } = Typography;
+const { useBreakpoint } = Grid;
+
 const HomeContent = () => {
-  return (
-    <div className="min-h-screen bg-gray-900 relative">
-      <Row>
-        <Col lg={12}>
-          <Typography.Title>
-            SPACE
-          </Typography.Title>
-          <Typography.Title>
-            EDUCATION | AWARENESS | OUTREACH
-          </Typography.Title>
-          <Typography.Title>
-            EDUCATION | AWARENESS | OUTREACH
-          </Typography.Title>
-        </Col>
-        <Col lg={12}>
-          <Typography.Title>
-            SPACE
-          </Typography.Title>
-          <Typography.Title>
-            EDUCATION | AWARENESS | OUTREACH
-          </Typography.Title>
-          <Typography.Title>
-            EDUCATION | AWARENESS | OUTREACH
-          </Typography.Title>
-        </Col>
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
 
+  return (
+    <div style={{ 
+      minHeight: '100vh', 
+      backgroundColor: '#111827',
+      padding: isMobile ? '40px 20px' : '80px 40px'
+    }}>
+      <Row gutter={[32, 32]} justify="center" align="middle" style={{ minHeight: '80vh' }}>
+        <Col xs={24} lg={12}>
+          <Title level={1} style={{ 
+            color: '#60A5FA',
+            fontSize: isMobile ? '2.5rem' : '4rem',
+            fontWeight: 'bold',
+            textAlign: isMobile ? 'center' : 'left',
+            marginBottom: '20px'
+          }}>
+            SPACE
+          </Title>
+          <Title level={2} style={{ 
+            color: '#F97316',
+            fontSize: isMobile ? '1.5rem' : '2rem',
+            textAlign: isMobile ? 'center' : 'left',
+            marginBottom: '10px'
+          }}>
+            EDUCATION | AWARENESS | OUTREACH
+          </Title>
+          <Title level={3} style={{ 
+            color: '#E5E7EB',
+            fontSize: isMobile ? '1.2rem' : '1.5rem',
+            textAlign: isMobile ? 'center' : 'left',
+            fontWeight: 'normal'
+          }}>
+            RESEARCH | INNOVATION | DISCOVERY
+          </Title>
+        </Col>
+        
+        <Col xs={24} lg={12}>
+          <Title level={1} style={{ 
+            color: '#F97316',
+            fontSize: isMobile ? '2.5rem' : '4rem',
+            fontWeight: 'bold',
+            textAlign: isMobile ? 'center' : 'right',
+            marginBottom: '20px'
+          }}>
+            SERL
+          </Title>
+          <Title level={2} style={{ 
+            color: '#60A5FA',
+            fontSize: isMobile ? '1.5rem' : '2rem',
+            textAlign: isMobile ? 'center' : 'right',
+            marginBottom: '10px'
+          }}>
+            SPACE EDUCATION RESEARCH LAB
+          </Title>
+          <Title level={3} style={{ 
+            color: '#E5E7EB',
+            fontSize: isMobile ? '1.2rem' : '1.5rem',
+            textAlign: isMobile ? 'center' : 'right',
+            fontWeight: 'normal'
+          }}>
+            ADVANCING SPACE SCIENCE EDUCATION
+          </Title>
+        </Col>
       </Row>
     </div>
   );
