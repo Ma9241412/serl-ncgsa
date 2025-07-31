@@ -12,22 +12,35 @@ const HeroSection = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${mainbg})`, // ✅ Use template literal
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundColor: "#000000", // Changed from blue to black
         minHeight: "80vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "20px",
+        padding: "8px", // Very small margin on all sides like in reference
       }}
     >
-      <Row
-        justify="space-between"
-        align="middle" // Vertically center content
-        style={{ width: "100%", maxWidth: "1200px" }}
-        gutter={[24, 24]}
+      <div
+        style={{
+          backgroundImage: `url(${mainbg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderRadius: "15px", // Curved rectangle
+          width: "100%",
+          maxWidth: "1200px",
+          minHeight: "calc(80vh - 16px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden", // Ensures curved corners work properly
+        }}
       >
+        <Row
+          justify="space-between"
+          align="middle" // Vertically center content
+          style={{ width: "100%", maxWidth: "1200px" }}
+          gutter={[24, 24]}
+        >
         {/* LEFT COLUMN */}
         <Col
           xs={24}
@@ -134,6 +147,7 @@ const HeroSection = () => {
           </Button>
         </Col>
       </Row>
+      </div>
     </div>
   );
 };
