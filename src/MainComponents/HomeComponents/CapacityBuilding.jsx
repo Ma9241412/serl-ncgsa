@@ -5,44 +5,32 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
 
-const CapacityBuilding = () => {
+const SpaceOutreach = () => {
   const screens = useBreakpoint();
   const isMobile = !screens.lg;
   const carouselRef = React.useRef(null);
   const [autoplayEnabled, setAutoplayEnabled] = React.useState(true);
 
-  // Real images for the carousel
+  // Images from assets folder
   const images = [
     {
-      src: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=400&h=250&fit=crop',
-      alt: 'World Space Week Event'
+      src: require('../../assets/images/slider1.png'),
+      alt: 'Space Research Background'
     },
     {
-      src: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&h=250&fit=crop',
-      alt: 'Telescope Observation'
+      src: require('../../assets/images/slider2.png'),
+      alt: 'Space Education Main'
     },
     {
-      src: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=250&fit=crop',
-      alt: 'Community Outreach'
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=250&fit=crop',
-      alt: 'Space Research'
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=400&h=250&fit=crop',
-      alt: 'Educational Workshop'
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=400&h=250&fit=crop',
-      alt: 'Space Technology'
+      src: require('../../assets/images/slider3.png'),
+      alt: 'SERL Organization'
     }
   ];
 
   return (
     <div style={{ 
       backgroundColor: 'transparent',
-      padding: screens.xs ? '16px 12px' : screens.sm ? '20px 16px' : screens.md ? '24px 20px' : screens.lg ? '32px 24px' : '40px 32px',
+      padding: isMobile ? '10px 20px' : '20px 40px',
       position: 'relative'
     }}>
       {/* Starry background effect */}
@@ -113,16 +101,19 @@ const CapacityBuilding = () => {
           slidesToShow={isMobile ? 1 : 3}
           slidesToScroll={1}
           pauseOnHover={true}
+          centerMode={false}
         >
           {images.map((image, index) => (
-            <div key={index} style={{ padding: '0 8px' }}>
+            <div key={index} style={{ padding: '0 24px' }}> {/* Increased gap from 16px to 24px */}
               <div style={{
                 height: '250px',
-                borderRadius: '12px',
+                borderRadius: '0px', // Non-curved rectangle
                 overflow: 'hidden',
                 position: 'relative',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                background: 'rgba(255, 255, 255, 0.05)', // Transparent background
+                margin: '0 8px' // Additional margin for more separation
               }}>
                 <img 
                   src={image.src}
@@ -160,8 +151,8 @@ const CapacityBuilding = () => {
             left: 0,
             top: '50%',
             transform: 'translate(-50px, -50%)',
-            backgroundColor: 'rgba(0,0,0,0.7)',
-            color: '#FFFFFF',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#ccbb00ff',
             border: 'none',
             borderRadius: '50%',
             width: '45px',
@@ -170,7 +161,9 @@ const CapacityBuilding = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            opacity: 0.8
+            opacity: 0.8,
+            fontSize: '20px',
+            fontWeight: 'bold'
           }}
           onMouseEnter={(e) => {
             e.target.style.opacity = '1';
@@ -192,8 +185,8 @@ const CapacityBuilding = () => {
             right: 0,
             top: '50%',
             transform: 'translate(50px, -50%)',
-            backgroundColor: 'rgba(0,0,0,0.7)',
-            color: '#FFFFFF',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#ccbb00ff',
             border: 'none',
             borderRadius: '50%',
             width: '45px',
@@ -202,7 +195,9 @@ const CapacityBuilding = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            opacity: 0.8
+            opacity: 0.8,
+            fontSize: '20px',
+            fontWeight: 'bold'
           }}
           onMouseEnter={(e) => {
             e.target.style.opacity = '1';
@@ -244,4 +239,4 @@ const CapacityBuilding = () => {
   );
 };
 
-export default CapacityBuilding;
+export default SpaceOutreach;

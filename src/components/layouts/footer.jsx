@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <AntFooter style={{ 
-      backgroundColor: '#1a1a1a', 
+      backgroundColor: '#000000ff', 
       color: 'white', 
       padding: isMobile ? '32px 0' : '40px 0'
     }}>
@@ -253,7 +253,7 @@ const Footer = () => {
       <div style={{ 
         borderTop: '1px solid #333',
         paddingTop: '16px',
-        backgroundColor: '#1a1a1a'
+        backgroundColor: '#000000ff'
       }}>
         <div style={{ 
           maxWidth: '1200px', 
@@ -263,7 +263,7 @@ const Footer = () => {
           <Text style={{ 
             display: 'block',
             textAlign: 'center', 
-            fontSize: '13px', 
+            fontSize: '16px', 
             color: '#9CA3AF',
             fontFamily: 'Inter',
             fontWeight: '400',

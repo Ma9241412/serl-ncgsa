@@ -1,4 +1,5 @@
 import React from 'react';  
+import StatsSection from './StatsSection';
 import SpaceOutreach from './SpaceOutreach';
 import SpaceEducation from './SpaceEducation';
 import CapacityBuilding from './CapacityBuilding';
@@ -33,6 +34,7 @@ const SpaceComponent = () => {
       
       {/* Content */}
       <div style={{ position: 'relative', zIndex: 2 }}>
+        <StatsSection />
         <SpaceOutreach />
         <SpaceEducation />
         <CapacityBuilding />
