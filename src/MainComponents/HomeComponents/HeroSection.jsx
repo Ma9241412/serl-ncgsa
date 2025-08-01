@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Typography, Button, Grid } from "antd";
-import mainbg from "../../assets/images/mainbg.png";
+import mainbg from "../../assets/images/mainbg.jpg";
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -12,23 +12,23 @@ const HeroSection = () => {
   return (
     <div
       style={{
+          backgroundImage: `url(${mainbg})`,
+    backgroundSize: "cover", width: "100%",
+          backgroundPosition: "center",
         backgroundColor: "#000000", // Changed from blue to black
         minHeight: "80vh",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "8px", // Very small margin on all sides like in reference
+        justifyContent: "space-around",
       }}
     >
       <div
         style={{
-          backgroundImage: `url(${mainbg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+      
           borderRadius: "15px", // Curved rectangle
           width: "100%",
           maxWidth: "1200px",
-          minHeight: "calc(80vh - 16px)",
+          minHeight: "calc(80vh - 0px)", // No padding adjustment needed
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -50,6 +50,7 @@ const HeroSection = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            marginBottom:"25px"
           }}
         >
           <Title

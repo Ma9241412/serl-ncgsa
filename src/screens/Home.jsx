@@ -1,18 +1,14 @@
 import React from 'react';
 import HeroSection from '../MainComponents/HomeComponents/HeroSection';
 import StatsSection from '../MainComponents/HomeComponents/StatsSection';
-import SpaceOutreach from '../MainComponents/HomeComponents/SpaceOutreach';
-import SpaceEducation from '../MainComponents/HomeComponents/SpaceEducation';
-import CapacityBuilding from '../MainComponents/HomeComponents/CapacityBuilding';
+import SpaceComponent from '../MainComponents/HomeComponents/SpaceComponent';
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
       <StatsSection />
-      <SpaceOutreach />
-      <SpaceEducation />
-      <CapacityBuilding />
+      <SpaceComponent />
     </div>
   );
 };

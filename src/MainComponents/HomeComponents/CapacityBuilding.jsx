@@ -5,7 +5,7 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
 
-const SpaceOutreach = () => {
+const CapacityBuilding = () => {
   const screens = useBreakpoint();
   const isMobile = !screens.lg;
   const carouselRef = React.useRef(null);
@@ -41,8 +41,8 @@ const SpaceOutreach = () => {
 
   return (
     <div style={{ 
-      backgroundColor: '#0B0F1A',
-      padding: isMobile ? '60px 20px' : '80px 40px',
+      backgroundColor: 'transparent',
+      padding: screens.xs ? '16px 12px' : screens.sm ? '20px 16px' : screens.md ? '24px 20px' : screens.lg ? '32px 24px' : '40px 32px',
       position: 'relative'
     }}>
       {/* Starry background effect */}
@@ -244,4 +244,4 @@ const SpaceOutreach = () => {
   );
 };
 
-export default SpaceOutreach;
+export default CapacityBuilding;

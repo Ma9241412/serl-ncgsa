@@ -41,8 +41,8 @@ const SpaceOutreach = () => {
 
   return (
     <div style={{ 
-      backgroundColor: '#0B0F1A',
-      padding: isMobile ? '60px 20px' : '80px 40px',
+      backgroundColor: 'transparent',
+      padding: isMobile ? '10px 20px' : '20px 40px',
       position: 'relative'
     }}>
       {/* Starry background effect */}
