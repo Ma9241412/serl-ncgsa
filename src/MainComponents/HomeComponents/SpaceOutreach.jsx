@@ -59,13 +59,13 @@ const SpaceOutreach = () => {
       
       <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Row 1: Text Content */}
-        <Row justify="center" style={{ marginBottom: '60px' }}>
-          <Col xs={24} lg={16} style={{ textAlign: 'center' }}>
+        <Row justify="start" style={{ marginBottom: '60px' }}>
+          <Col xs={24} lg={23} style={{ textAlign: 'left', paddingLeft: isMobile ? '10px' : '40px' }}>
             <Title 
               level={2}
               style={{ 
                 color: '#FFFFFF',
-                fontSize: isMobile ? '2rem' : '2.5rem',
+                fontSize: isMobile ? '2.2rem' : '2.8rem',
                 fontWeight: 'bold',
                 marginBottom: '20px'
               }}
@@ -75,10 +75,10 @@ const SpaceOutreach = () => {
             <Paragraph 
               style={{ 
                 color: '#D1D5DB',
-                fontSize: isMobile ? '1rem' : '1.1rem',
+                fontSize: isMobile ? '1.1rem' : '1.2rem',
                 lineHeight: '1.7',
                 marginBottom: '30px',
-                textAlign: 'left'
+                textAlign: 'justify'
               }}
             >
               The Space Education Research Lab (SERL) is committed to promote space science & technology by engaging school, 
@@ -86,151 +86,162 @@ const SpaceOutreach = () => {
               and educational support. With the national-level engagement and powerful outreach, SERL strives to nurture space-literate 
               and future-ready society prepared to lead and innovate in the evolving space sector.
             </Paragraph>
-            <Button 
-              type="primary"
-              size="large"
-              style={{ 
-                backgroundColor: '#F59E0B',
-                borderColor: '#F59E0B',
-                fontWeight: 'bold',
-                borderRadius: '6px'
-              }}
-            >
-              For More Details
-            </Button>
           </Col>
         </Row>
 
         {/* Row 2: Continuous Sliding Images Carousel */}
-        <Row>
-          <Col span={24}>
-            <div 
-              style={{ position: 'relative' }}
-              onMouseEnter={() => setAutoplayEnabled(false)}
-              onMouseLeave={() => setAutoplayEnabled(true)}
-            >
-              <Carousel 
-                ref={carouselRef}
-                autoplay={autoplayEnabled}
-                autoplaySpeed={3000}
-                dots={false}
-                infinite
-                speed={1000}
-                effect="scroll"
-                slidesToShow={isMobile ? 1 : 3}
-                slidesToScroll={1}
-                pauseOnHover={true}
-                style={{
-                  '.slick-slide': {
-                    padding: '0 8px'
-                  }
-                }}
-              >
-                {images.map((image, index) => (
-                  <div key={index} style={{ padding: '0 8px' }}>
-                    <div style={{
-                      height: '250px',
-                      borderRadius: '12px',
-                      overflow: 'hidden',
-                      position: 'relative',
-                      boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-                    }}>
-                      <img 
-                        src={image.src}
-                        alt={image.alt}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          transition: 'transform 0.3s ease'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.target.style.transform = 'scale(1.05)';
-                          e.target.parentElement.style.transform = 'translateY(-5px)';
-                          e.target.parentElement.style.boxShadow = '0 12px 32px rgba(0,0,0,0.6)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.target.style.transform = 'scale(1)';
-                          e.target.parentElement.style.transform = 'translateY(0)';
-                          e.target.parentElement.style.boxShadow = '0 8px 24px rgba(0,0,0,0.4)';
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </Carousel>
-              
-              {/* Navigation Arrows */}
-              <Button
-                type="text"
-                icon={<LeftOutlined />}
-                onClick={() => carouselRef.current?.prev()}
-                style={{
-                  position: 'absolute',
-                  left: '10px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  backgroundColor: 'rgba(0,0,0,0.7)',
-                  color: '#FFFFFF',
-                  border: 'none',
-                  borderRadius: '50%',
-                  width: '45px',
-                  height: '45px',
-                  zIndex: 10,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.3s ease',
-                  opacity: 0.8
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.opacity = '1';
-                  e.target.style.backgroundColor = 'rgba(0,0,0,0.9)';
-                  e.target.style.transform = 'translateY(-50%) scale(1.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.opacity = '0.8';
-                  e.target.style.backgroundColor = 'rgba(0,0,0,0.7)';
-                  e.target.style.transform = 'translateY(-50%) scale(1)';
-                }}
-              />
-              <Button
-                type="text"
-                icon={<RightOutlined />}
-                onClick={() => carouselRef.current?.next()}
-                style={{
-                  position: 'absolute',
-                  right: '10px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  backgroundColor: 'rgba(0,0,0,0.7)',
-                  color: '#FFFFFF',
-                  border: 'none',
-                  borderRadius: '50%',
-                  width: '45px',
-                  height: '45px',
-                  zIndex: 10,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.3s ease',
-                  opacity: 0.8
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.opacity = '1';
-                  e.target.style.backgroundColor = 'rgba(0,0,0,0.9)';
-                  e.target.style.transform = 'translateY(-50%) scale(1.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.opacity = '0.8';
-                  e.target.style.backgroundColor = 'rgba(0,0,0,0.7)';
-                  e.target.style.transform = 'translateY(-50%) scale(1)';
-                }}
-              />
+ <Row justify="start">
+<Col 
+  xs={24} 
+  lg={24} 
+  style={{ 
+    paddingLeft: isMobile ? '10px' : '40px', 
+    paddingRight: isMobile ? '10px' : '40px' 
+  }}
+>
+ <div style={{ paddingRight: isMobile ? '0px' : '0px' }}>
+      <div 
+        style={{ position: 'relative' }}
+        onMouseEnter={() => setAutoplayEnabled(false)}
+        onMouseLeave={() => setAutoplayEnabled(true)}
+      >
+        <Carousel 
+          ref={carouselRef}
+          autoplay={autoplayEnabled}
+          autoplaySpeed={3000}
+          dots={false}
+          infinite
+          speed={1000}
+          effect="scroll"
+          slidesToShow={isMobile ? 1 : 3}
+          slidesToScroll={1}
+          pauseOnHover={true}
+        >
+          {images.map((image, index) => (
+            <div key={index} style={{ padding: '0 8px' }}>
+              <div style={{
+                height: '250px',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                position: 'relative',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+              }}>
+                <img 
+                  src={image.src}
+                  alt={image.alt}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'scale(1.05)';
+                    e.target.parentElement.style.transform = 'translateY(-5px)';
+                    e.target.parentElement.style.boxShadow = '0 12px 32px rgba(0,0,0,0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'scale(1)';
+                    e.target.parentElement.style.transform = 'translateY(0)';
+                    e.target.parentElement.style.boxShadow = '0 8px 24px rgba(0,0,0,0.4)';
+                  }}
+                />
+              </div>
             </div>
-          </Col>
-        </Row>
+          ))}
+        </Carousel>
+
+        {/* Arrows unchanged */}
+        {/* Arrows unchanged */}
+        <Button
+          type="text"
+          icon={<LeftOutlined />}
+          onClick={() => carouselRef.current?.prev()}
+          style={{
+            position: 'absolute',
+            left: 0,
+            top: '50%',
+            transform: 'translate(-50px, -50%)',
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            color: '#FFFFFF',
+            border: 'none',
+            borderRadius: '50%',
+            width: '45px',
+            height: '45px',
+            zIndex: 10,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: 0.8
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.opacity = '1';
+            e.target.style.backgroundColor = 'rgba(0,0,0,0.9)';
+            e.target.style.transform = 'translate(-50px, -50%) scale(1.1)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.opacity = '0.8';
+            e.target.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            e.target.style.transform = 'translate(-50px, -50%) scale(1)';
+          }}
+        />
+        <Button
+          type="text"
+          icon={<RightOutlined />}
+          onClick={() => carouselRef.current?.next()}
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: '50%',
+            transform: 'translate(50px, -50%)',
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            color: '#FFFFFF',
+            border: 'none',
+            borderRadius: '50%',
+            width: '45px',
+            height: '45px',
+            zIndex: 10,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: 0.8
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.opacity = '1';
+            e.target.style.backgroundColor = 'rgba(0,0,0,0.9)';
+            e.target.style.transform = 'translate(50px, -50%) scale(1.1)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.opacity = '0.8';
+            e.target.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            e.target.style.transform = 'translate(50px, -50%) scale(1)';
+          }}
+        />
+      </div>
+    </div>
+  </Col>
+</Row>
+
+{/* Row 3: Button under slider, aligned with text */}  
+<Row style={{ marginTop: '50px' }}>
+  <Col xs={24} lg={20} style={{ paddingLeft: isMobile ? '10px' : '40px' }}>
+    <Button 
+      type="primary"
+      size="large"
+      style={{ 
+        backgroundColor: '#F59E0B',
+        borderColor: '#F59E0B',
+        color: '#000000',
+        fontWeight: 'bold',
+        borderRadius: '6px'
+      }}
+    >
+      For More Details
+    </Button>
+  </Col>
+</Row>
+
       </div>
     </div>
   );

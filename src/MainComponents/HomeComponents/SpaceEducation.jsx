@@ -1,113 +1,247 @@
 import React from 'react';
-import { Row, Col, Typography, Grid, Card } from 'antd';
-import Button from '../../components/ui/button';
+import { Row, Col, Typography, Grid, Button, Carousel } from 'antd';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
 
-const SpaceEducation = () => {
+const SpaceOutreach = () => {
   const screens = useBreakpoint();
   const isMobile = !screens.lg;
+  const carouselRef = React.useRef(null);
+  const [autoplayEnabled, setAutoplayEnabled] = React.useState(true);
 
+  // Real images for the carousel
   const images = [
-    '/placeholder-image-5.jpg',
-    '/placeholder-image-6.jpg',
-    '/placeholder-image-7.jpg',
-    '/placeholder-image-8.jpg'
+    {
+      src: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=400&h=250&fit=crop',
+      alt: 'World Space Week Event'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&h=250&fit=crop',
+      alt: 'Telescope Observation'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=250&fit=crop',
+      alt: 'Community Outreach'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=250&fit=crop',
+      alt: 'Space Research'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=400&h=250&fit=crop',
+      alt: 'Educational Workshop'
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=400&h=250&fit=crop',
+      alt: 'Space Technology'
+    }
   ];
 
   return (
     <div style={{ 
-      backgroundColor: '#111827',
-      padding: isMobile ? '60px 20px' : '100px 40px'
+      backgroundColor: '#0B0F1A',
+      padding: isMobile ? '60px 20px' : '80px 40px',
+      position: 'relative'
     }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-        <Row gutter={[48, 48]} align="middle">
-          <Col xs={24} lg={12} order={isMobile ? 2 : 1}>
-            <Row gutter={[16, 16]}>
-              {images.map((img, index) => (
-                <Col key={index} xs={12} sm={12}>
-                  <Card
-                    hoverable
-                    cover={
-                      <div style={{ 
-                        height: '200px', 
-                        backgroundColor: '#374151',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#9CA3AF'
-                      }}>
-                        Education Image {index + 1}
-                      </div>
-                    }
-                    style={{ 
-                      backgroundColor: '#1F2937',
-                      border: 'none'
-                    }}
-                    bodyStyle={{ padding: '12px' }}
-                  >
-                    <Paragraph 
-                      style={{ 
-                        color: '#D1D5DB', 
-                        margin: 0, 
-                        fontSize: '0.9rem' 
-                      }}
-                    >
-                      Educational Program {index + 1}
-                    </Paragraph>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </Col>
-          
-          <Col xs={24} lg={12} order={isMobile ? 1 : 2}>
+      {/* Starry background effect */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 1px, transparent 1px), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px), radial-gradient(circle at 40% 60%, rgba(255,255,255,0.1) 1px, transparent 1px)',
+        backgroundSize: '100px 100px, 150px 150px, 200px 200px',
+        pointerEvents: 'none'
+      }} />  
+      
+      <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+        {/* Row 1: Text Content */}
+        <Row justify="start" style={{ marginBottom: '60px' }}>
+          <Col xs={24} lg={23} style={{ textAlign: 'left', paddingLeft: isMobile ? '10px' : '40px' }}>
             <Title 
               level={2}
               style={{ 
-                color: '#FCD34D',
-                fontSize: isMobile ? '2rem' : '2.5rem',
+                color: '#FFFFFF',
+                fontSize: isMobile ? '2.2rem' : '2.8rem',
                 fontWeight: 'bold',
-                marginBottom: '20px',
-                textAlign: isMobile ? 'center' : 'left'
+                marginBottom: '20px'
               }}
             >
-              Space <span style={{ color: '#60A5FA' }}>Education</span>
+              Space <span style={{ color: '#1890FF' }}>Education</span>
             </Title>
             <Paragraph 
               style={{ 
                 color: '#D1D5DB',
-                fontSize: isMobile ? '1rem' : '1.1rem',
+                fontSize: isMobile ? '1.1rem' : '1.2rem',
                 lineHeight: '1.7',
                 marginBottom: '30px',
-                textAlign: isMobile ? 'center' : 'left'
+                textAlign: 'justify'
               }}
             >
-              Our comprehensive Space Education programs are designed to cultivate the next 
-              generation of space scientists, engineers, and explorers. Through hands-on 
-              learning experiences, advanced curriculum development, and innovative teaching 
-              methodologies, we provide students and educators with the tools they need to 
-              excel in space science fields. From elementary concepts to advanced research 
-              techniques, our educational initiatives span all academic levels.
+              SERL addresses the gap in space awareness and education at national level by implementing interactive, creative and innovative pedagogical methods on the grass root level. Through its dynamic STEM and STEAM initiatives including workshops, teacher trainings, specialized schools, competitions, seminars, webinars, and national summits, SERL attracts a diverse community of students, professionals and educators.
             </Paragraph>
-            <div style={{ textAlign: isMobile ? 'center' : 'left' }}>
-              <Button 
-                variant="primary" 
-                size="large"
-                style={{ 
-                  backgroundColor: '#60A5FA',
-                  borderColor: '#60A5FA'
-                }}
-              >
-                Explore Programs
-              </Button>
-            </div>
           </Col>
         </Row>
+
+        {/* Row 2: Continuous Sliding Images Carousel */}
+ <Row justify="start">
+<Col 
+  xs={24} 
+  lg={24} 
+  style={{ 
+    paddingLeft: isMobile ? '10px' : '40px', 
+    paddingRight: isMobile ? '10px' : '40px' 
+  }}
+>
+ <div style={{ paddingRight: isMobile ? '0px' : '0px' }}>
+      <div 
+        style={{ position: 'relative' }}
+        onMouseEnter={() => setAutoplayEnabled(false)}
+        onMouseLeave={() => setAutoplayEnabled(true)}
+      >
+        <Carousel 
+          ref={carouselRef}
+          autoplay={autoplayEnabled}
+          autoplaySpeed={3000}
+          dots={false}
+          infinite
+          speed={1000}
+          effect="scroll"
+          slidesToShow={isMobile ? 1 : 3}
+          slidesToScroll={1}
+          pauseOnHover={true}
+        >
+          {images.map((image, index) => (
+            <div key={index} style={{ padding: '0 8px' }}>
+              <div style={{
+                height: '250px',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                position: 'relative',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+              }}>
+                <img 
+                  src={image.src}
+                  alt={image.alt}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'scale(1.05)';
+                    e.target.parentElement.style.transform = 'translateY(-5px)';
+                    e.target.parentElement.style.boxShadow = '0 12px 32px rgba(0,0,0,0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'scale(1)';
+                    e.target.parentElement.style.transform = 'translateY(0)';
+                    e.target.parentElement.style.boxShadow = '0 8px 24px rgba(0,0,0,0.4)';
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+        </Carousel>
+
+        {/* Arrows unchanged */}
+        {/* Arrows unchanged */}
+        <Button
+          type="text"
+          icon={<LeftOutlined />}
+          onClick={() => carouselRef.current?.prev()}
+          style={{
+            position: 'absolute',
+            left: 0,
+            top: '50%',
+            transform: 'translate(-50px, -50%)',
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            color: '#FFFFFF',
+            border: 'none',
+            borderRadius: '50%',
+            width: '45px',
+            height: '45px',
+            zIndex: 10,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: 0.8
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.opacity = '1';
+            e.target.style.backgroundColor = 'rgba(0,0,0,0.9)';
+            e.target.style.transform = 'translate(-50px, -50%) scale(1.1)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.opacity = '0.8';
+            e.target.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            e.target.style.transform = 'translate(-50px, -50%) scale(1)';
+          }}
+        />
+        <Button
+          type="text"
+          icon={<RightOutlined />}
+          onClick={() => carouselRef.current?.next()}
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: '50%',
+            transform: 'translate(50px, -50%)',
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            color: '#FFFFFF',
+            border: 'none',
+            borderRadius: '50%',
+            width: '45px',
+            height: '45px',
+            zIndex: 10,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: 0.8
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.opacity = '1';
+            e.target.style.backgroundColor = 'rgba(0,0,0,0.9)';
+            e.target.style.transform = 'translate(50px, -50%) scale(1.1)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.opacity = '0.8';
+            e.target.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            e.target.style.transform = 'translate(50px, -50%) scale(1)';
+          }}
+        />
+      </div>
+    </div>
+  </Col>
+</Row>
+
+{/* Row 3: Button under slider, aligned with text */}  
+<Row style={{ marginTop: '50px' }}>
+  <Col xs={24} lg={20} style={{ paddingLeft: isMobile ? '10px' : '40px' }}>
+    <Button 
+      type="primary"
+      size="large"
+      style={{ 
+        backgroundColor: '#F59E0B',
+        borderColor: '#F59E0B',
+        color: '#000000',
+        fontWeight: 'bold',
+        borderRadius: '6px'
+      }}
+    >
+      For More Details
+    </Button>
+  </Col>
+</Row>
+
       </div>
     </div>
   );
 };
 
-export default SpaceEducation;
+export default SpaceOutreach;
