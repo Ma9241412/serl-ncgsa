@@ -19,12 +19,12 @@ const Footer = () => {
       padding: isMobile ? '32px 0' : '40px 0'
     }}>
       <div style={{ 
-        maxWidth: '1200px', 
+      
         margin: '0 auto', 
         padding: isMobile ? '0 16px' : '0 24px'
       }}>
         <div style={{
-          backgroundColor: '#0a0a0a',
+          backgroundColor: '#232121ff',
           borderRadius: '20px',
           padding: isMobile ? '24px' : '40px',
           marginBottom: isMobile ? '40px' : '80px'

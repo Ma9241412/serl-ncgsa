@@ -13,6 +13,8 @@ const Header = ({ activeNavItem = 'HOME' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const screens = useBreakpoint();
   const isMobile = !screens.lg; // Changed to lg (992px+) for better responsive behavior in 1200-1244px range
+  const isTablet = screens.md && !screens.lg;
+  const isSmallMobile = !screens.sm;
 
   // Load Google Fonts
   useEffect(() => {
@@ -30,7 +32,7 @@ const Header = ({ activeNavItem = 'HOME' }) => {
 
   return (
     <AntHeader style={{ 
-      backgroundColor: '#000', 
+      backgroundColor: '#232121ff', 
       borderBottom: '1px solid #333',
       position: 'sticky',
       top: 0,
@@ -43,15 +45,15 @@ const Header = ({ activeNavItem = 'HOME' }) => {
         justify="space-between" 
         align="middle"
         style={{ 
-          height: isMobile ? '80px' : '100px',
+          height: isSmallMobile ? '70px' : isMobile ? '80px' : isTablet ? '90px' : '100px',
           width: '100%',
           margin: 0,
-          padding: isMobile ? '0 8px 0 2px' : '0 24px 0 2px'
+          padding: isSmallMobile ? '0 4px 0 2px' : isMobile ? '0 8px 0 2px' : isTablet ? '0 16px 0 2px' : '0 24px 0 2px'
         }}
       >
         {/* Logo Section */}
         <Col flex="none">
-          <Logo size={isMobile ? 'small' : 'default'} />
+          <Logo size={isSmallMobile ? 'small' : isMobile ? 'small' : 'default'} />
         </Col>
 
         {/* Desktop Navigation - Match reference image */}
@@ -66,7 +68,7 @@ const Header = ({ activeNavItem = 'HOME' }) => {
                     color: activeNavItem === 'HOME' ? '#FFFFFF' : '#D1D5DB', 
                     textDecoration: 'none', 
                     fontFamily: 'Inter', 
-                    fontSize: '15px', 
+                    fontSize: isTablet ? '14px' : '15px', 
                     fontWeight: activeNavItem === 'HOME' ? '700' : '600', 
                     letterSpacing: '0.3px',
                     whiteSpace: 'nowrap'
