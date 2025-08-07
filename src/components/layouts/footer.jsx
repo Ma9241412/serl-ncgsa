@@ -16,11 +16,12 @@ const Footer = () => {
     <AntFooter style={{ 
       backgroundColor: '#000000ff', 
       color: 'white', 
-      padding: isMobile ? '32px 0' : '40px 0'
+      // padding: isMobile ? '32px 0' : '40px 0',
+ 
     }}>
       <div style={{ 
-        margin: '0 auto', 
-        padding: isMobile ? '0 16px' : '0 24px'
+        // margin: '0 auto', 
+        // padding: isMobile ? '0 16px' : '0 24px'
       }}>
         <div style={{
           backgroundColor: '#232121ff',
@@ -79,7 +80,8 @@ const Footer = () => {
                     height: '3px',
                     backgroundColor: '#F59E0B',
                     marginBottom: '16px'
-                  }}></div>
+                  }}>
+                  </div>
                   
                   <div style={{ 
                     fontSize: '16px', 

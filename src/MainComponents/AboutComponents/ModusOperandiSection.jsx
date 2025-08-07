@@ -110,6 +110,7 @@ const SpaceOutreach = () => {
           <Col xs={24} lg={24}>
             <div style={{
               backgroundColor: '#131212ff',
+              borderColor:"#FF9500",
               borderRadius: '16px',
               padding: isMobile ? '20px' : '25px',
               display: 'flex',
@@ -181,6 +182,7 @@ const SpaceOutreach = () => {
             <div style={{
           backgroundColor: '#131212ff',
               borderRadius: '16px',
+              borderColor:"#FF9500",
               padding: isMobile ? '20px' : '25px',
               display: 'flex',
               flexDirection: isMobile ? 'column' : 'row',
@@ -255,6 +257,8 @@ const SpaceOutreach = () => {
                   className={`additional-cards ${showAll ? 'show' : ''}`}
                   style={{
                     backgroundColor: '#131212ff',
+              borderColor:"#FF9500",
+
                     borderRadius: '16px',
                     padding: isMobile ? '20px' : '25px',
                     display: 'flex',

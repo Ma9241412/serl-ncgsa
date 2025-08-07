@@ -23,11 +23,12 @@ const HeroSection = () => {
       }}
     >
       <div
+      className="home-cont"
         style={{
       
           borderRadius: "15px", // Curved rectangle
-          width: "100%",
-          maxWidth: "1200px",
+          // width: "100%",
+          // maxWidth: "1200px",
           minHeight: "calc(80vh - 0px)", // No padding adjustment needed
           display: "flex",
           alignItems: "center",

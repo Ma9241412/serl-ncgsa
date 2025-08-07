@@ -8,6 +8,7 @@ import {
   EyeOutlined 
 } from '@ant-design/icons';
 
+import '../../Styles/Home.css'
 const { Title } = Typography;
 const { useBreakpoint } = Grid;
 
@@ -143,13 +144,14 @@ const StatsSection = () => {
       }}
     >
       <Row 
+      className='stats-cont'
         gutter={[24, 24]} 
         justify="center"
         align="middle"
         style={{ 
-          maxWidth: '1400px', 
+          // maxWidth: '1400px', 
           margin: '0 auto',
-          width: '100%'
+          // width: '100%'
         }}
       >
         {stats.map((stat, index) => {

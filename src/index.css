@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+.home-cont{
+  width:100%;
+  max-width: 1200px;
+}
 
 html, body {
   margin: 0;
