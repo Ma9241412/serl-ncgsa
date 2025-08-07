@@ -1,5 +1,10 @@
 import React from 'react';
 import { Row, Col, Typography, Grid } from 'antd';
+import { ReactComponent as Domain1Icon } from '../../assets/images/domain1.svg';
+import { ReactComponent as Domain2Icon } from '../../assets/images/domain2.svg';
+import { ReactComponent as Domain3Icon } from '../../assets/images/domain3.svg';
+import { ReactComponent as Domain4Icon } from '../../assets/images/domain4.svg';
+import { ReactComponent as Domain5Icon } from '../../assets/images/domain5.svg';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -11,29 +16,24 @@ const SpaceOutreach = () => {
   // Domain images and labels
   const domains = [
     {
-      src: require('../../assets/images/domain1.png'),
-      label: 'Astronomy & Astrophysics',
-      alt: 'Astronomy & Astrophysics Domain'
+      icon: <Domain1Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Astronomy & Astrophysics'
     },
     {
-      src: require('../../assets/images/domain2.png'),
-      label: 'Aviation',
-      alt: 'Aviation Domain'
+      icon: <Domain2Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Aviation'
     },
     {
-      src: require('../../assets/images/domain3.png'),
-      label: 'Earth & ATMOSPHERE',
-      alt: 'Earth & Atmosphere Domain'
+      icon: <Domain3Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Earth & ATMOSPHERE'
     },
     {
-      src: require('../../assets/images/domain4.png'),
-      label: 'Rocketry',
-      alt: 'Rocketry Domain'
+      icon: <Domain4Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Rocketry'
     },
     {
-      src: require('../../assets/images/domain5.png'),
-      label: 'Satellite Technology',
-      alt: 'Satellite Technology Domain'
+      icon: <Domain5Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Satellite Technology'
     }
   ];
 
@@ -89,8 +89,8 @@ const SpaceOutreach = () => {
             <div
               key={index}
               style={{
-                width: isMobile ? '100%' : 'calc((100% - 64px) / 5)', // 64px total gap for 4 spaces between 5 domains
-                marginRight: index < 4 ? (isMobile ? '0' : '16px') : '0', // No margin on last domain
+                width: isMobile ? '100%' : 'calc((100% - 64px) / 5)',
+                marginRight: index < 4 ? (isMobile ? '0' : '16px') : '0',
                 marginBottom: isMobile ? '24px' : '0',
                 textAlign: 'center'
               }}
@@ -116,21 +116,8 @@ const SpaceOutreach = () => {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                <img 
-                  src={domain.src}
-                  alt={domain.alt}
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain',
-                    background: 'transparent'
-                  }}
-                />
+                {domain.icon}
               </div>
-              
-              {/* Domain Label */}
               <Typography.Text 
                 style={{ 
                   color: '#FFFFFF', 

@@ -26,9 +26,10 @@ const HeroSection = () => {
           justifyContent: "center",
         }}
       >
-        <div style={{ width: "100%", maxWidth: "1200px", display: "flex", alignItems: "center", justifyContent: "flex-start", height: "100%" }}>
-          <div style={{ width: "100%", maxWidth: "600px", paddingLeft: "2vw", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <h1 style={{ color: "#F59E0B", fontSize: "9.2rem", fontWeight: 600, margin: 0, fontFamily: "Inter", textAlign: "left" }}>ABOUT</h1>
+        <div style={{ width: "100%", maxWidth: "1200px", display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>
+          {/* width: '100%', maxWidth: '1200px' is the standard for all events and navigation bar width in Space Outreach section */}
+          <div style={{ width: "100%", maxWidth: "600px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <h1 style={{ color: "#FFFFFF", fontSize: "9.2rem", fontWeight: 600, margin: 0, fontFamily: "Inter", textAlign: "center" }}>ABOUT</h1>
           </div>
         </div>
       </div>

@@ -1,5 +1,10 @@
 import React from 'react';
 import { Row, Col, Typography, Grid } from 'antd';
+import { ReactComponent as Mission1Icon } from '../../assets/images/mission1.svg';
+import { ReactComponent as Mission2Icon } from '../../assets/images/mission2.svg';
+import { ReactComponent as Mission3Icon } from '../../assets/images/mission3.svg';
+import { ReactComponent as Mission4Icon } from '../../assets/images/mission4.svg';
+import { ReactComponent as Mission5Icon } from '../../assets/images/mission5.svg';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -11,27 +16,27 @@ const SpaceOutreach = () => {
   // Mission objectives data with image icons
   const missionCards = [
     {
-      icon: <img src={require('../../assets/images/mission1.png')} alt="Awareness & Engagement" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />,
+      icon: <Mission1Icon style={{ width: '80px', height: '80px' }} />,
       title: 'Awareness &',
       subtitle: 'Engagement'
     },
     {
-      icon: <img src={require('../../assets/images/mission2.png')} alt="Educator Empowerment" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />,
+      icon: <Mission2Icon style={{ width: '80px', height: '80px' }} />,
       title: 'Educator',
       subtitle: 'Empowerment'
     },
     {
-      icon: <img src={require('../../assets/images/mission3.png')} alt="Curriculum Enhancement" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />,
+      icon: <Mission3Icon style={{ width: '80px', height: '80px' }} />,
       title: 'Curriculum',
       subtitle: 'Enhancement'
     },
     {
-      icon: <img src={require('../../assets/images/mission4.png')} alt="STEM/STEAM Enrichment" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />,
+      icon: <Mission4Icon style={{ width: '80px', height: '80px' }} />,
       title: 'STEM/STEAM',
       subtitle: 'Enrichment'
     },
     {
-      icon: <img src={require('../../assets/images/mission5.png')} alt="Media Outreach" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />,
+      icon: <Mission5Icon style={{ width: '80px', height: '80px' }} />,
       title: 'Media',
       subtitle: 'Outreach'
     }

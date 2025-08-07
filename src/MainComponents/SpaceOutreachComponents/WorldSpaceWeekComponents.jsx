@@ -35,13 +35,13 @@ const WorldSpaceWeekComponents = ({ selectedYear, availableYears, onYearChange }
     <>
       {/* World Space Week Main Section */}
       <section style={{ 
-        padding: '20px 0', 
+        padding: '20px 0 0 0', // remove bottom padding from section
         backgroundImage: `url(${homemainbg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
-        minHeight: 'auto'
+        minHeight: '500px' // reduce height to remove empty space
       }}>
         <Row justify="center">
           <Col xs={24} lg={24} xl={24}>
@@ -50,12 +50,15 @@ const WorldSpaceWeekComponents = ({ selectedYear, availableYears, onYearChange }
                 backgroundColor: 'transparent', 
                 borderRadius: '30px', 
                 border: '2px solid #FF9500',
-                maxWidth: '3800px',
-                width: '95%',
-                margin: '0 auto'
+                // width: '100%', maxWidth: '1200px' is the standard for all events and navigation bar width in Space Outreach section
+                maxWidth: '1200px',
+                width: '100%',
+                margin: '0 auto',
+                marginBottom: 0,
+                paddingBottom: 0
               }}
               bodyStyle={{ 
-                padding: '60px 40px', 
+                padding: '40px 40px 0 40px', // no bottom padding
                 backgroundColor: 'transparent',
                 borderRadius: '30px'
               }}
@@ -67,7 +70,8 @@ const WorldSpaceWeekComponents = ({ selectedYear, availableYears, onYearChange }
                     World Space Week
                   </Title>
                   <div style={{
-                    width: '1400px',
+                    width: '100%',
+                    maxWidth: '1200px',
                     height: '2px',
                     backgroundColor: 'white',
                     marginBottom: '24px'

@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 import Logo from '../ui/logo';
 import Navigation from '../common/navigation';
 import Button from '../ui/button';
+import DrawerMenu from './drawer.jsx';
 
 const { Header: AntHeader } = Layout;
 const { useBreakpoint } = Grid;
@@ -53,14 +54,13 @@ const Header = ({ activeNavItem = 'HOME' }) => {
         <Col flex="none">
           <Logo size={isSmallMobile ? 'small' : isMobile ? 'small' : 'default'} />
         </Col>
-
         {!isMobile && (
           <Col flex="auto" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               {['HOME', 'ABOUT', 'SPACE OUTREACH', 'SPACE EDUCATION', 'CAPACITY BUILDING', 'RESOURCES'].map((label) => (
                 <a
                   key={label}
-                  href={`/${label.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={label === 'HOME' ? '/' : `/${label.toLowerCase().replace(/\s+/g, '-')}`}
                   className={`header-nav-item ${activeNavItem === label ? 'active' : ''}`}
                   style={{
                     color: activeNavItem === label ? '#FFFFFF' : '#D1D5DB',
@@ -87,101 +87,23 @@ const Header = ({ activeNavItem = 'HOME' }) => {
             </div>
           </Col>
         )}
-
         {isMobile && (
           <Col flex="none">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'transparent',
-                color: 'white',
-                border: 'none',
-                padding: '8px',
-                cursor: 'pointer',
-                borderRadius: '4px',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+            <DrawerMenu
+              activeKey={activeNavItem}
+              onSelect={(key) => {
+                window.location.href =
+                  key === 'HOME' ? '/' :
+                  key === 'ABOUT' ? '/about' :
+                  key === 'SPACE_OUTREACH' ? '/space-outreach' :
+                  key === 'SPACE_EDUCATION' ? '/space-education' :
+                  key === 'CAPACITY_BUILDING' ? '/capacity-building' :
+                  key === 'RESOURCES' ? '/resources' : '/';
               }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = '#1F2937';
-                e.target.style.transform = 'scale(1.1)';
-                e.target.style.color = '#F97316';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.transform = isMenuOpen ? 'rotate(90deg)' : 'scale(1)';
-                e.target.style.color = 'white';
-              }}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            />
           </Col>
         )}
       </Row>
-
-      <Drawer
-        title={null}
-        placement="right"
-        onClose={() => setIsMenuOpen(false)}
-        open={isMenuOpen}
-        width={320}
-        className="mobile-drawer"
-        styles={{
-          body: { 
-            backgroundColor: '#111', 
-            padding: 0,
-            borderLeft: '2px solid #F97316'
-          },
-          header: { 
-            display: 'none' 
-          },
-          mask: {
-            backgroundColor: 'rgba(0, 0, 0, 0.7)'
-          }
-        }}
-        closeIcon={null}
-        maskClosable={true}
-        keyboard={true}
-        destroyOnClose={false}
-        forceRender={true}
-        zIndex={1001}
-      >
-        <div style={{ 
-          padding: '24px 20px',
-          backgroundColor: '#111',
-          minHeight: '250px',
-          maxHeight: '400px',
-          overflowY: 'auto'
-        }}>
-          <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ 
-              color: '#F97316', 
-              margin: '0 0 16px 0', 
-              fontSize: '18px',
-              fontWeight: '700',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-            }}>
-            </h3>
-            <Navigation activeItem={activeNavItem} isMobile={true} />
-          </div>
-          <div style={{ 
-            marginTop: '24px',
-            paddingTop: '16px',
-            borderTop: '1px solid #333'
-          }}>
-            <Button 
-              text="CONTACT US" 
-              variant="primary"
-              size="full"
-              className="mobile-contact-button"
-            />
-          </div>
-        </div>
-      </Drawer>
     </AntHeader>
   );
 };
