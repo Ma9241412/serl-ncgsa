@@ -45,7 +45,7 @@ const SpaceOutreach = () => {
         pointerEvents: 'none'
       }} />  
       
-      <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div style={{width: "100%", maxWidth: "1200px", margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Row 1: Text Content */}
         <Row justify="start" style={{ marginBottom: '60px' }}>
           <Col xs={24} lg={23} style={{ textAlign: 'left', paddingLeft: isMobile ? '10px' : '40px' }}>

@@ -19,7 +19,6 @@ const Footer = () => {
       padding: isMobile ? '32px 0' : '40px 0'
     }}>
       <div style={{ 
-      
         margin: '0 auto', 
         padding: isMobile ? '0 16px' : '0 24px'
       }}>
@@ -27,7 +26,7 @@ const Footer = () => {
           backgroundColor: '#232121ff',
           borderRadius: '20px',
           padding: isMobile ? '24px' : '40px',
-          marginBottom: isMobile ? '40px' : '80px'
+          marginBottom: isMobile ? '16px' : '32px'
         }}>
           
           {/* Top section with SERL info */}
@@ -49,7 +48,7 @@ const Footer = () => {
               
               <Text style={{ 
                 color: '#D1D5DB', 
-                fontSize: isTablet ? '14px' : '13px', 
+                fontSize: '16px', 
                 lineHeight: '1.5', 
                 display: 'block',
                 marginBottom: '24px',
@@ -69,8 +68,8 @@ const Footer = () => {
                   <Title level={4} style={{ 
                     color: 'white', 
                     fontWeight: '700', 
-                    fontSize: '16px', 
-                    marginBottom: '8px',
+                    fontSize: '25px', 
+                    marginBottom: '10px',
                     fontFamily: 'Inter'
                   }}>
                     Contact Us
@@ -83,9 +82,9 @@ const Footer = () => {
                   }}></div>
                   
                   <div style={{ 
-                    fontSize: isTablet ? '14px' : '13px', 
+                    fontSize: '16px', 
                     color: '#D1D5DB', 
-                    lineHeight: '1.6',
+                    lineHeight: '1.8',
                     fontFamily: 'Inter',
                     fontWeight: '400'
                   }}>
@@ -105,8 +104,8 @@ const Footer = () => {
                   <Title level={4} style={{ 
                     color: 'white', 
                     fontWeight: '700', 
-                    fontSize: '16px', 
-                    marginBottom: '8px',
+                    fontSize: '25px', 
+                    marginBottom: '10px',
                     fontFamily: 'Inter'
                   }}>
                     Explore
@@ -119,9 +118,9 @@ const Footer = () => {
                   }}></div>
                   
                   <div style={{ 
-                    fontSize: isTablet ? '14px' : '13px', 
+                    fontSize: '16px', 
                     color: '#D1D5DB', 
-                    lineHeight: '1.6',
+                    lineHeight: '1.8',
                     fontFamily: 'Inter',
                     fontWeight: '400'
                   }}>
@@ -131,6 +130,7 @@ const Footer = () => {
                         margin: '0 0 6px 0', 
                         cursor: 'pointer',
                         color: '#D1D5DB',
+                        fontSize: '16px',
                         transition: 'color 0.2s ease'
                       }}
                       onMouseEnter={(e) => e.target.style.color = '#F59E0B'}
@@ -166,7 +166,7 @@ const Footer = () => {
                   </Title>
                   <Text style={{ 
                     color: '#D1D5DB', 
-                    fontSize: isTablet ? '14px' : '13px', 
+                    fontSize: '16px', 
                     display: 'block',
                     margin: '2px 0',
                     fontFamily: 'Inter'
@@ -175,7 +175,7 @@ const Footer = () => {
                   </Text>
                   <Text style={{ 
                     color: '#D1D5DB', 
-                    fontSize: isTablet ? '14px' : '13px', 
+                    fontSize: '16px', 
                     display: 'block',
                     margin: '2px 0',
                     fontFamily: 'Inter'
@@ -192,7 +192,7 @@ const Footer = () => {
                   <Title level={4} style={{ 
                     color: 'white', 
                     fontWeight: '700', 
-                    fontSize: '16px', 
+                    fontSize: '25px', 
                     marginBottom: '8px',
                     fontFamily: 'Inter'
                   }}>
@@ -206,7 +206,7 @@ const Footer = () => {
                   }}></div>
                   
                   <div style={{ 
-                    fontSize: isTablet ? '14px' : '13px', 
+                    fontSize: '16px', 
                     color: '#D1D5DB', 
                     lineHeight: '1.6',
                     fontFamily: 'Inter',
@@ -228,7 +228,7 @@ const Footer = () => {
                   <Title level={4} style={{ 
                     color: 'white', 
                     fontWeight: '700', 
-                    fontSize: '16px', 
+                    fontSize: '25px', 
                     marginBottom: '8px',
                     fontFamily: 'Inter'
                   }}>
@@ -242,24 +242,15 @@ const Footer = () => {
                   }}></div>
                   
                   <SocialIcons variant="footer-follow" />
+                  
                 </Col>
               </Row>
             </Col>
+    
+      
           </Row>
-        </div>
-      </div>
-
-      {/* Copyright */}
-      <div style={{ 
-        borderTop: '1px solid #333',
-        paddingTop: '16px',
-        backgroundColor: '#000000ff'
-      }}>
-        <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          padding: isMobile ? '0 16px' : '0 24px'
-        }}>
+          <Divider style={{ backgroundColor: '#333', margin: isMobile ? '24px 0' : '24px 0' }}/>
+            <div style={{display:"flex",justifyContent:"center"}} >
           <Text style={{ 
             display: 'block',
             textAlign: 'center', 
@@ -271,8 +262,13 @@ const Footer = () => {
           }}>
             © 2025 — Higher Education Commission of Pakistan
           </Text>
+     
         </div>
+        </div>
+              {/* Copyright */}
+     
       </div>
+
     </AntFooter>
   );
 };

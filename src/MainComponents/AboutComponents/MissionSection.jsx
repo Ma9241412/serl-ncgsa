@@ -40,7 +40,7 @@ const SpaceOutreach = () => {
   return (
     <div style={{ 
       backgroundColor: 'transparent',
-      padding: isMobile ? '20px 30px' : '40px 80px',
+      padding: isMobile ? '10px 20px' : '30px 40px',
       position: 'relative'
     }}>
       {/* Starry background effect */}
@@ -55,7 +55,7 @@ const SpaceOutreach = () => {
         pointerEvents: 'none'
       }} />  
       
-      <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Row 1: Text Content */}
         <Row justify="start" style={{ marginBottom: '60px' }}>
           <Col xs={24} lg={23} style={{ textAlign: 'left', paddingLeft: isMobile ? '10px' : '40px' }}>
@@ -72,7 +72,7 @@ const SpaceOutreach = () => {
             </Title>
             {/* Thin orange line under title */}
             <div style={{
-              width: '1318px',
+              width: '100%',
               height: '2px',
               backgroundColor: '#FF9500',
               marginBottom: '20px'
@@ -97,11 +97,9 @@ const SpaceOutreach = () => {
           justify="space-between" 
           style={{ 
             paddingLeft: isMobile ? '10px' : '40px',
-           paddingRight: isMobile ? '10px' : '0px', // ✅ minimum allowed
-           marginRight: isMobile ? '0px' : '-300px', // ✅ to shift it outward
-
+            paddingRight: isMobile ? '10px' : '40px',
             margin: '0',
-            width: isMobile ? 'auto' : '1318px', // Match the orange line width
+            width: '100%',
             display: 'flex'
           }}
         >
@@ -109,8 +107,8 @@ const SpaceOutreach = () => {
             <div
               key={index}
               style={{
-                width: isMobile ? '100%' : 'calc((100% - 64px) / 5)', // 64px total gap for 4 spaces between 5 cards
-                marginRight: index < 4 ? (isMobile ? '0' : '16px') : '0', // No margin on last card
+                width: isMobile ? '100%' : 'calc((100% - 32px) / 5)', // 32px total gap for 4 spaces between 5 cards
+                marginRight: index < 4 ? (isMobile ? '0' : '8px') : '0', // Reduced margin between cards
                 marginBottom: isMobile ? '16px' : '0'
               }}
             >

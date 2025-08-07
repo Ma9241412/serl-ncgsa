@@ -22,10 +22,16 @@ const SpaceOutreach = () => {
     { src: require('../../assets/images/award10.png'), alt: 'Award 10' }
   ];
 
+  // Split awards into rows of 5
+  const awardRows = [];
+  for (let i = 0; i < awards.length; i += 5) {
+    awardRows.push(awards.slice(i, i + 5));
+  }
+
   return (
     <div style={{ 
       backgroundColor: 'transparent',
-      padding: isMobile ? '20px 30px' : '40px 80px',
+      padding: isMobile ? '15px 30px' : '30px 40px',
       position: 'relative'
     }}>
       {/* Starry background effect */}
@@ -40,7 +46,7 @@ const SpaceOutreach = () => {
         pointerEvents: 'none'
       }} />  
       
-      <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Row 1: Text Content */}
         <Row justify="start" style={{ marginBottom: '60px' }}>
           <Col xs={24} lg={23} style={{ textAlign: 'left', paddingLeft: isMobile ? '10px' : '40px' }}>
@@ -57,7 +63,7 @@ const SpaceOutreach = () => {
             </Title>
             {/* Thin orange line under title */}
             <div style={{
-              width: '1318px',
+              width: '100%',
               height: '2px',
               backgroundColor: '#FF9500',
               marginBottom: '20px'
@@ -66,68 +72,52 @@ const SpaceOutreach = () => {
         </Row>
 
         {/* Row 2: Awards Grid - 2 Rows of 5 Curved White Rectangles */}
-        <Row 
-          gutter={0} 
-          justify="space-between" 
-          style={{ 
-            paddingLeft: isMobile ? '10px' : '40px',
-            paddingRight: isMobile ? '10px' : '40px',
-            margin: '0',
-            width: isMobile ? 'auto' : '1318px', // Match the orange line width
-            display: 'flex',
-            flexWrap: 'wrap'
-          }}
-        >
-          {awards.map((award, index) => (
-<div
-  key={index}
-  style={{
-    width: isMobile ? '100%' : '20%',
-    marginBottom: isMobile ? '6px' : '6px', // Slight spacing between rows
-    display: 'flex',
-    justifyContent: 'center'
-  }}
->
-
-              <div
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '12px',
-                  padding: '5px',
-                  width: '100%',
-                  maxWidth: '180px',
-                  height: '180px', // Made height equal to maxWidth for square shape
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-                }}
-              >
-                <img 
-                  src={award.src}
-                  alt={award.alt}
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-            </div>
+        <div style={{ paddingLeft: isMobile ? '10px' : '40px', paddingRight: isMobile ? '10px' : '40px' }}>
+          {awardRows.map((row, rowIdx) => (
+            <Row gutter={[8, 16]} justify="center" key={rowIdx} style={{ marginBottom: rowIdx === awardRows.length - 1 ? 0 : '8px' }}>
+              {row.map((award, colIdx) => (
+                <Col xs={24} sm={12} md={8} lg={4} xl={4} key={colIdx} style={{ display: 'flex', justifyContent: 'center' }}>
+                  <div
+                    style={{
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '12px',
+                      padding: '5px',
+                      width: '100%',
+                      maxWidth: '180px',
+                      height: '180px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+                    }}
+                  >
+                    <img 
+                      src={award.src}
+                      alt={award.alt}
+                      style={{
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        width: 'auto',
+                        height: 'auto',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </div>
+                </Col>
+              ))}
+            </Row>
           ))}
-        </Row>
+        </div>
 
       </div>
     </div>

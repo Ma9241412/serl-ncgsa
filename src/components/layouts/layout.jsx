@@ -17,13 +17,12 @@ const Layout = ({ children }) => {
     const path = location.pathname;
     if (path === '/') return 'HOME';
     if (path.startsWith('/about')) return 'ABOUT';
-    if (path.startsWith('/research')) return 'RESEARCH';
-    if (path.startsWith('/education')) return 'EDUCATION';
-    if (path.startsWith('/outreach')) return 'OUTREACH';
-    if (path.startsWith('/contact')) return 'CONTACT';
+    if (path.startsWith('/space-outreach')) return 'SPACE OUTREACH';
+    if (path.startsWith('/space-education')) return 'SPACE EDUCATION';
+    if (path.startsWith('/capacity-building')) return 'CAPACITY BUILDING';
+    if (path.startsWith('/resources')) return 'RESOURCES';
     return 'HOME';
   };
-  
   const activeNavItem = getActiveNavItem();
 
   return (

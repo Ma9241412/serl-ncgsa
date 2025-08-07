@@ -22,8 +22,9 @@ const AboutCoreContent = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'scroll', // Changed from fixed to scroll
+        backgroundAttachment: 'fixed',
         position: 'relative',
+        minHeight: '100vh',
         width: '100%'
       }}
     >
@@ -35,12 +36,13 @@ const AboutCoreContent = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.3)'
+          backgroundColor: 'rgba(0, 0, 0, 0.3)',
+          zIndex: 1
         }}
       />
       
       {/* Content */}
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', zIndex: 2 }}>
         <VisionSection />
         <ContributionSection />
         <MissionSection />

@@ -40,7 +40,7 @@ const SpaceOutreach = () => {
   return (
     <div style={{ 
       backgroundColor: 'transparent',
-      padding: isMobile ? '20px 30px' : '40px 80px',
+      padding: isMobile ? '15px 30px' : '30px 40px',
       position: 'relative'
     }}>
       {/* Starry background effect */}
@@ -55,7 +55,7 @@ const SpaceOutreach = () => {
         pointerEvents: 'none'
       }} />  
       
-      <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Row 1: Text Content */}
         <Row justify="start" style={{ marginBottom: '60px' }}>
           <Col xs={24} lg={23} style={{ textAlign: 'left', paddingLeft: isMobile ? '10px' : '40px' }}>
@@ -81,7 +81,7 @@ const SpaceOutreach = () => {
             paddingLeft: isMobile ? '10px' : '40px',
             paddingRight: isMobile ? '10px' : '40px',
             margin: '0',
-            width: isMobile ? 'auto' : '1318px', // Match the orange line width
+            width: '100%',
             display: 'flex'
           }}
         >

@@ -12,11 +12,10 @@ const { useBreakpoint } = Grid;
 const Header = ({ activeNavItem = 'HOME' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const screens = useBreakpoint();
-  const isMobile = !screens.lg; // Changed to lg (992px+) for better responsive behavior in 1200-1244px range
+  const isMobile = !screens.lg;
   const isTablet = screens.md && !screens.lg;
   const isSmallMobile = !screens.sm;
 
-  // Load Google Fonts
   useEffect(() => {
     const link = document.createElement('link');
     link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap';
@@ -51,117 +50,44 @@ const Header = ({ activeNavItem = 'HOME' }) => {
           padding: isSmallMobile ? '0 4px 0 2px' : isMobile ? '0 8px 0 2px' : isTablet ? '0 16px 0 2px' : '0 24px 0 2px'
         }}
       >
-        {/* Logo Section */}
         <Col flex="none">
           <Logo size={isSmallMobile ? 'small' : isMobile ? 'small' : 'default'} />
         </Col>
 
-        {/* Desktop Navigation - Match reference image */}
         {!isMobile && (
-          <>
-            <Col flex="auto" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <a 
-                  href="/" 
-                  className={`header-nav-item ${activeNavItem === 'HOME' ? 'active' : ''}`}
-                  style={{ 
-                    color: activeNavItem === 'HOME' ? '#FFFFFF' : '#D1D5DB', 
-                    textDecoration: 'none', 
-                    fontFamily: 'Inter', 
-                    fontSize: isTablet ? '14px' : '15px', 
-                    fontWeight: activeNavItem === 'HOME' ? '700' : '600', 
+          <Col flex="auto" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              {['HOME', 'ABOUT', 'SPACE OUTREACH', 'SPACE EDUCATION', 'CAPACITY BUILDING', 'RESOURCES'].map((label) => (
+                <a
+                  key={label}
+                  href={`/${label.toLowerCase().replace(/\s+/g, '-')}`}
+                  className={`header-nav-item ${activeNavItem === label ? 'active' : ''}`}
+                  style={{
+                    color: activeNavItem === label ? '#FFFFFF' : '#D1D5DB',
+                    textDecoration: 'none',
+                    fontFamily: 'Inter',
+                    fontSize: '15px',
+                    fontWeight: activeNavItem === label ? '700' : '600',
                     letterSpacing: '0.3px',
-                    whiteSpace: 'nowrap'
+                    whiteSpace: 'nowrap',
+                    borderBottom: activeNavItem === label ? '2px solid #F97316' : '2px solid transparent',
+                    paddingBottom: '4px',
+                    marginRight: '20px',
+                    transition: 'all 0.3s ease',
                   }}
                 >
-                  HOME
+                  {label}
                 </a>
-                <a 
-                  href="/about" 
-                  className={`header-nav-item ${activeNavItem === 'ABOUT' ? 'active' : ''}`}
-                  style={{ 
-                    color: activeNavItem === 'ABOUT' ? '#FFFFFF' : '#D1D5DB', 
-                    textDecoration: 'none', 
-                    fontFamily: 'Inter', 
-                    fontSize: '15px', 
-                    fontWeight: activeNavItem === 'ABOUT' ? '700' : '600', 
-                    letterSpacing: '0.3px',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  ABOUT
-                </a>
-                <a 
-                  href="/space-outreach" 
-                  className={`header-nav-item ${activeNavItem === 'SPACE OUTREACH' ? 'active' : ''}`}
-                  style={{ 
-                    color: activeNavItem === 'SPACE OUTREACH' ? '#FFFFFF' : '#D1D5DB', 
-                    textDecoration: 'none', 
-                    fontFamily: 'Inter', 
-                    fontSize: '15px', 
-                    fontWeight: activeNavItem === 'SPACE OUTREACH' ? '700' : '600', 
-                    letterSpacing: '0.3px',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  SPACE OUTREACH
-                </a>
-                <a 
-                  href="/space-education" 
-                  className={`header-nav-item ${activeNavItem === 'SPACE EDUCATION' ? 'active' : ''}`}
-                  style={{ 
-                    color: activeNavItem === 'SPACE EDUCATION' ? '#FFFFFF' : '#D1D5DB', 
-                    textDecoration: 'none', 
-                    fontFamily: 'Inter', 
-                    fontSize: '15px', 
-                    fontWeight: activeNavItem === 'SPACE EDUCATION' ? '700' : '600', 
-                    letterSpacing: '0.3px',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  SPACE EDUCATION
-                </a>
-                <a 
-                  href="/capacity-building" 
-                  className={`header-nav-item ${activeNavItem === 'CAPACITY BUILDING' ? 'active' : ''}`}
-                  style={{ 
-                    color: activeNavItem === 'CAPACITY BUILDING' ? '#FFFFFF' : '#D1D5DB', 
-                    textDecoration: 'none', 
-                    fontFamily: 'Inter', 
-                    fontSize: '15px', 
-                    fontWeight: activeNavItem === 'CAPACITY BUILDING' ? '700' : '600', 
-                    letterSpacing: '0.3px',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  CAPACITY BUILDING
-                </a>
-                <a 
-                  href="/resources" 
-                  className={`header-nav-item ${activeNavItem === 'RESOURCES' ? 'active' : ''}`}
-                  style={{ 
-                    color: activeNavItem === 'RESOURCES' ? '#FFFFFF' : '#D1D5DB', 
-                    textDecoration: 'none', 
-                    fontFamily: 'Inter', 
-                    fontSize: '15px', 
-                    fontWeight: activeNavItem === 'RESOURCES' ? '700' : '600', 
-                    letterSpacing: '0.3px',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  RESOURCES
-                </a>
-                <Button 
-                  text="CONTACT US" 
-                  variant="primary"
-                  size={screens.xl ? "medium" : "small"}
-                />
-              </div>
-            </Col>
-          </>
+              ))}
+              <Button 
+                text="CONTACT US" 
+                variant="primary"
+                size={screens.xl ? "medium" : "small"}
+              />
+            </div>
+          </Col>
         )}
 
-        {/* Mobile Menu Button */}
         {isMobile && (
           <Col flex="none">
             <button
@@ -197,19 +123,18 @@ const Header = ({ activeNavItem = 'HOME' }) => {
         )}
       </Row>
 
-      {/* Mobile Navigation Drawer */}
       <Drawer
         title={null}
-        placement="top"
+        placement="right"
         onClose={() => setIsMenuOpen(false)}
         open={isMenuOpen}
-        height="auto"
+        width={320}
         className="mobile-drawer"
         styles={{
           body: { 
             backgroundColor: '#111', 
             padding: 0,
-            borderBottom: '2px solid #F97316'
+            borderLeft: '2px solid #F97316'
           },
           header: { 
             display: 'none' 
@@ -223,14 +148,7 @@ const Header = ({ activeNavItem = 'HOME' }) => {
         keyboard={true}
         destroyOnClose={false}
         forceRender={true}
-        getContainer={false}
         zIndex={1001}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0
-        }}
       >
         <div style={{ 
           padding: '24px 20px',
@@ -247,7 +165,6 @@ const Header = ({ activeNavItem = 'HOME' }) => {
               fontWeight: '700',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
             }}>
-              Navigation Menu
             </h3>
             <Navigation activeItem={activeNavItem} isMobile={true} />
           </div>

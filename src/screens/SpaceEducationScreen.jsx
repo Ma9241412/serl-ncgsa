@@ -1,10 +1,10 @@
 import React from 'react';
-import WorldSpaceWeek from '../MainComponents/SpaceOutreachComponents/WorldSpaceWeek';
+import SpaceOutreachSection from '../MainComponents/SpaceOutreachComponents/SpaceOutreachSection';
 
 const SpaceEducationScreen = () => {
   return (
     <div>
-      <WorldSpaceWeek/>
+      <SpaceOutreachSection/>
     </div>
   );
 };

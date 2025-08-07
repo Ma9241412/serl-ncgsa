@@ -11,6 +11,7 @@ const AppRouter = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/space-outreach" element={<SpaceEducationScreen />} />
           {/* Add more routes here as needed */}
