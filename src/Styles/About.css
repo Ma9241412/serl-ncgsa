@@ -1,0 +1,18 @@
+/* AboutSection custom styles (minimal, only if needed) */
+.about-bg {
+  background-color: #000;
+  background-image: url('../assets/images/mainbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+}
+
+.about-title {
+  color: #fff;
+  font-size: 9.2rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
