@@ -1,278 +1,129 @@
-import React from 'react';
-import { Layout, Row, Col, Divider, Grid, Typography } from 'antd';
-import SocialIcons from '../ui/social_icons';
-import Logo from '../ui/logo';
+import React from "react";
+import { Layout, Row, Col, Typography, Space, Divider, Image } from "antd";
+import {
+  FacebookFilled,
+  InstagramFilled,
+  LinkedinFilled,
+  YoutubeFilled,
+  SendOutlined,
+  WhatsAppOutlined,
+} from "@ant-design/icons";
+import '../../Styles/Footer.css'
+import logo from '../../assets/images/ncgsa-logo.png'
 
-const { Footer: AntFooter } = Layout;
-const { useBreakpoint } = Grid;
-const { Title, Text } = Typography;
+const { Footer } = Layout;
+const { Title, Text, Link } = Typography;
 
-const Footer = () => {
-  const screens = useBreakpoint();
-  const isMobile = !screens.md;
-  const isTablet = screens.md && !screens.lg;
-
+const AppFooter = () => {
   return (
-    <AntFooter style={{ 
-      backgroundColor: '#000000ff', 
-      color: 'white', 
-      // padding: isMobile ? '32px 0' : '40px 0',
- 
-    }}>
-      <div style={{ 
-        // margin: '0 auto', 
-        // padding: isMobile ? '0 16px' : '0 24px'
-      }}>
-        <div style={{
-          backgroundColor: '#232121ff',
-          borderRadius: '20px',
-          padding: isMobile ? '24px' : '40px',
-          marginBottom: isMobile ? '16px' : '32px'
-        }}>
-          
-          {/* Top section with SERL info */}
-          <Row gutter={[24, 32]} style={{ marginBottom: isMobile ? '32px' : '40px' }}>
-            <Col xs={24} md={24} lg={10}>
-              <Title level={3} style={{ 
-                color: 'white',
-                fontSize: isMobile ? '1.5rem' : isTablet ? '1.75rem' : '2rem',
-                fontWeight: '700', 
-                marginBottom: '16px',
-                fontFamily: 'Inter',
-                lineHeight: '1.2'
-              }}>
-                <span style={{ color: '#60A5FA' }}>Space</span>{' '}
-                <span style={{ color: '#F97316' }}>Education</span>{' '}
-                <span style={{ color: '#60A5FA' }}>Research</span>{' '}
-                <span style={{ color: '#E5E7EB' }}>Lab</span>
-              </Title>
-              
-              <Text style={{ 
-                color: '#D1D5DB', 
-                fontSize: '16px', 
-                lineHeight: '1.5', 
-                display: 'block',
-                marginBottom: '24px',
-                fontFamily: 'Inter',
-                fontWeight: '400'
-              }}>
-                A component of National Center of GIS and Space Applications for the Awareness, Education, Outreach and Popularization of Space Science, Technology & its Applications
-              </Text>
-              
-              <SocialIcons variant="footer-top" />
-            </Col>
+    <Footer
+      style={{
+        backgroundColor: "#0f0f0f",
+        padding: "50px 20px",
+        color: "#fff",
 
-            {/* Contact & Explore sections */}
-            <Col xs={24} md={24} lg={14}>
-              <Row gutter={[24, 24]}>
-                <Col xs={24} md={12} lg={12}>
-                  <Title level={4} style={{ 
-                    color: 'white', 
-                    fontWeight: '700', 
-                    fontSize: '25px', 
-                    marginBottom: '10px',
-                    fontFamily: 'Inter'
-                  }}>
-                    Contact Us
-                  </Title>
-                  <div style={{
-                    width: '50px',
-                    height: '3px',
-                    backgroundColor: '#F59E0B',
-                    marginBottom: '16px'
-                  }}>
-                  </div>
-                  
-                  <div style={{ 
-                    fontSize: '16px', 
-                    color: '#D1D5DB', 
-                    lineHeight: '1.8',
-                    fontFamily: 'Inter',
-                    fontWeight: '400'
-                  }}>
-                    <Text style={{ display: 'block', margin: '0 0 6px 0', color: '#D1D5DB' }}>
-                      serl.ncgsa@gmail.com
-                    </Text>
-                    <Text style={{ display: 'block', margin: '0 0 6px 0', color: '#D1D5DB' }}>
-                      +92-51-907-5864 | 5799
-                    </Text>
-                    <Text style={{ display: 'block', margin: '0 0 6px 0', color: '#D1D5DB' }}>
-                      +92-334-2949667
-                    </Text>
-                  </div>
-                </Col>
-
-                <Col xs={24} md={12} lg={12}>
-                  <Title level={4} style={{ 
-                    color: 'white', 
-                    fontWeight: '700', 
-                    fontSize: '25px', 
-                    marginBottom: '10px',
-                    fontFamily: 'Inter'
-                  }}>
-                    Explore
-                  </Title>
-                  <div style={{
-                    width: '50px',
-                    height: '3px',
-                    backgroundColor: '#F59E0B',
-                    marginBottom: '16px'
-                  }}></div>
-                  
-                  <div style={{ 
-                    fontSize: '16px', 
-                    color: '#D1D5DB', 
-                    lineHeight: '1.8',
-                    fontFamily: 'Inter',
-                    fontWeight: '400'
-                  }}>
-                    {['SERL', 'Space Outreach', 'Space Education', 'Capacity Building', 'Resources'].map((item) => (
-                      <Text key={item} style={{ 
-                        display: 'block', 
-                        margin: '0 0 6px 0', 
-                        cursor: 'pointer',
-                        color: '#D1D5DB',
-                        fontSize: '16px',
-                        transition: 'color 0.2s ease'
-                      }}
-                      onMouseEnter={(e) => e.target.style.color = '#F59E0B'}
-                      onMouseLeave={(e) => e.target.style.color = '#D1D5DB'}>
-                        {item}
-                      </Text>
-                    ))}
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-
-          <Divider style={{ backgroundColor: '#333', margin: isMobile ? '24px 0' : '24px 0' }} />
-
-          {/* Bottom section with NCGSA info */}
-          <Row gutter={[24, 32]} align="top">
-            <Col xs={24} md={24} lg={10}>
-              <Row gutter={16} align="middle">
-                <Col flex="none">
-                  <Logo variant="ncgsa" size="ncgsa" />
-                </Col>
-                <Col flex="auto">
-                  <Title level={4} style={{ 
-                    color: 'white', 
-                    fontWeight: '600', 
-                    fontSize: '16px', 
-                    marginBottom: '4px',
-                    fontFamily: 'Inter',
-                    lineHeight: '1.3'
-                  }}>
-                    National Center of GIS & Space Applications
-                  </Title>
-                  <Text style={{ 
-                    color: '#D1D5DB', 
-                    fontSize: '16px', 
-                    display: 'block',
-                    margin: '2px 0',
-                    fontFamily: 'Inter'
-                  }}>
-                    Institute of Space Technology
-                  </Text>
-                  <Text style={{ 
-                    color: '#D1D5DB', 
-                    fontSize: '16px', 
-                    display: 'block',
-                    margin: '2px 0',
-                    fontFamily: 'Inter'
-                  }}>
-                    Islamabad, Pakistan
-                  </Text>
-                </Col>
-              </Row>
-            </Col>
-
-            <Col xs={24} md={24} lg={14}>
-              <Row gutter={[24, 24]}>
-                <Col xs={24} md={12} lg={12}>
-                  <Title level={4} style={{ 
-                    color: 'white', 
-                    fontWeight: '700', 
-                    fontSize: '25px', 
-                    marginBottom: '8px',
-                    fontFamily: 'Inter'
-                  }}>
-                    Contact Us
-                  </Title>
-                  <div style={{
-                    width: '50px',
-                    height: '3px',
-                    backgroundColor: '#F59E0B',
-                    marginBottom: '16px'
-                  }}></div>
-                  
-                  <div style={{ 
-                    fontSize: '16px', 
-                    color: '#D1D5DB', 
-                    lineHeight: '1.6',
-                    fontFamily: 'Inter',
-                    fontWeight: '400'
-                  }}>
-                    <Text style={{ display: 'block', margin: '0 0 6px 0', color: '#D1D5DB' }}>
-                      +92-51-907-5799
-                    </Text>
-                    <Text style={{ display: 'block', margin: '0 0 6px 0', color: '#D1D5DB' }}>
-                      +92-51-907-5578
-                    </Text>
-                    <Text style={{ display: 'block', margin: '0 0 6px 0', color: '#D1D5DB' }}>
-                      ncgsa@ist.edu.pk
-                    </Text>
-                  </div>
-                </Col>
-
-                <Col xs={24} md={12} lg={12}>
-                  <Title level={4} style={{ 
-                    color: 'white', 
-                    fontWeight: '700', 
-                    fontSize: '25px', 
-                    marginBottom: '8px',
-                    fontFamily: 'Inter'
-                  }}>
-                    Follow Us
-                  </Title>
-                  <div style={{
-                    width: '50px',
-                    height: '3px',
-                    backgroundColor: '#F59E0B',
-                    marginBottom: '16px'
-                  }}></div>
-                  
-                  <SocialIcons variant="footer-follow" />
-                  
-                </Col>
-              </Row>
-            </Col>
-    
-      
-          </Row>
-          <Divider style={{ backgroundColor: '#333', margin: isMobile ? '24px 0' : '24px 0' }}/>
-            <div style={{display:"flex",justifyContent:"center"}} >
-          <Text style={{ 
-            display: 'block',
-            textAlign: 'center', 
-            fontSize: '16px', 
-            color: '#9CA3AF',
-            fontFamily: 'Inter',
-            fontWeight: '400',
-            margin: 0
-          }}>
-            © 2025 — Higher Education Commission of Pakistan
+      }}
+    >
+    <div  style={{
+    width: "100%",
+    maxWidth: "1400px",
+    backgroundColor: "#232121",
+    borderRadius: "20px",
+    margin: "0 auto",           // ✅ Centers horizontally
+    padding: "20px"             // Optional, adds breathing room
+  }}>
+        <Row gutter={[32, 32]} justify="space-between">
+        {/* Left Section */}
+        <Col xs={24} md={10}>
+          <Title level={4} style={{ color: "#fff", marginBottom: 10 }}>
+            <span style={{ color: "#4da3ff" }}>Space </span>
+            <span style={{ color: "#ff9500" }}>Education </span>
+            <span style={{ color: "#4da3ff" }}>Research </span>
+            <span style={{ color: "#fff" }}>Lab</span>
+          </Title>
+          <Text style={{ color: "#ccc" }}>
+            A component of National Center of GIS and Space Applications for the Awareness,
+            Education, Outreach and Popularization of Space Science, Technology & its Applications
           </Text>
-     
-        </div>
-        </div>
-              {/* Copyright */}
-     
-      </div>
+          <div style={{ marginTop: 15 }}>
+            <Space size="middle">
+              <FacebookFilled style={{ fontSize: 20, color: "#fff" }} />
+              <InstagramFilled style={{ fontSize: 20, color: "#fff" }} />
+              <LinkedinFilled style={{ fontSize: 20, color: "#fff" }} />
+            </Space>
+          </div>
+        </Col>
 
-    </AntFooter>
+        {/* Contact Us */}
+        <Col xs={24} sm={12} md={5}>
+          <Title level={5} style={{ color: "#fff" }}>Contact Us</Title>
+          <Text style={{ display: "block", color: "#ccc" }}>serl.ncgsa@gmail.com</Text>
+          <Text style={{ display: "block", color: "#ccc" }}>+92-51-907-5864 | 5799</Text>
+          <Text style={{ display: "block", color: "#ccc" }}>+92-334-2949667</Text>
+        </Col>
+
+        {/* Explore */}
+        <Col xs={24} sm={12} md={5}>
+          <Title level={5} style={{ color: "#fff" }}>Explore</Title>
+          <Space direction="vertical">
+            <Link style={{ color: "#ff9500" }}>SERL</Link>
+            <Link style={{ color: "#ccc" }}>Space Outreach</Link>
+            <Link style={{ color: "#ccc" }}>Space Education</Link>
+            <Link style={{ color: "#ccc" }}>Capacity Building</Link>
+            <Link style={{ color: "#ccc" }}>Resources</Link>
+          </Space>
+        </Col>
+      </Row>
+
+      <Divider style={{ backgroundColor: "#444", margin: "30px 0" }} />
+
+      {/* Bottom Section */}
+      <Row gutter={[32, 32]} justify="space-between" align="middle">
+        <Col xs={24} md={12}>
+         <Space size={10} align="center">
+           <Image
+            src={logo}
+            alt="NCGSA"
+            style={{ marginBottom: 10 }}
+          />
+          <div>
+            <Text style={{ color: "#ccc" }} strong>National Center of GIS & Space Applications</Text>
+            <br />
+            <Text style={{ color: "#ccc" }} strong>Institute of Space Technology</Text>
+            <br />
+            <Text style={{ color: "#ccc" }}>Islamabad, Pakistan</Text>
+          </div>
+         </Space>
+        </Col>
+
+        <Col xs={24} sm={12} md={6}>
+          <Title level={5} style={{ color: "#fff" }}>Contact Us</Title>
+          <Text style={{ display: "block", color: "#ccc" }}>+92-51-907-5799</Text>
+          <Text style={{ display: "block", color: "#ccc" }}>+92-51-907-5578</Text>
+          <Text style={{ display: "block", color: "#ccc" }}>ncgsa@ist.edu.pk</Text>
+        </Col>
+
+        <Col xs={24} sm={12} md={6}>
+          <Title level={5} style={{ color: "#fff" }}>Follow Us</Title>
+          <Space size="middle">
+            <FacebookFilled style={{ fontSize: 20, color: "#fff" }} />
+            <LinkedinFilled style={{ fontSize: 20, color: "#fff" }} />
+            <InstagramFilled style={{ fontSize: 20, color: "#fff" }} />
+            <YoutubeFilled style={{ fontSize: 20, color: "#fff" }} />
+            <SendOutlined style={{ fontSize: 20, color: "#fff" }} />
+            <WhatsAppOutlined style={{ fontSize: 20, color: "#fff" }} />
+          </Space>
+        </Col>
+      </Row>
+
+      {/* Copyright */}
+      <Divider style={{ backgroundColor: "#888", margin: "30px 0 10px" }} />
+      <Text style={{ color: "#888", fontSize: "12px", display: "block", textAlign: "center" }}>
+        © 2025 — Higher Education Commission of Pakistan
+      </Text>
+    </div>
+    </Footer>
   );
 };
 
-export default Footer;
+export default AppFooter;

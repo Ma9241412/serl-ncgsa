@@ -45,7 +45,7 @@ const SpaceOutreach = () => {
             </Title>
             {/* Thin orange line under title */}
             <div style={{
-              width: '205%',
+              width: '100%',
               height: '2px',
               backgroundColor: '#FF9500',
               marginBottom: '20px'

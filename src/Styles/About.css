@@ -1,18 +1,50 @@
-/* AboutSection custom styles (minimal, only if needed) */
+/* AboutSection styles */
 .about-bg {
   background-color: #000;
   background-image: url('../assets/images/mainbg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  min-height: 70vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Default (large screens) */
 .about-title {
-  color: #fff;
-  font-size: 9.2rem;
-  font-weight: 600;
+  color: #fff !important;
+  font-size: 9.2rem !important;
+  font-weight: 600 !important;
   margin: 0;
   font-family: 'Inter', sans-serif;
   text-align: center;
+  line-height: 1.1;
+}
+
+/* Medium screens */
+@media (max-width: 1200px) {
+  .about-title {
+    font-size: 2rem !important;
+  }
+}
+
+
+/* Tablets */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 4rem;
+  }
+  .about-bg {
+  min-height: 20vh !important;
+
+}
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2.8rem;
+    padding: 0 10px; /* to prevent text touching edges */
+  }
 }

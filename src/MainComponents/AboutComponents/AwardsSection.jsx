@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Typography, Grid } from 'antd';
+import { Row, Col, Typography, Grid, Divider } from 'antd';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -62,62 +62,56 @@ const SpaceOutreach = () => {
               Awards & Honors
             </Title>
             {/* Thin orange line under title */}
-            <div style={{
-              width: '100%',
-              height: '2px',
-              backgroundColor: '#FF9500',
-              marginBottom: '20px'
-            }} />
+       <Divider style={{ borderColor: "#FF9500", borderWidth: "2px", width:"100%" }} />
+
           </Col>
         </Row>
 
         {/* Row 2: Awards Grid - 2 Rows of 5 Curved White Rectangles */}
-        <div style={{ paddingLeft: isMobile ? '10px' : '40px', paddingRight: isMobile ? '10px' : '40px' }}>
-          {awardRows.map((row, rowIdx) => (
-            <Row gutter={[8, 16]} justify="center" key={rowIdx} style={{ marginBottom: rowIdx === awardRows.length - 1 ? 0 : '8px' }}>
-              {row.map((award, colIdx) => (
-                <Col xs={24} sm={12} md={8} lg={4} xl={4} key={colIdx} style={{ display: 'flex', justifyContent: 'center' }}>
-                  <div
-                    style={{
-                      backgroundColor: '#FFFFFF',
-                      borderRadius: '12px',
-                      padding: '5px',
-                      width: '100%',
-                      maxWidth: '180px',
-                      height: '180px',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                      transition: 'all 0.3s ease',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.3)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-                    }}
-                  >
-                    <img 
-                      src={award.src}
-                      alt={award.alt}
-                      style={{
-                        maxWidth: '100%',
-                        maxHeight: '100%',
-                        width: 'auto',
-                        height: 'auto',
-                        objectFit: 'contain'
-                      }}
-                    />
-                  </div>
-                </Col>
-              ))}
-            </Row>
-          ))}
+   <div style={{ padding: '0 20px' }}>
+  <Row gutter={[24, 24]} justify="center">
+    {awards.map((award, idx) => (
+      <Col xs={24} sm={12} md={8} lg={4} xl={4} key={idx}>
+        <div
+          style={{
+            backgroundColor: '#FFFFFF',
+            borderRadius: '12px',
+            height: '180px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            transition: 'all 0.3s ease',
+            cursor: 'pointer',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '10px'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-4px)';
+            e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+          }}
+        >
+          <img
+            src={award.src}
+            alt={award.alt}
+            style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              width: 'auto',
+              height: 'auto',
+              objectFit: 'contain'
+            }}
+          />
         </div>
+      </Col>
+    ))}
+  </Row>
+</div>
+
+
 
       </div>
     </div>
