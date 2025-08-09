@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Typography, Card, Image, List, Avatar, Carousel } from 'antd';
 import { ClockCircleOutlined, BookOutlined, ExperimentOutlined, StarOutlined } from '@ant-design/icons';
 import activity1 from '../../../assets/images/activity1.png';
@@ -7,6 +7,7 @@ import activity3 from '../../../assets/images/activity3.png';
 import spaceOutreach01 from '../../../assets/images/SpaceOutreach01.jpg';
 import spaceOutreach03 from '../../../assets/images/SpaceOutreach03.jpg';
 import spaceOutreach07 from '../../../assets/images/SpaceOutreach07.jpg';
+import '../../../Styles/STEMxWebinar.css';
 
 const { Title, Text } = Typography;
 
@@ -44,116 +45,46 @@ const STEMxWebinar = () => {
 
   return (
     <>
-      {/* World Space Week 2020 Section */}
-      <Card
-        style={{ backgroundColor: '#2a2a2a', border: 'none', borderRadius: '20px' }}
-        bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
-      >
-        <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          World Space Week 2020
-        </Title>
-        
-        {/* Space Outreach Image Slider */}
-        <div style={{ 
-          backgroundColor: '#1a1a1aff', 
-          borderRadius: '12px', 
-          padding: '6px',
-          marginBottom: '20px'
-        }}>
-          <Carousel 
-            autoplay 
-            autoplaySpeed={3000}
-            dots={true}
-            dotPosition="bottom"
-            style={{ borderRadius: '8px', overflow: 'hidden' }}
-          >
+      <Card className="tsw-card" bordered={false}>
+        <Title level={3} className="tsw-card-title">World Space Week 2020</Title>
+        <div className="tsw-carousel-wrap">
+          <Carousel autoplay autoplaySpeed={3000} dots dotPosition="bottom" className="tsw-carousel">
             {spaceOutreachImages.map((image, index) => (
-              <div key={index}>
-                <div style={{ 
-                  height: '500px',
-                  backgroundImage: `url(${image.src})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  borderRadius: '8px'
-                }}>
-                </div>
+              <div key={index} className="tsw-carousel-slide">
+                <img src={image.src} alt={image.alt} className="tsw-carousel-img" />
               </div>
             ))}
           </Carousel>
         </div>
-        
-        <Text style={{ color: '#cccccc', fontSize: '18px' }}>
+        <Text className="tsw-desc">
           The 2020 Theme "Satellites Improve Life" Celebrates The Contribution Of Satellites To Human Development And Welfare. Learn How Satellites Help Us With Communication, Navigation, Weather Forecasting, Resource Management, And Disaster Response.
         </Text>
       </Card>
 
-      {/* Activities Section */}
-      <div>
-        <Title level={2} style={{ color: 'white', marginBottom: '8px', fontSize: '32px' }}>
-          Activities
-        </Title>
-        <div style={{
-          width: '60px',
-          height: '4px',
-          backgroundColor: '#ff8c00',
-          marginBottom: '24px'
-        }}></div>
+      <div className="tsw-activities">
+        <Title level={2} className="tsw-activities-title">Activities</Title>
+        <div className="tsw-underline" />
         <List
+          className="tsw-activities-list"
           dataSource={activities}
           renderItem={(item) => (
-            <List.Item style={{ border: 'none', padding: '16px 0' }}>
+            <List.Item className="tsw-activity-item">
               <List.Item.Meta
                 avatar={
-                  <Avatar 
-                    icon={item.icon} 
-                    style={{ backgroundColor: 'transparent', color: 'white', fontSize: '20px' }}
-                    size="large"
-                  />
+                  <Avatar className="tsw-avatar" icon={item.icon} size="large" />
                 }
-                title={
-                  <Text style={{ color: 'white', fontSize: '20px', lineHeight: '1.5', fontWeight: '400' }}>
-                    {item.title}
-                  </Text>
-                }
+                title={<Text className="tsw-list-title">{item.title}</Text>}
               />
             </List.Item>
           )}
         />
       </div>
 
-      {/* Photo Gallery */}
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        width: '100%',
-        padding: '0 20px'
-      }}>
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          gap: '15px',
-          width: '95%',
-          maxWidth: '1200px'
-        }}>
+      <div className="tsw-gallery">
+        <div className="tsw-gallery-inner">
           {heroImages.map((image, index) => (
-            <div key={index} style={{ 
-              width: 'calc(33.33% - 10px)',
-              height: '450px', 
-              borderRadius: '20px',
-              overflow: 'hidden'
-            }}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'cover',
-                  borderRadius: '20px'
-                }}
-                fallback="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
-              />
+            <div key={index} className="tsw-gallery-tile">
+              <Image src={image.src} alt={image.alt} className="tsw-gallery-img" />
             </div>
           ))}
         </div>
@@ -162,4 +93,4 @@ const STEMxWebinar = () => {
   );
 };
 
-export default STEMxWebinar;
+export default React.memo(STEMxWebinar);
