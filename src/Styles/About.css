@@ -11,6 +11,9 @@
   justify-content: center;
 }
 
+.about-col { width: 100%; }
+.about-space { width: 100%; }
+
 /* Default (large screens) */
 .about-title {
   color: #fff !important;
