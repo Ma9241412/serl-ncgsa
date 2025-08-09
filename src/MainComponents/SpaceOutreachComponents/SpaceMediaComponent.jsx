@@ -2,12 +2,11 @@ import React from 'react';
 import { Row, Col, Space, Typography, Button, Card } from 'antd';
 import SpaceFilmFestival from './SpaceMedia/SpaceFilmFestival';
 import JahanAurBhiHain from './SpaceMedia/JahanAurBhiHain';
-import homemainbg from '../../assets/images/homemainbg.jpg';
+import '../../Styles/SpaceMedia.css';
 
 const { Title, Paragraph } = Typography;
 
 const SpaceMediaComponent = ({ selectedEvent, availableEvents, onEventChange }) => {
-  // Use props instead of internal state
   const currentEvent = selectedEvent || 'space-film-festival';
   const eventButtons = availableEvents || ['space-film-festival', 'jahan-aur-bhi-hain'];
 
@@ -28,81 +27,35 @@ const SpaceMediaComponent = ({ selectedEvent, availableEvents, onEventChange }) 
   };
 
   return (
-    <>
-      {/* Space Media Main Section */}
-      <section style={{ 
-        padding: '20px 0', 
-        backgroundImage: `url(${homemainbg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-        minHeight: 'auto'
-      }}>
-        <Row justify="center">
-          <Col xs={24} lg={24} xl={24}>
-            <Card
-              style={{ 
-                backgroundColor: 'transparent', 
-                borderRadius: '30px', 
-                border: '2px solid #FF9500',
-                maxWidth: '3800px',
-                width: '95%',
-                margin: '0 auto'
-              }}
-              bodyStyle={{ 
-                padding: '60px 40px', 
-                backgroundColor: 'transparent',
-                borderRadius: '30px'
-              }}
-            >
-              <Space direction="vertical" size="large" style={{ width: '100%' }}>
-                {/* Header */}
-                <div style={{ textAlign: 'left', paddingBottom: '20px' }}>
-                  <Title level={1} style={{ marginBottom: '16px', color: 'white' }}>
-                    Space Media
-                  </Title>
-                  <div style={{
-                    width: '1400px',
-                    height: '2px',
-                    backgroundColor: 'white',
-                    marginBottom: '24px'
-                  }}></div>
-                  <Paragraph style={{ fontSize: '18px', color: '#cccccc', marginBottom: '24px' }}>
-                    SERL produces and promotes space-themed media content including documentaries, films, and educational programs that showcase Pakistan's space achievements and inspire public interest in space science and exploration.
-                  </Paragraph>
-                  
-                  {/* Event Navigation */}
-                  <Space size="small" wrap>
-                    {eventButtons.map((event) => (
-                      <Button
-                        key={event}
-                        size="large"
-                        type={currentEvent === event ? 'primary' : 'default'}
-                        style={{
-                          backgroundColor: currentEvent === event ? '#ff8c00' : '#333333',
-                          borderColor: currentEvent === event ? '#ff8c00' : '#555555',
-                          color: currentEvent === event ? 'white' : '#cccccc',
-                          minWidth: '160px',
-                          height: '40px'
-                        }}
-                        onClick={() => onEventChange && onEventChange(event)}
-                      >
-                        {eventTitles[event]}
-                      </Button>
-                    ))}
-                  </Space>
-                </div>
-
-                {/* Dynamic Event Content */}
-                {renderEventComponent()}
+    <Row className="sm-wrapper" justify="center">
+      <Col xs={24} lg={24} xl={24}>
+        <Card bordered={false} className="sm-card">
+          <Space direction="vertical" size="large" className="sm-space">
+            <div className="sm-header">
+              <Title level={1} className="sm-title">Space Media</Title>
+              <div className="sm-underline" />
+              <Paragraph className="sm-paragraph">
+                SERL produces and promotes space-themed media content including documentaries, films, and educational programs that showcase Pakistan's space achievements and inspire public interest in space science and exploration.
+              </Paragraph>
+              <Space size="small" wrap>
+                {eventButtons.map((event) => (
+                  <Button
+                    key={event}
+                    size="large"
+                    className={currentEvent === event ? 'sm-btn sm-btn-active' : 'sm-btn sm-btn-inactive'}
+                    onClick={() => onEventChange && onEventChange(event)}
+                  >
+                    {eventTitles[event]}
+                  </Button>
+                ))}
               </Space>
-            </Card>
-          </Col>
-        </Row>
-      </section>
-    </>
+            </div>
+            {renderEventComponent()}
+          </Space>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 
-export default SpaceMediaComponent;
+export default React.memo(SpaceMediaComponent);

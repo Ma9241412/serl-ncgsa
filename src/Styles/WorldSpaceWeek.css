@@ -1,0 +1,11 @@
+.wsw-wrapper { padding: 20px 0 0 0; background-image: url('../assets/images/homemainbg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; min-height: 500px; }
+.wsw-card { background-color: transparent !important; border-radius: 30px !important; border: 2px solid #FF9500 !important; max-width: 1200px; width: 100%; margin: 0 auto; margin-bottom: 0; padding-bottom: 0; }
+.wsw-card .ant-card-body { padding: 40px 40px 0 40px; background-color: transparent; border-radius: 30px; }
+.wsw-space { width: 100%; }
+.wsw-header { text-align: left; padding-bottom: 20px; }
+.wsw-title { margin-bottom: 16px !important; color: white !important; }
+.wsw-underline { width: 100%; max-width: 1200px; height: 2px; background-color: white; margin-bottom: 24px; }
+.wsw-paragraph { font-size: 18px; color: #cccccc; margin-bottom: 24px; }
+.wsw-btn { min-width: 80px; height: 40px; }
+.wsw-btn-active { background-color: #ff8c00 !important; border-color: #ff8c00 !important; color: white !important; }
+.wsw-btn-inactive { background-color: #333333 !important; border-color: #555555 !important; color: #cccccc !important; }
