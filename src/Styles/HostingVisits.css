@@ -1,0 +1,19 @@
+.hv-bg { min-height: 100vh; background-image: url('../assets/images/homemainbg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+.hv-header-wrap { padding: 60px 0 20px; background: rgba(0, 0, 0, 0.7); }
+.hv-header-card { background-color: transparent !important; border-radius: 20px !important; border: 2px solid #FF9500 !important; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important; backdrop-filter: blur(10px); }
+.hv-header-card .ant-card-body { padding: 50px 80px; background-color: transparent; border-radius: 20px; }
+.hv-title { color: white !important; margin-bottom: 8px !important; font-size: 36px !important; font-weight: 700 !important; text-align: center !important; }
+.hv-underline { width: 120px; height: 4px; background-color: #ff8c00; margin: 0 auto 32px; }
+.hv-select-wrap { display: flex; justify-content: center; margin-bottom: 40px; }
+.hv-select { width: 300px; height: 50px; }
+.hv-select .ant-select-selector { height: 50px !important; background: rgba(0,0,0,0.9) !important; backdrop-filter: blur(10px) !important; border: 1px solid #FF9500 !important; color: #cccccc !important; }
+.hv-select-icon { color: #FF9500; font-size: 16px; }
+/* dropdown panel */
+.ant-select-dropdown { background: rgba(0, 0, 0, 0.9) !important; backdrop-filter: blur(10px) !important; border: 1px solid #FF9500 !important; }
+.ant-select-item { color: #cccccc !important; background: transparent !important; }
+.ant-select-item:hover { background: rgba(255, 149, 0, 0.1) !important; }
+.ant-select-item-option-selected { background: rgba(255, 149, 0, 0.2) !important; color: #FF9500 !important; }
+
+.hv-content-wrap { padding: 0 0 60px; background: rgba(0, 0, 0, 0.7); }
+
+@media (max-width: 992px) { .hv-header-card .ant-card-body { padding: 30px 20px; } .hv-select { width: 100%; } }

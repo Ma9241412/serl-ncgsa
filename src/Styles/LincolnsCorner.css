@@ -1,0 +1,11 @@
+.lc-wrapper { padding: 20px 0; background-image: url('../assets/images/homemainbg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+.lc-card { background-color: transparent !important; border-radius: 30px !important; border: 2px solid #FF9500 !important; max-width: 3800px; width: 95%; margin: 0 auto; }
+.lc-card .ant-card-body { padding: 60px 40px; background-color: transparent; border-radius: 30px; }
+.lc-space { width: 100%; }
+.lc-header { text-align: left; padding-bottom: 20px; }
+.lc-title { margin-bottom: 16px !important; color: white !important; }
+.lc-underline { width: 1400px; height: 2px; background-color: white; margin-bottom: 24px; }
+.lc-paragraph { font-size: 18px; color: #cccccc; margin-bottom: 24px; }
+.lc-btn { min-width: 180px; height: 40px; }
+.lc-btn-active { background-color: #ff8c00 !important; border-color: #ff8c00 !important; color: white !important; }
+.lc-btn-inactive { background-color: #333333 !important; border-color: #555555 !important; color: #cccccc !important; }
