@@ -1,0 +1,143 @@
+import React from 'react';
+import { Row, Col, Typography, Grid } from 'antd';
+import { ReactComponent as Domain1Icon } from '../../assets/images/domain1.svg';
+import { ReactComponent as Domain2Icon } from '../../assets/images/domain2.svg';
+import { ReactComponent as Domain3Icon } from '../../assets/images/domain3.svg';
+import { ReactComponent as Domain4Icon } from '../../assets/images/domain4.svg';
+import { ReactComponent as Domain5Icon } from '../../assets/images/domain5.svg';
+
+const { Title, Paragraph } = Typography;
+const { useBreakpoint } = Grid;
+
+const SpaceOutreach = () => {
+  const screens = useBreakpoint();
+  const isMobile = !screens.lg;
+
+  // Domain images and labels
+  const domains = [
+    {
+      icon: <Domain1Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Astronomy & Astrophysics'
+    },
+    {
+      icon: <Domain2Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Aviation'
+    },
+    {
+      icon: <Domain3Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Earth & ATMOSPHERE'
+    },
+    {
+      icon: <Domain4Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Rocketry'
+    },
+    {
+      icon: <Domain5Icon style={{ width: '160px', height: '160px' }} />, 
+      label: 'Satellite Technology'
+    }
+  ];
+
+  return (
+    <div style={{ 
+      backgroundColor: 'transparent',
+      padding: isMobile ? '15px 30px' : '30px 40px',
+      position: 'relative'
+    }}>
+      {/* Starry background effect */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 1px, transparent 1px), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px), radial-gradient(circle at 40% 60%, rgba(255,255,255,0.1) 1px, transparent 1px)',
+        backgroundSize: '100px 100px, 150px 150px, 200px 200px',
+        pointerEvents: 'none'
+      }} />  
+      
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+        {/* Row 1: Text Content */}
+        <Row justify="start" style={{ marginBottom: '60px' }}>
+          <Col xs={24} lg={23} style={{ textAlign: 'left', paddingLeft: isMobile ? '10px' : '40px' }}>
+            <Title 
+              level={2}
+              style={{ 
+                color: '#FFFFFF',
+                fontSize: isMobile ? '2.2rem' : '2.8rem',
+                fontWeight: 'bold',
+                marginBottom: '10px'
+              }}
+            >
+              Space Domains
+            </Title>
+          </Col>
+        </Row>
+
+        {/* Row 2: Domain Images in One Row */}
+        <Row 
+          gutter={0} 
+          justify="space-between" 
+          style={{ 
+            paddingLeft: isMobile ? '10px' : '40px',
+            paddingRight: isMobile ? '10px' : '40px',
+            margin: '0',
+            width: '100%',
+            display: 'flex'
+          }}
+        >
+          {domains.map((domain, index) => (
+            <div
+              key={index}
+              style={{
+                width: isMobile ? '100%' : 'calc((100% - 64px) / 5)',
+                marginRight: index < 4 ? (isMobile ? '0' : '16px') : '0',
+                marginBottom: isMobile ? '24px' : '0',
+                textAlign: 'center'
+              }}
+            >
+              <div
+                style={{
+                  background: 'transparent',
+                  borderRadius: '0px',
+                  overflow: 'visible',
+                  height: '200px',
+                  width: '100%',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  marginBottom: '12px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                {domain.icon}
+              </div>
+              <Typography.Text 
+                style={{ 
+                  color: '#FFFFFF', 
+                  fontSize: isMobile ? '1rem' : '1.1rem',
+                  fontWeight: '500',
+                  lineHeight: '1.3',
+                  textAlign: 'center',
+                  fontFamily: 'system-ui, -apple-system, sans-serif',
+                  display: 'block'
+                }}
+              >
+                {domain.label}
+              </Typography.Text>
+            </div>
+          ))}
+        </Row>
+
+      </div>
+    </div>
+  );
+};
+
+export default SpaceOutreach;

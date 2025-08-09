@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+.home-cont {
+  width: 100%;
+  max-width: 1200px;
+}
+.standard-layout {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: black;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow/white space */
+}
+
+.body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Fix Ant Design Row default margins */
+.ant-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Ensure header has no extra spacing */
+.ant-layout-header {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Remove Col margins only in header to ensure edge-to-edge positioning */
+.ant-layout-header > .ant-row > .ant-col {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Simple navigation spacing - match reference image */
+.header-nav-item {
+  margin-right: 40px !important;
+  display: inline-block !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  padding-bottom: 0px !important;
+  /* Ensure ::after positioning works */
+  line-height: 1.4 !important;
+}
+
+.header-nav-item:last-child {
+  margin-right: 0 !important;
+}
+
+/* Override any inline margin styles specifically for RESOURCES */
+.header-nav-item[href="/resources"] {
+  margin-right: 40px !important;
+}
+
+/* Responsive adjustments for 1200px to 1300px range */
+@media (min-width: 1200px) and (max-width: 1300px) {
+  .header-nav-item {
+    margin-right: 32px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Responsive adjustments for smaller desktop screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-nav-item {
+    margin-right: 28px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Ensure nav fits within header near tablet widths */
+@media (max-width: 786px) {
+  .header-nav-item {
+    margin-right: 16px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Yellow hover underline effect - closer to text */
+.header-nav-item:hover {
+  color: #ffffff !important;
+}
+
+.header-nav-item:hover::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background-color: #ff9500 !important;
+  transition: all 0.3s ease !important;
+  z-index: 1 !important;
+}
+
+/* Active page yellow underline - closer to text */
+.header-nav-item.active::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background-color: #ff9500 !important;
+  z-index: 1 !important;
+}
+
+/* Specific adjustment for logo positioning */
+.ant-layout-header .ant-col:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  transform: translateX(-4px); /* Move logo slightly more to the left */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
