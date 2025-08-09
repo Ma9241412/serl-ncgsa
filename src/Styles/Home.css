@@ -1,7 +1,4 @@
 /* Add gap between Ant Design Carousel images */
-.ant-carousel .slick-slide {
-  padding: 0 12px;
-}
 
 .hero-bg-card {
   background-color: #000000;
@@ -26,41 +23,6 @@
   margin: 0 auto;
 }
 
-.hero-title-main,
-.hero-title-main.ant-typography {
-  color: #fff !important;
-  margin-bottom: 0 !important;
-  font-family: Inter, sans-serif !important;
-  font-size: 1.9rem !important;
-}
-.hero-title-space,
-.hero-title-space.ant-typography {
-  color: #f59e0b !important;
-  font-weight: 600 !important;
-  margin: 0 !important;
-  font-family: Inter, sans-serif !important;
-  font-size: 9.2rem !important;
-}
-.hero-title-center {
-  text-align: center !important;
-}
-.hero-title-left {
-  text-align: left !important;
-}
-.hero-paragraph-highlight {
-  color: #fff;
-  font-size: 1.4rem;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-family: Inter, sans-serif;
-  font-weight: bold;
-}
-.hero-paragraph-desc {
-  color: #3b82f6;
-  font-size: 1.16rem;
-  margin: 0;
-  font-family: Inter, sans-serif;
-}
 .hero-desc-card {
   background-color: #302e30;
   border-radius: 10px;
@@ -68,6 +30,7 @@
   width: 100%;
   text-align: justify;
   font-family: Inter, sans-serif;
+  padding: 20px 25px 10px 25px;
 }
 .hero-desc-paragraph {
   color: white;
@@ -83,13 +46,6 @@
   margin-top: 15px;
   border: none;
   font-family: Inter, sans-serif;
-}
-.hero-btn-left {
-  align-self: flex-start !important;
-}
-
-.hero-btn-center {
-  align-self: center !important;
 }
 .hero-title {
   font-size: 2.4rem !important;

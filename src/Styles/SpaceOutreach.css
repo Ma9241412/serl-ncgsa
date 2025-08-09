@@ -1,24 +1,17 @@
 .so-wrapper {
   background-color: transparent;
-  padding: 20px 40px;
   position: relative;
   display: block;
   width: 100%;
   max-width: 1300px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
 }
 @media (max-width: 992px) { .so-wrapper { padding: 10px 20px; } }
 
-.so-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
-              radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
-              radial-gradient(circle at 40% 60%, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size: 100px 100px, 150px 150px, 200px 200px;
-  pointer-events: none;
-}
 
 .so-row-text { margin-bottom: 60px; position: relative; z-index: 1; }
 .so-text-col { text-align: center; padding-left: 0; padding-right: 0; }
@@ -29,7 +22,7 @@
 @media (max-width: 992px) { .so-paragraph { font-size: 1.1rem; } }
 
 .so-row-carousel { position: relative; z-index: 1; }
-.so-carousel-col { padding-left: 40px; padding-right: 40px; }
+.so-carousel-col { padding-left: 0; padding-right: 0; }
 @media (max-width: 992px) { .so-carousel-col { padding-left: 10px; padding-right: 10px; } }
 .so-carousel-wrapper { position: relative; }
 
@@ -42,6 +35,6 @@
 .so-slide-card:hover .so-slide-img { transform: scale(1.05); }
 
 .so-row-button { margin-top: 50px; position: relative; z-index: 1; }
-.so-button-col { padding-left: 40px; }
+.so-button-col { padding-left: 0; }
 @media (max-width: 992px) { .so-button-col { padding-left: 10px; } }
 .so-button { background-color: #F59E0B !important; border-color: #F59E0B !important; color: #000000 !important; font-weight: bold !important; border-radius: 6px !important; }
