@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';  
-import { Layout, Row, Spin } from 'antd';
+import { Layout, Spin } from 'antd';
 import StatsSection from './StatsSection';
 import SpaceOutreach from './SpaceOutreach';
 const SpaceEducation = React.lazy(() => import('./SpaceEducation'));
@@ -11,7 +11,6 @@ const { Content } = Layout;
 const SpaceComponent = () => {
   return (
     <Layout className="space-component-bg">
-      <Row className="space-component-overlay" />
       <Content className="space-component-content">
         <StatsSection />
         <SpaceOutreach />

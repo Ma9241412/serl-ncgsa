@@ -2,24 +2,17 @@
   background-color: transparent;
   padding: 20px 40px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
   width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
+@media (max-width: 992px) { .so-wrapper { padding: 10px 20px; } }
 
-@media (max-width: 992px) {
-  .so-wrapper {
-    padding: 10px 20px;
-  }
-}
-
-.so-starry {
+.so-wrapper::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
               radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
               radial-gradient(circle at 40% 60%, rgba(255,255,255,0.1) 1px, transparent 1px);
@@ -27,112 +20,28 @@
   pointer-events: none;
 }
 
-.so-container {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.so-row-text {
-  margin-bottom: 60px;
-}
-
-.so-text-col {
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.so-title {
-  color: #FFFFFF !important;
-  font-size: 2.8rem !important;
-  font-weight: bold !important;
-  margin-bottom: 20px !important;
-  text-align: left !important;
-  width: 100%;
-}
-
-@media (max-width: 992px) {
-  .so-title {
-    font-size: 2.2rem !important;
-  }
-}
-
+.so-row-text { margin-bottom: 60px; position: relative; z-index: 1; }
+.so-text-col { text-align: center; padding-left: 0; padding-right: 0; }
+.so-title { color: #FFFFFF !important; font-size: 2.8rem !important; font-weight: bold !important; margin-bottom: 20px !important; text-align: left !important; width: 100%; }
+@media (max-width: 992px) { .so-title { font-size: 2.2rem !important; } }
 .so-title-highlight { color: #1890FF; }
+.so-paragraph { color: #D1D5DB; font-size: 1.2rem; line-height: 1.7; margin-bottom: 30px; text-align: justify; position: relative; z-index: 1; }
+@media (max-width: 992px) { .so-paragraph { font-size: 1.1rem; } }
 
-.so-paragraph {
-  color: #D1D5DB;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  margin-bottom: 30px;
-  text-align: justify;
-}
-
-@media (max-width: 992px) {
-  .so-paragraph {
-    font-size: 1.1rem;
-  }
-}
-
-.so-row-carousel {}
-
-.so-carousel-col {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-@media (max-width: 992px) {
-  .so-carousel-col {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
+.so-row-carousel { position: relative; z-index: 1; }
+.so-carousel-col { padding-left: 40px; padding-right: 40px; }
+@media (max-width: 992px) { .so-carousel-col { padding-left: 10px; padding-right: 10px; } }
 .so-carousel-wrapper { position: relative; }
 
-.so-slide { padding: 0 24px; }
+/* Ensure exact slide gap */
+.so-wrapper .slick-slide { padding: 0 24px !important; }
 
-.so-slide-inner {
-  height: 250px;
-  border-radius: 0px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: rgba(255, 255, 255, 0.05);
-  margin: 0 8px;
-}
+.so-slide-card { height: 250px; border-radius: 0px !important; overflow: hidden; position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; background: rgba(255, 255, 255, 0.05); }
+.so-slide-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.6); }
+.so-slide-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; display: block; }
+.so-slide-card:hover .so-slide-img { transform: scale(1.05); }
 
-.so-slide-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.so-slide-inner:hover .so-slide-img {
-  transform: scale(1.05);
-}
-
-.so-slide-inner:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
-}
-
-.so-row-button { margin-top: 50px; }
-
+.so-row-button { margin-top: 50px; position: relative; z-index: 1; }
 .so-button-col { padding-left: 40px; }
-
-@media (max-width: 992px) {
-  .so-button-col { padding-left: 10px; }
-}
-
-.so-button {
-  background-color: #F59E0B !important;
-  border-color: #F59E0B !important;
-  color: #000000 !important;
-  font-weight: bold !important;
-  border-radius: 6px !important;
-}
+@media (max-width: 992px) { .so-button-col { padding-left: 10px; } }
+.so-button { background-color: #F59E0B !important; border-color: #F59E0B !important; color: #000000 !important; font-weight: bold !important; border-radius: 6px !important; }
