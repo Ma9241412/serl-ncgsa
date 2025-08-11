@@ -186,19 +186,9 @@ const SpaceOutreachSection = () => {
     <Layout className="sos-bg">
       <Content>
         {/* Hero Section */}
-        <Card bordered={false} className="sos-hero-card">
-          <Row justify="center" className="sos-hero-row">
-            <Col xs={24} lg={24} xl={23}>
-              <Card bordered={false} className="sos-hero-inner" >
-                <div className="sos-hero-center">
-                  <div className="sos-hero-title-wrap">
-                    <h1 className="sos-hero-title">SPACE OUTREACH</h1>
-                  </div>
-                </div>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
+        <div className="sos-hero-card">
+          <h1 className="sos-hero-title">SPACE OUTREACH</h1>
+        </div>
 
         {/* Navigate To Program Section */}
         <Row justify="center" className="sos-nav-section">

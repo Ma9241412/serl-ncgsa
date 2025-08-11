@@ -18,7 +18,9 @@ const SpaceOutreach = () => {
 
   return (
     < div className="about-vision-wrapper" >
-      <Row  >
+   
+
+      <Row  className="about-vision-row-carousel">
         <Col xs={24} lg={24} className="about-vision-text-col">
           <Title level={2} className="about-vision-title">Vision</Title>
           <div className="section-underline" />
@@ -26,9 +28,6 @@ const SpaceOutreach = () => {
             In pursuit of achieving United Nations Sustainable Development Goals (SDGs) through space technology, particularly focusing on their relevance to developing countries, our dedicated team of researchers embarked on a pioneering endeavor to establish Space Education Research Lab (SERL) in 2020 at a public university, the Institute of Space Technology at Islamabad, Pakistan. SERL envisions to foster space awareness, education, and outreach across schools, colleges, and universities, building a resilient pipeline of talent for the growing space ecosystem. With a commitment to expanding the frontiers of space knowledge, SERL actively drives the dissemination of space education through space-related festivities to raise awareness about space technology and its applications among the broader community.
           </Paragraph>
         </Col>
-      </Row>
-
-      <Row  className="about-vision-row-carousel">
         <Col xs={24} lg={24} className="about-vision-carousel-col">
             <Carousel
               ref={carouselRef}
@@ -37,7 +36,7 @@ const SpaceOutreach = () => {
               infinite={false}
               speed={1000}
               slidesToShow={isMobile ? 1 : 3}
-              slidesToScroll={1}
+              slidesToScroll={3}
               pauseOnHover={false}
               centerMode
             >
