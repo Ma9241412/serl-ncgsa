@@ -24,14 +24,13 @@ const SpaceOutreach = () => {
 
   return (
     <Row className="awards-wrapper" justify="start">
-      <Row justify="start" className="awards-row-text">
-        <Col xs={24} lg={23} className="awards-text-col">
+ 
+
+      <Row gutter={[24, 24]} justify="center" className="awards-grid">
+            <Col xs={24} lg={24} className="awards-text-col">
           <Title level={2} className="awards-title">Awards & Honors</Title>
           <Divider className="awards-divider" />
         </Col>
-      </Row>
-
-      <Row gutter={[24, 24]} justify="center" className="awards-grid">
         {awards.map((award, idx) => (
           <Col xs={24} sm={12} md={8} lg={4} xl={4} key={idx}>
             <Card bordered={false} className="award-card" hoverable>

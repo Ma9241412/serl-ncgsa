@@ -24,15 +24,16 @@ const SpaceOutreach = () => {
 
   return (
     <Row className="domains-wrapper" justify="start">
-      <Row justify="start" className="domains-row-text">
-        <Col xs={24} lg={23} className="domains-text-col">
-          <Title level={2} className="domains-title">Space Domains</Title>
-        </Col>
-      </Row>
+  
 
       <Row gutter={[0, 0]} justify="space-between" className="domains-row-icons">
+        <Col lg={24}>
+          <Title level={2} className="domains-title">Space Domains</Title>
+           <div className="section-underline" />
+</Col>
         {domains.map((domain, index) => (
           <Col xs={24} lg={4} key={index} className="domains-icon-col">
+
             <div className="domain-icon-circle">
               {domain.icon}
             </div>
