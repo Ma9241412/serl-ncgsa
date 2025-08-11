@@ -1,5 +1,5 @@
 .ao-wrapper { padding: 20px 0; background-image: url('../assets/images/homemainbg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
-.ao-card { background-color: transparent !important; border-radius: 30px !important; border: 2px solid #FF9500 !important; max-width: 3800px; width: 95%; margin: 0 auto; }
+.ao-card { background-color: transparent !important; border-radius: 30px !important; border: 2px solid #FF9500 !important; max-width: 1200px; width: 100%; margin: 0 auto; }
 .ao-card .ant-card-body { padding: 60px 40px; background-color: transparent; border-radius: 30px; }
 .ao-space { width: 100%; }
 .ao-header { text-align: left; padding-bottom: 20px; }

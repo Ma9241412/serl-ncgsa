@@ -1,5 +1,5 @@
 .sm-wrapper { padding: 20px 0; background-image: url('../assets/images/homemainbg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
-.sm-card { background-color: transparent !important; border-radius: 30px !important; border: 2px solid #FF9500 !important; max-width: 3800px; width: 95%; margin: 0 auto; }
+.sm-card { background-color: transparent !important; border-radius: 30px !important; border: 2px solid #FF9500 !important; max-width: 1200px; width: 100%; margin: 0 auto; }
 .sm-card .ant-card-body { padding: 60px 40px; background-color: transparent; border-radius: 30px; }
 .sm-space { width: 100%; }
 .sm-header { text-align: left; padding-bottom: 20px; }

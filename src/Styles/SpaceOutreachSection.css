@@ -1,20 +1,20 @@
-.sos-bg { background-color: #000000; }
+.sos-bg { background-color: #000000; min-height: 100vh; }
 
 /* Hero */
 .sos-hero-card { position: relative; height: 80vh; overflow: hidden; background: transparent; }
 .sos-hero-card .ant-card-body { padding: 0; }
-.sos-hero-card { background-color: #000; background-image: url("../assets/images/mainbg.jpg"); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 70vh !important; display: flex; align-items: center; justify-content: center; }
+.sos-hero-card { background-image: url('../assets/images/homemainbg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; }
 .sos-hero-row { width: 100%; }
 .sos-hero-inner { background: transparent; }
 .sos-hero-inner .ant-card-body { padding: 0; }
 .sos-hero-center { width: 100%; display: flex; align-items: center; justify-content: center; height: 100%; }
 .sos-hero-title-wrap { width: 100%; max-width: 600px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.sos-hero-title { color: #fff !important; font-size: 9.2rem !important; font-weight: 600 !important; margin: 0; font-family: "Inter", sans-serif; text-align: center; line-height: 1.1; }
+.sos-hero-title { color: #FFFFFF; font-size: 9.2rem; font-weight: 600; margin: 0; font-family: Inter, sans-serif; text-align: center; }
 
 /* Navigation card */
-.sos-nav-section { padding: 60px 0; background: #000000; }
-.sos-nav-card { background-color: #1a1a1a !important; border-radius: 20px !important; border: none !important; box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important; width: 100%; }
-.sos-nav-card .ant-card-body { padding: 70px 100px; background-color: #1a1a1a; border-radius: 20px; }
+.sos-nav-section { padding: 60px 0; background: transparent; }
+.sos-nav-card { background-color: #1a1a1a !important; border-radius: 20px !important; border: none !important; box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important; max-width: 1200px; width: 100%; margin: 0 auto; }
+.sos-nav-card .ant-card-body { padding: 60px 60px; background-color: #1a1a1a; border-radius: 20px; }
 .sos-nav-title { color: #FFFFFF !important; margin-bottom: 8px !important; font-size: 30px !important; font-weight: 700 !important; }
 .sos-nav-underline { width: 80px; height: 3px; background-color: #ff8c00; margin-bottom: 32px; }
 
@@ -41,14 +41,7 @@
 .sos-dynamic { background: #000000; }
 .sos-skeleton { padding: 40px 0; text-align: center; }
 
-@media (max-width: 1200px) {
-  .sos-hero-title { font-size: 2rem !important; }
-}
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .sos-nav-card .ant-card-body { padding: 40px 20px; }
   .sos-hero-title { font-size: 4rem; }
-  .sos-hero-card { min-height: 20vh !important; }
-  .sp-bg { min-height: 20vh !important; }
-}
-@media (max-width: 480px) {
-  .sos-hero-title { font-size: 2.8rem; padding: 0 10px; }
 }
