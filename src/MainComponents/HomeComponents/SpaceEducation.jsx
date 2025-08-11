@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Typography, Grid, Button, Carousel, Card } from 'antd';
-import '../../Styles/SpaceEducation.css';
+import '../../Styles/Home.css';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -26,10 +26,10 @@ const SpaceOutreach = () => {
 
 
   return (
-    <Row className="se-wrapper" justify="center">
-      <Col span={24} className="se-container">
-        <Row justify="start" className="se-row-text">
-          <Col xs={24} lg={23} className="se-text-col">
+  <Row className="se-wrapper" justify="start">
+  <Col xs={24} lg={24} className="se-text-col">
+  <Row justify="start" className="se-row-text">
+          <Col xs={24} lg={24} className="se-text-col">
             <Title className="se-title">
               Space <span className="se-title-highlight">Education</span>
             </Title>
@@ -39,49 +39,37 @@ const SpaceOutreach = () => {
           </Col>
         </Row>
 
-        <Row justify="start" className="se-row-carousel">
+  <Row justify="start" className="se-row-carousel">
           <Col xs={24} lg={24} className="se-carousel-col">
-            <Carousel
-              ref={carouselRef}
-              autoplay
-              autoplaySpeed={3000}
-              dots={false}
-              speed={1000}
-              effect="scroll"
-              slidesToShow={isMobile ? 1 : 3}
-              slidesToScroll={1}
-              pauseOnHover
-              centerMode
-            >
-              {images.map((image, index) => (
-                <Card
-                  key={index}
-                  hoverable
-                  bordered={false}
-                  className="se-slide-card"
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="se-slide-img"
-                  />
-                </Card>
-              ))}
-            </Carousel>
+            <div className="se-carousel-wrapper">
+              <Carousel
+                ref={carouselRef}
+                autoplay
+                autoplaySpeed={3000}
+                dots={false}
+                infinite
+                speed={1000}
+                effect="scroll"
+                slidesToShow={isMobile ? 1 : 3}
+                slidesToScroll={1}
+                pauseOnHover={true}
+                centerMode={false}
+              >
+                {images.map((image, index) => (
+                  <img key={index} src={image.src} alt={image.alt} className="se-slide-img" />
+                ))}
+              </Carousel>
+            </div>
           </Col>
         </Row>
 
-        <Row className="se-row-button">
-          <Col xs={24} lg={20} className="se-button-col">
-            <Button
-              type="primary"
-              size="large"
-              className="se-button"
-            >
-              For More Details
-            </Button>
-          </Col>
-        </Row>
+  <Row className="se-row-button" justify="start">
+    <Col xs={24} lg={24} className="se-button-col" style={{ textAlign: "left" }}>
+      <Button type="primary" size="large" className="se-button">
+        For More Details
+      </Button>
+    </Col>
+  </Row>
       </Col>
     </Row>
   );

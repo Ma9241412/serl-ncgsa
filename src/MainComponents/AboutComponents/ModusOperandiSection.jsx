@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Row, Col, Typography, Grid, Button, Card } from 'antd';
-import '../../Styles/AboutModus.css';
+import '../../Styles/About.css';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;

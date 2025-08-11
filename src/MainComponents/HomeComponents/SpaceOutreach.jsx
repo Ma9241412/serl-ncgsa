@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Typography, Grid, Button, Carousel, Card } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import '../../Styles/SpaceOutreach.css';
+import '../../Styles/Home.css';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -51,9 +51,7 @@ const SpaceOutreach = () => {
               centerMode={false}
             >
               {images.map((image, index) => (
-                <Card key={index} bordered={false} className="so-slide-card" hoverable>
-                  <img src={image.src} alt={image.alt} className="so-slide-img" />
-                </Card>
+                <img key={index} src={image.src} alt={image.alt} className="so-slide-img" />
               ))}
             </Carousel>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Typography, Grid, Carousel, Card } from 'antd';
-import '../../Styles/AboutVision.css';
+import '../../Styles/About.css';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -17,19 +17,19 @@ const SpaceOutreach = () => {
   ];
 
   return (
-    <Row className="vision-wrapper" justify="start">
-      <Row justify="start" className="vision-row-text">
-        <Col xs={24} lg={23} className="vision-text-col">
-          <Title level={2} className="vision-title">Vision</Title>
+  <>
+  <Row  className="about-vision-row-text">
+        <Col xs={24} lg={24} className="about-vision-text-col">
+          <Title level={2} className="about-vision-title">Vision</Title>
           <div className="section-underline" />
-          <Paragraph className="vision-paragraph">
+          <Paragraph className="about-vision-paragraph">
             In pursuit of achieving   United Nations Sustainable Development Goals (SDGs) through   space technology, particularly focusing on their relevance to developing countries,  our dedicated team of researchers embarked on a pioneering endeavor to establish Space Education Research Lab   (SERL) in 2020 at a public university, the Institute   of Space Technology at Islamabad, Pakistan.    SERL envisions to foster space awareness,   education, and outreach    across schools,  colleges, and    universities, building a resilien     pipeline of talent for the growing space ecosystem. With a commitment to expanding the frontiers of space knowledge, SERL actively drives the dissemination of space education though space-related festivities to raise   awareness about space technology and its applications   among the broader
           </Paragraph>
         </Col>
       </Row>
-      <Row justify="start" className="vision-row-carousel">
-        <Col xs={24} lg={24} className="vision-carousel-col">
-          <div className="vision-carousel-wrapper">
+      <Row justify="start" className="about-vision-row-carousel">
+        <Col xs={24} lg={24} className="about-vision-carousel-col">
+          <div className="about-vision-carousel-wrapper">
             <Carousel
               ref={carouselRef}
               autoplay={false}
@@ -43,15 +43,14 @@ const SpaceOutreach = () => {
               centerMode={false}
             >
               {images.map((image, index) => (
-                <Card key={index} bordered={false} className="vision-slide-card" hoverable>
-                  <img src={image.src} alt={image.alt} className="vision-slide-img" />
-                </Card>
+                  <img src={image.src} alt={image.alt} className="about-vision-slide-img" />
               ))}
             </Carousel>
           </div>
         </Col>
-      </Row>
-    </Row>
+      </Row></>
+      
+  
   );
 };
 

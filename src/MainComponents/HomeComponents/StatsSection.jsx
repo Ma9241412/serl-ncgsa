@@ -8,7 +8,7 @@ import {
   EyeOutlined 
 } from '@ant-design/icons';
 
-import '../../Styles/StatsSection.css';
+import '../../Styles/Home.css';
 const { Title } = Typography;
 
 const StatsSection = () => {

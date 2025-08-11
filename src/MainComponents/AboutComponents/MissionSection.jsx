@@ -5,7 +5,7 @@ import { ReactComponent as Mission2Icon } from '../../assets/images/mission2.svg
 import { ReactComponent as Mission3Icon } from '../../assets/images/mission3.svg';
 import { ReactComponent as Mission4Icon } from '../../assets/images/mission4.svg';
 import { ReactComponent as Mission5Icon } from '../../assets/images/mission5.svg';
-import '../../Styles/AboutMission.css';
+import '../../Styles/About.css';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
@@ -36,7 +36,7 @@ const SpaceOutreach = () => {
 
       <Row gutter={[0, 0]} justify="space-between" className="mission-cards-row">
         {missionCards.map((card, index) => (
-          <Col xs={24} lg={24} key={index} className="mission-card-col">
+          <Col xs={24} lg={4} key={index} className="mission-card-col">
             <Card bordered={false} className="mission-card" hoverable>
               <div className="mission-card-top">{card.icon}</div>
               <div className="mission-card-bottom">

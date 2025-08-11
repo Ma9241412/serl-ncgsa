@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Typography, Grid, Divider, Card } from 'antd';
-import '../../Styles/AboutAwards.css';
+import '../../Styles/About.css';
 
 const { Title, Paragraph } = Typography;
 const { useBreakpoint } = Grid;
