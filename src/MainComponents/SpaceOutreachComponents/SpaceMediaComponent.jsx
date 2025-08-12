@@ -27,14 +27,14 @@ const SpaceMediaComponent = ({ selectedEvent, availableEvents, onEventChange }) 
   };
 
   return (
-    <Row className="sm-wrapper" justify="center">
+    <Row className="spo-wrapper" justify="center">
       <Col xs={24} lg={24} xl={24}>
-        <Card bordered={false} className="sm-card">
-          <Space direction="vertical" size="large" className="sm-space">
-            <div className="sm-header">
-              <Title level={1} className="sm-title">Space Media</Title>
-              <div className="sm-underline" />
-              <Paragraph className="sm-paragraph">
+        <Card bordered={false} className="spo-card">
+          <Space direction="vertical" size="large" className="spo-space">
+            <div className="spo-header">
+              <Title level={1} className="spo-title">Space Media</Title>
+              <div className="spo-underline" />
+              <Paragraph className="spo-paragraph">
                 SERL produces and promotes space-themed media content including documentaries, films, and educational programs that showcase Pakistan's space achievements and inspire public interest in space science and exploration.
               </Paragraph>
               <Space size="small" wrap>
@@ -42,7 +42,7 @@ const SpaceMediaComponent = ({ selectedEvent, availableEvents, onEventChange }) 
                   <Button
                     key={event}
                     size="large"
-                    className={currentEvent === event ? 'sm-btn sm-btn-active' : 'sm-btn sm-btn-inactive'}
+                    className={currentEvent === event ? 'spo-btn spo-btn-active' : 'spo-btn spo-btn-inactive'}
                     onClick={() => onEventChange && onEventChange(event)}
                   >
                     {eventTitles[event]}

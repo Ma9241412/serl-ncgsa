@@ -196,25 +196,30 @@ const SpaceOutreachSection = () => {
             <Card bordered={false} className="sos-nav-card">
               <Title level={3} className="sos-nav-title">Navigate To Program</Title>
               <div className="sos-nav-underline"></div>
-              <Select
-                value={selectedProgram}
-                onChange={handleProgramChange}
-                className="sos-select"
-                size="large"
-                suffixIcon={<DownOutlined className="sos-select-icon" />}
-              >
-                <Option value="world-space-week">World Space Week</Option>
-                <Option value="space-festivals">Space Festivals</Option>
-                <Option value="space-media">Space Media</Option>
-                <Option value="lincolns-corner">Lincoln's Corner</Option>
-                <Option value="astronomy-outreach">Astronomy Outreach</Option>
-                <Option value="space-biblio-rendezvous">Space Biblio Rendezvous</Option>
-                <Option value="talks-sessions">Talks & Sessions</Option>
-                <Option value="hosting-visits">Hosting Visits</Option>
-                <Option value="showcasing">Showcasing</Option>
-                <Option value="school-visits">School Visits</Option>
-                <Option value="forum">Forum</Option>
-              </Select>
+              <Row gutter={[16, 16]} className="sos-nav-btn-row" style={{ marginTop: '24px' }}>
+                {['world-space-week', 'space-festivals', 'space-media', 'lincolns-corner', 'astronomy-outreach'].map((key) => (
+                  <Col key={key}>
+                    <button
+                      onClick={() => handleProgramChange(key)}
+                      className={`sos-nav-btn${selectedProgram === key ? ' sos-nav-btn-active' : ''}`}
+                    >
+                      {programData[key].title}
+                    </button>
+                  </Col>
+                ))}
+              </Row>
+              <Row gutter={[16, 16]} className="sos-nav-btn-row" style={{ marginTop: '8px' }}>
+                {['space-biblio-rendezvous', 'talks-sessions', 'showcasing', 'school-visits', 'forum'].map((key) => (
+                  <Col key={key}>
+                    <button
+                      onClick={() => handleProgramChange(key)}
+                      className={`sos-nav-btn${selectedProgram === key ? ' sos-nav-btn-active' : ''}`}
+                    >
+                      {programData[key].title}
+                    </button>
+                  </Col>
+                ))}
+              </Row>
             </Card>
           </Col>
         </Row>

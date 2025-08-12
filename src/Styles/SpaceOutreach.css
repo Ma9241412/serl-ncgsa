@@ -1,296 +1,79 @@
-/* World Space Week */
-.wsw-wrapper {
+.spo-wrapper {
   padding: 20px 0 0 0;
   background-image: url("../assets/images/homemainbg.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 500px;
 }
-.wsw-card {
+.spo-card {
   background-color: transparent !important;
   border-radius: 30px !important;
   border: 2px solid #ff9500 !important;
   max-width: 1200px !important;
   width: 100%;
   margin: 0 auto;
-
 }
-.wsw-card .ant-card-body {
-  padding: 40px 40px 0 40px;
+
+.spo-card .ant-card-body {
+  padding: 15px 40px 0 40px;
   background-color: transparent;
   border-radius: 30px;
 }
-.wsw-space {
+.spo-space {
   width: 100%;
 }
-.wsw-header {
+.spo-header {
   text-align: left;
   padding-bottom: 20px;
 }
-.wsw-title {
+.spo-title {
   margin-bottom: 16px !important;
   color: white !important;
 }
-.wsw-underline {
+.spo-underline {
   width: 100% !important;
   max-width: 1200px;
   height: 2px;
   background-color: white;
   margin-bottom: 24px;
 }
-.wsw-paragraph {
+.spo-paragraph {
   font-size: 18px;
   color: #cccccc;
   margin-bottom: 24px;
 }
-.wsw-btn {
+.spo-btn {
   min-width: 80px;
   height: 40px;
-}
-.wsw-btn-active {
-  background-color: #ff8c00 !important;
-  border-color: #ff8c00 !important;
-  color: white !important;
-}
-.wsw-btn-inactive {
-  background-color: #333333 !important;
-  border-color: #555555 !important;
-  color: #cccccc !important;
-}
-
-/* Space Festival */
-.sf-wrapper {
-  padding: 20px 0;
-  background-image: url("../assets/images/homemainbg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.sf-card {
-  background-color: transparent !important;
-  border-radius: 30px !important;
-  border: 2px solid #ff9500 !important;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-.sf-card .ant-card-body {
-  padding: 60px 40px;
-  background-color: transparent;
-  border-radius: 30px;
-}
-.sf-space {
-  width: 100%;
-}
-.sf-header {
-  text-align: left;
-  padding-bottom: 20px;
-}
-.sf-title {
-  margin-bottom: 16px !important;
-  color: white !important;
-}
-.sf-underline {
-  width: 1400px;
-  height: 2px;
-  background-color: white;
-  margin-bottom: 24px;
-}
-.sf-paragraph {
-  font-size: 18px;
+  border: 1px solid #555555;
+  border-radius: 6px;
+  background: transparent;
   color: #cccccc;
-  margin-bottom: 24px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
 }
-.sf-btn {
-  min-width: 140px;
-  height: 40px;
+/* Hover effect: pop up and orange border */
+.spo-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: #ff8c00 !important;
+  box-shadow: 0 4px 16px rgba(255,140,0,0.15);
 }
-.sf-btn-active {
+/* Active/clicked effect: orange background and border */
+.spo-btn:active,
+.spo-btn-active {
+  background-color: #ff8c00 !important;
+  border-color: #ff8c00 !important;
+  color: #fff !important;
+}
+.spo-btn-active {
   background-color: #ff8c00 !important;
   border-color: #ff8c00 !important;
   color: white !important;
 }
-.sf-btn-inactive {
-  background-color: #333333 !important;
-  border-color: #555555 !important;
-  color: #cccccc !important;
-}
-
-/* Space Media */
-.sm-wrapper {
-  padding: 20px 0;
-  background-image: url("../assets/images/homemainbg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.sm-card {
-  background-color: transparent !important;
-  border-radius: 30px !important;
-  border: 2px solid #ff9500 !important;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-.sm-card .ant-card-body {
-  padding: 60px 40px;
-  background-color: transparent;
-  border-radius: 30px;
-}
-.sm-space {
-  width: 100%;
-}
-.sm-header {
-  text-align: left;
-  padding-bottom: 20px;
-}
-.sm-title {
-  margin-bottom: 16px !important;
-  color: white !important;
-}
-.sm-underline {
-  width: 1400px;
-  height: 2px;
-  background-color: white;
-  margin-bottom: 24px;
-}
-.sm-paragraph {
-  font-size: 18px;
-  color: #cccccc;
-  margin-bottom: 24px;
-}
-.sm-btn {
-  min-width: 160px;
-  height: 40px;
-}
-.sm-btn-active {
-  background-color: #ff8c00 !important;
-  border-color: #ff8c00 !important;
-  color: white !important;
-}
-.sm-btn-inactive {
-  background-color: #333333 !important;
-  border-color: #555555 !important;
-  color: #cccccc !important;
-}
-
-/* Lincoln's Corner */
-.lc-wrapper {
-  padding: 20px 0;
-  background-image: url("../assets/images/homemainbg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.lc-card {
-  background-color: transparent !important;
-  border-radius: 30px !important;
-  border: 2px solid #ff9500 !important;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-.lc-card .ant-card-body {
-  padding: 60px 40px;
-  background-color: transparent;
-  border-radius: 30px;
-}
-.lc-space {
-  width: 100%;
-}
-.lc-header {
-  text-align: left;
-  padding-bottom: 20px;
-}
-.lc-title {
-  margin-bottom: 16px !important;
-  color: white !important;
-}
-.lc-underline {
-  width: 1400px;
-  height: 2px;
-  background-color: white;
-  margin-bottom: 24px;
-}
-.lc-paragraph {
-  font-size: 18px;
-  color: #cccccc;
-  margin-bottom: 24px;
-}
-.lc-btn {
-  min-width: 180px;
-  height: 40px;
-}
-.lc-btn-active {
-  background-color: #ff8c00 !important;
-  border-color: #ff8c00 !important;
-  color: white !important;
-}
-.lc-btn-inactive {
-  background-color: #333333 !important;
-  border-color: #555555 !important;
-  color: #cccccc !important;
-}
-
-/* Astronomy Outreach */
-.ao-wrapper {
-  padding: 20px 0;
-  background-image: url("../assets/images/homemainbg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.ao-card {
-  background-color: transparent !important;
-  border-radius: 30px !important;
-  border: 2px solid #ff9500 !important;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-.ao-card .ant-card-body {
-  padding: 60px 40px;
-  background-color: transparent;
-  border-radius: 30px;
-}
-.ao-space {
-  width: 100%;
-}
-.ao-header {
-  text-align: left;
-  padding-bottom: 20px;
-}
-.ao-title {
-  margin-bottom: 16px !important;
-  color: white !important;
-}
-.ao-underline {
-  width: 1400px;
-  height: 2px;
-  background-color: white;
-  margin-bottom: 24px;
-}
-.ao-paragraph {
-  font-size: 18px;
-  color: #cccccc;
-  margin-bottom: 24px;
-}
-.ao-btn {
-  min-width: 180px;
-  height: 40px;
-}
-.ao-btn-active {
-  background-color: #ff8c00 !important;
-  border-color: #ff8c00 !important;
-  color: white !important;
-}
-.ao-btn-inactive {
+.spo-btn-inactive {
   background-color: #333333 !important;
   border-color: #555555 !important;
   color: #cccccc !important;

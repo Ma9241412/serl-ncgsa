@@ -31,15 +31,15 @@ const WorldSpaceWeekComponents = ({ selectedYear, availableYears, onYearChange }
   };
 
   return (
-    <Row className="wsw-wrapper" justify="center">
+    <Row className="spo-wrapper" justify="center">
       <Col xs={24} lg={24} xl={24}>
-        <Card bordered={false} className="wsw-card">
-          <Space direction="vertical" size="large" className="wsw-space">
-            <div className="wsw-header">
-              <Title level={1} className="wsw-title">World Space Week</Title>
-              <div className="wsw-underline" />
-              <Paragraph className="wsw-paragraph">
-                Annual Celebration Of Space Science And Technology Contributions To Improving Human Conditions. World Space Week Is An International 
+        <Card bordered={false} className="spo-card">
+          <Space direction="vertical" size="large" className="spo-space">
+            <div className="spo-header">
+              <Title level={1} className="spo-title">World Space Week</Title>
+              <div className="spo-underline" />
+              <Paragraph className="spo-paragraph">
+                Annual Celebration Of Space Science And Technology Contributions To Improving Human Conditions. World Space Week Is An International
                 Celebration Of Science And Technology, And Their Contribution To The Betterment Of The Human Condition.
               </Paragraph>
               <Space size="small">
@@ -47,7 +47,7 @@ const WorldSpaceWeekComponents = ({ selectedYear, availableYears, onYearChange }
                   <Button
                     key={year}
                     size="large"
-                    className={currentYear === year ? 'wsw-btn wsw-btn-active' : 'wsw-btn wsw-btn-inactive'}
+                    className={currentYear === year ? 'spo-btn spo-btn-active' : 'spo-btn spo-btn-inactive'}
                     onClick={() => onYearChange && onYearChange(year)}
                   >
                     {year}

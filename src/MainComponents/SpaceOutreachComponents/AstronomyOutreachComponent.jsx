@@ -27,14 +27,14 @@ const AstronomyOutreachComponent = ({ selectedEvent, availableEvents, onEventCha
   };
 
   return (
-    <Row className="ao-wrapper" justify="center">
+    <Row className="spo-wrapper" justify="center">
       <Col xs={24} lg={24} xl={24}>
-        <Card bordered={false} className="ao-card">
-          <Space direction="vertical" size="large" className="ao-space">
-            <div className="ao-header">
-              <Title level={1} className="ao-title">Astronomy Outreach</Title>
-              <div className="ao-underline" />
-              <Paragraph className="ao-paragraph">
+        <Card bordered={false} className="spo-card">
+          <Space direction="vertical" size="large" className="spo-space">
+            <div className="spo-header">
+              <Title level={1} className="spo-title">Astronomy Outreach</Title>
+              <div className="spo-underline" />
+              <Paragraph className="spo-paragraph">
                 SERL's Astronomy Outreach programs promote astronomical education and public engagement through the International Astronomy Olympiad and specialized solar observation sessions designed to inspire the next generation of astronomers.
               </Paragraph>
               <Space size="small" wrap>
@@ -42,7 +42,7 @@ const AstronomyOutreachComponent = ({ selectedEvent, availableEvents, onEventCha
                   <Button
                     key={event}
                     size="large"
-                    className={currentEvent === event ? 'ao-btn ao-btn-active' : 'ao-btn ao-btn-inactive'}
+                    className={currentEvent === event ? 'spo-btn spo-btn-active' : 'spo-btn spo-btn-inactive'}
                     onClick={() => onEventChange && onEventChange(event)}
                   >
                     {eventTitles[event]}

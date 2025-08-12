@@ -1,3 +1,6 @@
+.sos-nav-btn-row {
+  justify-content: center !important;
+}
 .sos-bg {
   background-color: #000000;
   min-height: 100vh;
@@ -56,23 +59,22 @@
 }
 
 /* Navigation card */
-.sos-nav-section {
-  padding: 60px 0;
+.sos-nav-btn {
+  /* width: 100%; */
+  height: 56px;
+  font-size: 1.15rem;
+  border: 1.5px solid #555555;
+  border-radius: 10px;
   background: transparent;
-}
-.sos-nav-card {
-  background-color: #1a1a1a !important;
-  border-radius: 20px !important;
-  border: none !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-.sos-nav-card .ant-card-body {
-  padding: 60px 60px;
-  background-color: #1a1a1a;
-  border-radius: 20px;
+  color: #cccccc;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sos-nav-title {
   color: #ffffff !important;
@@ -85,6 +87,32 @@
   height: 3px;
   background-color: #ff8c00;
   margin-bottom: 32px;
+}
+/* Navigation Buttons */
+.sos-nav-btn {
+  min-width: 190px;
+  height: 56px;
+  font-size: 1.15rem;
+  border: 1.5px solid #555555;
+  border-radius: 10px;
+  background: transparent;
+  color: #cccccc;
+  font-weight: 550;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 0;
+}
+.sos-nav-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: #ff8c00 !important;
+  box-shadow: 0 4px 16px rgba(255,140,0,0.15);
+}
+.sos-nav-btn:active,
+.sos-nav-btn-active {
+  background-color: #ff8c00 !important;
+  border-color: #ff8c00 !important;
+  color: #fff !important;
 }
 
 /* Select styling to match inline */

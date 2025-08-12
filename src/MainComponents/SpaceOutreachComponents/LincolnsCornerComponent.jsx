@@ -35,14 +35,14 @@ const LincolnsCornerComponent = ({ selectedEvent, availableEvents, onEventChange
   };
 
   return (
-    <Row className="lc-wrapper" justify="center">
+    <Row className="spo-wrapper" justify="center">
       <Col xs={24} lg={24} xl={24}>
-        <Card bordered={false} className="lc-card">
-          <Space direction="vertical" size="large" className="lc-space">
-            <div className="lc-header">
-              <Title level={1} className="lc-title">Lincoln's Corner</Title>
-              <div className="lc-underline" />
-              <Paragraph className="lc-paragraph">
+        <Card bordered={false} className="spo-card">
+          <Space direction="vertical" size="large" className="spo-space">
+            <div className="spo-header">
+              <Title level={1} className="spo-title">Lincoln's Corner</Title>
+              <div className="spo-underline" />
+              <Paragraph className="spo-paragraph">
                 SERL's Lincoln's Corner celebrates the spirit of innovation and exploration through specialized programs focusing on human spaceflight, aviation history, and the pioneering achievements of women in space science and technology.
               </Paragraph>
               <Space size="small" wrap>
@@ -50,7 +50,7 @@ const LincolnsCornerComponent = ({ selectedEvent, availableEvents, onEventChange
                   <Button
                     key={event}
                     size="large"
-                    className={currentEvent === event ? 'lc-btn lc-btn-active' : 'lc-btn lc-btn-inactive'}
+                    className={currentEvent === event ? 'spo-btn spo-btn-active' : 'spo-btn spo-btn-inactive'}
                     onClick={() => onEventChange && onEventChange(event)}
                   >
                     {eventTitles[event]}

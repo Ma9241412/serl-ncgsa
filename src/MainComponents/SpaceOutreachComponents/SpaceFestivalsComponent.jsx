@@ -35,14 +35,14 @@ const SpaceFestivalsComponent = ({ selectedEvent, availableEvents, onEventChange
   };
 
   return (
-    <Row className="sf-wrapper" justify="center">
+    <Row className="spo-wrapper" justify="center">
       <Col xs={24} lg={24} xl={24}>
-        <Card bordered={false} className="sf-card">
-          <Space direction="vertical" size="large" className="sf-space">
-            <div className="sf-header">
-              <Title level={1} className="sf-title">Space Festivals</Title>
-              <div className="sf-underline" />
-              <Paragraph className="sf-paragraph">
+        <Card bordered={false} className="spo-card">
+          <Space direction="vertical" size="large" className="spo-space">
+            <div className="spo-header">
+              <Title level={1} className="spo-title">Space Festivals</Title>
+              <div className="spo-underline" />
+              <Paragraph className="spo-paragraph">
                 SERL organizes and participates in various space festivals and educational events across Pakistan, promoting space science education and inspiring the next generation of space scientists and engineers.
               </Paragraph>
               <Space size="small" wrap>
@@ -50,7 +50,7 @@ const SpaceFestivalsComponent = ({ selectedEvent, availableEvents, onEventChange
                   <Button
                     key={event}
                     size="large"
-                    className={currentEvent === event ? 'sf-btn sf-btn-active' : 'sf-btn sf-btn-inactive'}
+                    className={currentEvent === event ? 'spo-btn spo-btn-active' : 'spo-btn spo-btn-inactive'}
                     onClick={() => onEventChange && onEventChange(event)}
                   >
                     {eventTitles[event]}
