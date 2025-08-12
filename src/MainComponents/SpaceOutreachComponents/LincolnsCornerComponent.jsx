@@ -4,7 +4,7 @@ import HumanSpaceFlightFJWU from './LincolnsCorner/HumanSpaceFlightFJWU';
 import HumanSpaceFlightNLP from './LincolnsCorner/HumanSpaceFlightNLP';
 import WomenInSpaceFJWU_old from './LincolnsCorner/WomenInSpaceFJWU_old';
 import WrightBrothersDayFJWU_new from './LincolnsCorner/WrightBrothersDayFJWU_new';
-import '../../Styles/LincolnsCorner.css';
+import '../../Styles/SpaceOutreach.css';
 
 const { Title, Paragraph } = Typography;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Space, Typography, Button, Card } from 'antd';
 import SpaceFilmFestival from './SpaceMedia/SpaceFilmFestival';
 import JahanAurBhiHain from './SpaceMedia/JahanAurBhiHain';
-import '../../Styles/SpaceMedia.css';
+import '../../Styles/SpaceOutreach.css';
 
 const { Title, Paragraph } = Typography;
 

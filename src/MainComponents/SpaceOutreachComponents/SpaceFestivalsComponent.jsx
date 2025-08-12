@@ -4,7 +4,7 @@ import LahoreScienceMela from './SpaceFestivals/LahoreScienceMela';
 import STEAMMela from './SpaceFestivals/STEAMMela';
 import SpaceExpo from './SpaceFestivals/SpaceExpo';
 import PakistanLearningFestival from './SpaceFestivals/PakistanLearningFestival';
-import '../../Styles/SpaceFestivals.css';
+import '../../Styles/SpaceOutreach.css';
 
 const { Title, Paragraph } = Typography;
 

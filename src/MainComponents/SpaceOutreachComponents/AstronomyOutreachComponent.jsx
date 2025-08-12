@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Space, Typography, Button, Card } from 'antd';
 import IAO from './AstronomyOutreach/IAO';
 import SolarTelescopyVisits from './AstronomyOutreach/SolarTelescopyVisits';
-import '../../Styles/AstronomyOutreach.css';
+import '../../Styles/SpaceOutreach.css';
 
 const { Title, Paragraph } = Typography;
 
