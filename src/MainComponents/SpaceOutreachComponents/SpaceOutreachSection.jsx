@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { Layout, Row, Col, Typography, Card, Select, Skeleton } from "antd";
 import { DownOutlined } from "@ant-design/icons";
+import '../../Styles/SpaceOutreachSection.css'
 const WorldSpaceWeekComponents = React.lazy(() =>
   import("./WorldSpaceWeekComponents")
 );

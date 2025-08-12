@@ -17,19 +17,20 @@
   padding: 0;
 }
 .sos-hero-card {
-  background-image: url("../assets/images/homemainbg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-image: url("../assets/images/homemainbg.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !;
+  
 }
 .sos-hero-row {
   width: 100%;
 }
 .sos-hero-inner {
-  background: transparent;
+  background: transparent !important;
 }
 .sos-hero-inner .ant-card-body {
   padding: 0;
