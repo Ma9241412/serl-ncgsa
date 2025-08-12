@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Skeleton, Layout } from "antd";
-import '../../Styles/AboutCore.css';
+import '../../Styles/About.css';
 
 const VisionSection = React.lazy(() => import("./VisionSection"));
 const ContributionSection = React.lazy(() => import("./ContributionSection"));

@@ -1,7 +1,8 @@
+
 import React from 'react';
 import SpaceOutreachSection from '../MainComponents/SpaceOutreachComponents/SpaceOutreachSection';
 
-const SpaceEducationScreen = () => {
+const SpaceOutreachScreen = () => {
   return (
     <div>
       <SpaceOutreachSection/>
@@ -9,4 +10,4 @@ const SpaceEducationScreen = () => {
   );
 };
 
-export default SpaceEducationScreen;
+export default SpaceOutreachScreen;

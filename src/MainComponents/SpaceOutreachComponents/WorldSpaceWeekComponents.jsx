@@ -5,7 +5,7 @@ import WorldSpaceWeek2021 from './WorldSpaceWeek/WorldSpaceWeek2021';
 import WorldSpaceWeek2022 from './WorldSpaceWeek/WorldSpaceWeek2022';
 import WorldSpaceWeek2023 from './WorldSpaceWeek/WorldSpaceWeek2023';
 import WorldSpaceWeek2024 from './WorldSpaceWeek/WorldSpaceWeek2024';
-import '../../Styles/WorldSpaceWeek.css';
+import '../../Styles/SpaceOutreach.css';
 
 const { Title, Paragraph } = Typography;
 
