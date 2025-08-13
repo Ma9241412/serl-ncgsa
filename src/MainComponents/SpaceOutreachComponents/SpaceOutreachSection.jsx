@@ -22,7 +22,7 @@ const TalksSessionsComponent = React.lazy(() =>
   import("./TalksSessionsComponent")
 );
 const HostingVisitsComponent = React.lazy(() =>
-  import("./HostingVisitsComponent")
+  import("./HostingVisitsComponents")
 );
 const ShowcasingComponent = React.lazy(() => import("./ShowcasingComponent"));
 const SchoolVisitsComponent = React.lazy(() =>
@@ -42,7 +42,12 @@ const SpaceOutreachSection = () => {
     "space-festivals": { title: "Space Festivals", events: ["lahore-science-mela", "steam-mela", "space-expo", "pakistan-learning-festival"] },
     "space-media": { title: "Space Media", events: ["space-film-festival", "jahan-aur-bhi-hain"] },
     "lincolns-corner": { title: "Lincoln's Corner", events: ["human-spaceflight-fjwu", "human-spaceflight-nlp", "women-in-space-fjwu", "wright-brothers-day-fjwu"] },
-    "astronomy-outreach": { title: "Astronomy Outreach", events: ["iao", "solar-telescopy-visits"] },
+    "astronomy-outreach": { title: "Astronomy Outreach", events: [
+      "iao",
+      "solar-telescopy-aerospace-hercules-workshop",
+      "solar-telescopy-ai-and-robotics-summer-camp",
+      "solar-telescopy-roots-ivy-international-schools-dha-1"
+    ] },
     "space-biblio-rendezvous": { title: "Space Biblio Rendezvous", isStandalone: true },
     "talks-sessions": { title: "Talks & Sessions", events: [
       "stemx-webinar","the-space-talk-podcast","space-tech-edu-landscape","cyber-threats-aerospace","space-data-emergency","tech-nexus-security","stem-for-space-vu","space-tech-sdgs","women-in-space-contributions","women-in-space-sector","floating-satellite-platform","careers-in-space","telescope-peep-sky","stem-panel-symposium-bna","academia-industry-uow","iac-baku-research","ai-future-panel-nust","space-sci-comm-case-study","space-talk-reza-shirazi","gnss-stemx","space-tech-rendezvous"
@@ -198,7 +203,7 @@ const SpaceOutreachSection = () => {
               <Title level={3} className="sos-nav-title">Navigate To Program</Title>
               <div className="sos-nav-underline"></div>
               <Row gutter={[16, 16]} className="sos-nav-btn-row" style={{ marginTop: '24px' }}>
-                {['world-space-week', 'space-festivals', 'space-media', 'lincolns-corner', 'astronomy-outreach'].map((key) => (
+                {['world-space-week', 'space-festivals', 'space-media', 'lincolns-corner', 'astronomy-outreach', 'hosting-visits'].map((key) => (
                   <Col key={key}>
                     <button
                       onClick={() => handleProgramChange(key)}

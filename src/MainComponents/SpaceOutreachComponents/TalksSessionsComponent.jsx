@@ -1,6 +1,5 @@
 import React from 'react';
-import { Typography, Card, Select, Row, Col } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { Typography, Card, Row, Col, Button, Space } from 'antd';
 import STEMxWebinar from './TalksSessions/STEMxWebinar';
 import TheSpaceTalkPodcast from './TalksSessions/TheSpaceTalkPodcast';
 import SpaceTechEduLandscape from './TalksSessions/SpaceTechEduLandscape';
@@ -22,10 +21,9 @@ import SpaceSciCommCaseStudy from './TalksSessions/SpaceSciCommCaseStudy';
 import SpaceTalkRezaShirazi from './TalksSessions/SpaceTalkRezaShirazi';
 import GNSSSTEMx from './TalksSessions/GNSSSTEMx';
 import SpaceTechRendezvous from './TalksSessions/SpaceTechRendezvous';
-import '../../Styles/TalksSessions.css';
+import '../../Styles/SpaceOutreach.css';
 
 const { Title } = Typography;
-const { Option } = Select;
 
 const TalksSessionsComponent = ({ selectedEvent, availableEvents, onEventChange }) => {
   const eventTitles = {
@@ -102,36 +100,33 @@ const TalksSessionsComponent = ({ selectedEvent, availableEvents, onEventChange 
   };
 
   return (
-    <div className="ts-bg">
-      <div className="ts-header-wrap">
-        <Row justify="center">
-          <Col xs={24} lg={24} xl={23}>
-            <Card bordered={false} className="ts-header-card">
-              <Title level={2} className="ts-title">Talks & Sessions</Title>
-              <div className="ts-underline"></div>
-              <Select
-                value={selectedEvent}
-                onChange={onEventChange}
-                className="ts-select"
-                size="large"
-                placeholder="Select Talk/Session"
-                suffixIcon={<DownOutlined className="ts-select-icon" />}
-              >
+    <Row className="spo-wrapper" justify="center">
+      <Col xs={24} lg={24} xl={24}>
+        <Card bordered={false} className="spo-card">
+          <Space direction="vertical" size="large" className="spo-space" style={{ width: '100%' }}>
+            <div className="spo-header">
+              <Title level={1} className="spo-title">Talks & Sessions</Title>
+              <div className="spo-underline" />
+              <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '16px', flexWrap: 'wrap', margin: '24px 0' }}>
                 {availableEvents.map(event => (
-                  <Option key={event} value={event}>
+                  <Button
+                    key={event}
+                    size="large"
+                    className={selectedEvent === event ? 'spo-btn spo-btn-active' : 'spo-btn spo-btn-inactive'}
+                    onClick={() => onEventChange(event)}
+                  >
                     {eventTitles[event]}
-                  </Option>
+                  </Button>
                 ))}
-              </Select>
-            </Card>
-          </Col>
-        </Row>
-      </div>
-
-      <div className="ts-content-bg">
-        {selectedEvent && renderSelectedEvent()}
-      </div>
-    </div>
+              </div>
+            </div>
+            <div style={{ width: '100%' }}>
+              {selectedEvent && renderSelectedEvent()}
+            </div>
+          </Space>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

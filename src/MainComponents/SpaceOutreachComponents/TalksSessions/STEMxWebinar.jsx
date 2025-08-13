@@ -46,7 +46,7 @@ const STEMxWebinar = () => {
   return (
     <>
       <Card className="tsw-card" bordered={false}>
-        <Title level={3} className="tsw-card-title">World Space Week 2020</Title>
+        <Title level={3} className="tsw-card-title">STEMx-Webinar</Title>
         <div className="tsw-carousel-wrap">
           <Carousel autoplay autoplaySpeed={3000} dots dotPosition="bottom" className="tsw-carousel">
             {spaceOutreachImages.map((image, index) => (

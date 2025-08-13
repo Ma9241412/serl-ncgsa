@@ -50,7 +50,7 @@ const ICE2025 = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          World Space Week 2020
+          Investor Connect Event (ICE 2025)
         </Title>
         
         {/* Space Outreach Image Slider */}

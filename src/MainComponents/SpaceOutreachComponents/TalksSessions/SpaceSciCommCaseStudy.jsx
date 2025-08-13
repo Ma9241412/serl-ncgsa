@@ -50,7 +50,7 @@ const SpaceSciCommCaseStudy = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          World Space Week 2020
+          Building the Knowledge Base for Effective Science Communication : A Case study of Space Science Communication & Community Engagement" at International Conference on Science Communication and Community Engagement
         </Title>
         
         {/* Space Outreach Image Slider */}

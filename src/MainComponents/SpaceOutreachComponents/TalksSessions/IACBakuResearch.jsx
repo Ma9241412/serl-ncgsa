@@ -50,7 +50,7 @@ const IACBakuResearch = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          World Space Week 2020
+          Four Research Contributions related with space awareness, education, outreach and popularization at 74th international astronautical congress by International Astronautical Federation at Baku, Azerbaijan.
         </Title>
         
         {/* Space Outreach Image Slider */}

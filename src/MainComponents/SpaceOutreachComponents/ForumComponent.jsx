@@ -1,16 +1,14 @@
 import React from 'react';
-import { Typography, Card, Select, Row, Col } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { Typography, Row, Col, Button, Card, Space } from 'antd';
 import SpaceForum2020 from './Forum/SpaceForum2020';
 import SpaceForum2021 from './Forum/SpaceForum2021';
 import CareersInSpaceForum from './Forum/CareersInSpaceForum';
 import STEPForum from './Forum/STEPForum';
 import Forum360STEM from './Forum/Forum360STEM';
 import SpaceForum2022 from './Forum/SpaceForum2022';
-import '../../Styles/Forum.css';
+import '../../Styles/SpaceOutreach.css';
 
 const { Title } = Typography;
-const { Option } = Select;
 
 const ForumComponent = ({ selectedEvent, availableEvents, onEventChange }) => {
   const eventTitles = {
@@ -42,36 +40,33 @@ const ForumComponent = ({ selectedEvent, availableEvents, onEventChange }) => {
   };
 
   return (
-    <div className="forum-bg">
-      <div className="forum-header-wrap">
-        <Row justify="center">
-          <Col xs={24} lg={24} xl={23}>
-            <Card bordered={false} className="forum-header-card">
-              <Title level={2} className="forum-title">Forum</Title>
-              <div className="forum-underline"></div>
-              <Select
-                value={selectedEvent}
-                onChange={onEventChange}
-                className="forum-select"
-                size="large"
-                placeholder="Select Program"
-                suffixIcon={<DownOutlined className="forum-select-icon" />}
-              >
+    <Row className="spo-wrapper" justify="center">
+      <Col xs={24} lg={24} xl={24}>
+        <Card bordered={false} className="spo-card">
+          <Space direction="vertical" size="large" className="spo-space" style={{ width: '100%' }}>
+            <div className="spo-header">
+              <Title level={1} className="spo-title">Forum</Title>
+              <div className="spo-underline" />
+              <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '16px', flexWrap: 'wrap', margin: '24px 0' }}>
                 {availableEvents.map(event => (
-                  <Option key={event} value={event}>
+                  <Button
+                    key={event}
+                    size="large"
+                    className={selectedEvent === event ? 'spo-btn spo-btn-active' : 'spo-btn spo-btn-inactive'}
+                    onClick={() => onEventChange(event)}
+                  >
                     {eventTitles[event]}
-                  </Option>
+                  </Button>
                 ))}
-              </Select>
-            </Card>
-          </Col>
-        </Row>
-      </div>
-
-      <div className="forum-content-bg">
-        {selectedEvent && renderSelectedEvent()}
-      </div>
-    </div>
+              </div>
+            </div>
+            <div style={{ width: '100%' }}>
+              {selectedEvent && renderSelectedEvent()}
+            </div>
+          </Space>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

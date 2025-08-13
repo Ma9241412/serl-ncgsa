@@ -50,7 +50,7 @@ const STEPForum = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          World Space Week 2020
+          STEP Stakeholders Forum
         </Title>
         
         {/* Space Outreach Image Slider */}

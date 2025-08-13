@@ -50,7 +50,7 @@ const AcademiaIndustryUOW = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          World Space Week 2020
+          Eclipsing Challenges: A Stellar Journey of Success in Academia-Industry Collaboration for Space (3rd International Conference on Academia Industry collaboration by University of Wah.)
         </Title>
         
         {/* Space Outreach Image Slider */}

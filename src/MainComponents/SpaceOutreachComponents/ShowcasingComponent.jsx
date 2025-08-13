@@ -1,14 +1,12 @@
 import React from 'react';
-import { Typography, Select, Row, Col } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { Typography, Row, Col, Button, Card, Space } from 'antd';
 import ICE2025 from './Showcasing/ICE2025';
 import Beaconhouse from './Showcasing/Beaconhouse';
 import VCForum2023 from './Showcasing/VCForum2023';
 import APTEX2025 from './Showcasing/APTEX2025';
-import '../../Styles/Showcasing.css';
+import '../../Styles/SpaceOutreach.css';
 
 const { Title } = Typography;
-const { Option } = Select;
 
 const ShowcasingComponent = ({ selectedEvent, availableEvents, onEventChange }) => {
   const eventTitles = {
@@ -34,32 +32,33 @@ const ShowcasingComponent = ({ selectedEvent, availableEvents, onEventChange }) 
   };
 
   return (
-    <div className="sc-bg">
-      <div className="sc-inner">
-        <Row justify="center">
-          <Col xs={24} lg={20} xl={18}>
-            <Title level={1} className="sc-title">Showcasing</Title>
-            <div className="sc-select-wrap">
-              <Select
-                value={selectedEvent}
-                onChange={onEventChange}
-                className="sc-select"
-                size="large"
-                suffixIcon={<DownOutlined className="sc-select-icon" />}
-                dropdownClassName="sc-dropdown"
-              >
+    <Row className="spo-wrapper" justify="center">
+      <Col xs={24} lg={24} xl={24}>
+        <Card bordered={false} className="spo-card">
+          <Space direction="vertical" size="large" className="spo-space" style={{ width: '100%' }}>
+            <div className="spo-header">
+              <Title level={1} className="spo-title">Showcasing</Title>
+              <div className="spo-underline" />
+              <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '16px', flexWrap: 'wrap', margin: '24px 0' }}>
                 {availableEvents.map(event => (
-                  <Option key={event} value={event}>
-                    <span className="sc-option-text">{eventTitles[event]}</span>
-                  </Option>
+                  <Button
+                    key={event}
+                    size="large"
+                    className={selectedEvent === event ? 'spo-btn spo-btn-active' : 'spo-btn spo-btn-inactive'}
+                    onClick={() => onEventChange(event)}
+                  >
+                    {eventTitles[event]}
+                  </Button>
                 ))}
-              </Select>
+              </div>
             </div>
-            {renderSelectedEvent()}
-          </Col>
-        </Row>
-      </div>
-    </div>
+            <div style={{ width: '100%' }}>
+              {selectedEvent && renderSelectedEvent()}
+            </div>
+          </Space>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

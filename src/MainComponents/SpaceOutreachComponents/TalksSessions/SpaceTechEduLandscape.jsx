@@ -50,7 +50,7 @@ const SpaceTechEduLandscape = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          World Space Week 2020
+          The Academic and Learning Landscape of Space Technology Education among K-12 Learners in Pakistan
         </Title>
         
         {/* Space Outreach Image Slider */}

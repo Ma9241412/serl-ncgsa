@@ -50,7 +50,7 @@ const SpaceForum2022 = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          World Space Week 2020
+          Space Ambassadors Forum 2022
         </Title>
         
         {/* Space Outreach Image Slider */}
