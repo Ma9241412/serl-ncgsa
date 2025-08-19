@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Typography, Card, Image, List, Avatar, Carousel } from 'antd';
 import '../../../Styles/SpaceOutreach.css';
@@ -11,18 +12,28 @@ import spaceOutreach07 from '../../../assets/images/SpaceOutreach07.jpg';
 
 const { Title, Text } = Typography;
 
+const heroImages = [
+  { src: activity1, alt: 'Lt. General Mohsin Qureshi Activity 1' },
+  { src: activity2, alt: 'Lt. General Mohsin Qureshi Activity 2' },
+  { src: activity3, alt: 'Lt. General Mohsin Qureshi Activity 3' }
+];
+
+const spaceOutreachImages = [
+  { src: spaceOutreach01, alt: 'Space Outreach 01' },
+  { src: spaceOutreach03, alt: 'Space Outreach 03' },
+  { src: spaceOutreach07, alt: 'Space Outreach 07' }
+];
+
+const activities = [
+  { title: 'Public Lectures And Seminars Featuring Leading Space Scientists And Researchers', icon: <ClockCircleOutlined /> },
+  { title: 'School Competitions And Activities Designed To Engage Students With Space Science', icon: <BookOutlined /> },
+  { title: 'Astronomy Observation Sessions With Professional Telescopes And Expert Guidance', icon: <StarOutlined /> },
+  { title: 'Workshops And Hands-On Activities Exploring Space Technology And Principles', icon: <ExperimentOutlined /> }
+];
+
 const LtGeneralMohsinQureshi = () => {
-  // ...existing code...
   return (
     <>
-<<<<<<< Updated upstream
-      <Card style={{ backgroundColor: '#2a2a2a', border: 'none', borderRadius: '20px' }} bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}>
-        <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          Lt. General Mohsin Qureshi
-        </Title>
-        {/* ...existing code... */}
-      </Card>
-=======
       <Card className="soc-card">
         <Title level={3} className="soc-title-3">
           Lt. General Mohsin Qureshi
@@ -86,7 +97,6 @@ const LtGeneralMohsinQureshi = () => {
           />
         ))}
       </div>
->>>>>>> Stashed changes
     </>
   );
 };

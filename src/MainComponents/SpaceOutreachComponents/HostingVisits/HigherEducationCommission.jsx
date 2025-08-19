@@ -15,14 +15,6 @@ const HigherEducationCommission = () => {
   // ...existing code...
   return (
     <>
-<<<<<<< Updated upstream
-      <Card style={{ backgroundColor: '#2a2a2a', border: 'none', borderRadius: '20px' }} bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}>
-        <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          Higher Education Commission
-        </Title>
-        {/* ...existing code... */}
-      </Card>
-=======
       {/* Higher Education Commission Section */}
       <Card className="soc-card">
         <Title level={3} className="soc-title-3">
@@ -87,7 +79,6 @@ const HigherEducationCommission = () => {
           />
         ))}
       </div>
->>>>>>> Stashed changes
     </>
   );
 };

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Typography, Card, Image, List, Avatar, Carousel } from 'antd';
 import { ClockCircleOutlined, BookOutlined, ExperimentOutlined, StarOutlined } from '@ant-design/icons';
@@ -7,35 +8,30 @@ import activity3 from '../../../assets/images/activity3.png';
 import spaceOutreach01 from '../../../assets/images/SpaceOutreach01.jpg';
 import spaceOutreach03 from '../../../assets/images/SpaceOutreach03.jpg';
 import spaceOutreach07 from '../../../assets/images/SpaceOutreach07.jpg';
-<<<<<<< Updated upstream
-import '../../../Styles/STEMxWebinar.css';
-=======
 import '../../../Styles/SpaceOutreachSection.css';
-// Keeping existing section styles for specific tsw- classes; no inline styles here
->>>>>>> Stashed changes
 
 const { Title, Text } = Typography;
 
+const heroImages = [
+  { src: activity1, alt: 'The Space Talk Podcast Activity 1' },
+  { src: activity2, alt: 'The Space Talk Podcast Activity 2' },
+  { src: activity3, alt: 'The Space Talk Podcast Activity 3' }
+];
+
+const spaceOutreachImages = [
+  { src: spaceOutreach01, alt: 'Space Outreach 01' },
+  { src: spaceOutreach03, alt: 'Space Outreach 03' },
+  { src: spaceOutreach07, alt: 'Space Outreach 07' }
+];
+
+const activities = [
+  { title: 'Public Lectures And Seminars Featuring Leading Space Scientists And Researchers', icon: <ClockCircleOutlined /> },
+  { title: 'School Competitions And Activities Designed To Engage Students With Space Science', icon: <BookOutlined /> },
+  { title: 'Astronomy Observation Sessions With Professional Telescopes And Expert Guidance', icon: <StarOutlined /> },
+  { title: 'Workshops And Hands-On Activities Exploring Space Technology And Principles', icon: <ExperimentOutlined /> }
+];
+
 const TheSpaceTalkPodcast = () => {
-  const heroImages = [
-    { src: activity1, alt: 'The Space Talk Podcast Activity 1' },
-    { src: activity2, alt: 'The Space Talk Podcast Activity 2' },
-    { src: activity3, alt: 'The Space Talk Podcast Activity 3' }
-  ];
-
-  const spaceOutreachImages = [
-    { src: spaceOutreach01, alt: 'Space Outreach 01' },
-    { src: spaceOutreach03, alt: 'Space Outreach 03' },
-    { src: spaceOutreach07, alt: 'Space Outreach 07' }
-  ];
-
-  const activities = [
-    { title: 'Public Lectures And Seminars Featuring Leading Space Scientists And Researchers', icon: <ClockCircleOutlined /> },
-    { title: 'School Competitions And Activities Designed To Engage Students With Space Science', icon: <BookOutlined /> },
-    { title: 'Astronomy Observation Sessions With Professional Telescopes And Expert Guidance', icon: <StarOutlined /> },
-    { title: 'Workshops And Hands-On Activities Exploring Space Technology And Principles', icon: <ExperimentOutlined /> }
-  ];
-
   return (
     <>
       <Card className="tsw-card" bordered={false}>
