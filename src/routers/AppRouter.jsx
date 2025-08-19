@@ -5,9 +5,9 @@ import Layout from "../components/layouts/layout";
 
 const Home = lazy(() => import("../screens/Home"));
 const About = lazy(() => import("../screens/About"));
-const SpaceOutreachScreen = lazy(() =>
-  import("../screens/SpaceOutreachScreen")
-);
+const SpaceOutreachScreen = lazy(() => import("../screens/SpaceOutreachScreen"));
+const SpaceEducationScreen = lazy(() => import("../screens/SpaceEducationScreen"));
+const CapacityBuildingScreen = lazy(() => import("../screens/CapacityBuildingScreen"));
 
 const AppRouter = () => {
   return (
@@ -32,6 +32,7 @@ const AppRouter = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/space-outreach" element={<SpaceOutreachScreen />} />
+            <Route path="/capacity-building" element={<CapacityBuildingScreen />} />
             {/* Add more routes here as needed */}
           </Routes>
         </Suspense>

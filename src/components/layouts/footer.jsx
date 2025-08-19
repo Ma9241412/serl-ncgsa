@@ -67,7 +67,7 @@ const AppFooter = () => {
         <Col xs={24} sm={12} md={5}>
           <Title className="footer-contact-us"  style={{ color: "#fff" }}>Explore</Title>
           <Space direction="vertical">
-            <Link className="footer-text" style={{ color: "#ff9500" }}>SERL</Link>
+            <Link className="footer-text" style={{ color: "#ccc" }}>SERL</Link>
             <Link className="footer-text" style={{ color: "#ccc" }}>Space Outreach</Link>
             <Link className="footer-text" style={{ color: "#ccc" }}>Space Education</Link>
             <Link className="footer-text" style={{ color: "#ccc" }}>Capacity Building</Link>

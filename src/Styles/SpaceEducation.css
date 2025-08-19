@@ -1,0 +1,68 @@
+.spo-wrapper {
+  padding: 20px 0 0 0;
+  background-image: url("../assets/images/homemainbg.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.spo-card {
+  background-color: transparent !important;
+  border-radius: 30px !important;
+  border: 2px solid #ff9500 !important;
+  max-width: 1200px !important;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.spo-card .ant-card-body {
+  padding: 15px 40px 0 40px;
+  background-color: transparent;
+  border-radius: 30px;
+}
+.spo-space {
+  width: 100%;
+}
+.spo-header {
+  text-align: left;
+  padding-bottom: 20px;
+}
+.spo-title {
+  margin-bottom: 16px !important;
+  color: white !important;
+}
+.spo-underline {
+  width: 100% !important;
+  max-width: 1200px;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 24px;
+}
+.spo-paragraph {
+  font-size: 18px;
+  color: #cccccc;
+  margin-bottom: 24px;
+}
+.spo-btn {
+  min-width: 80px;
+  height: 40px;
+  transition: transform 0.18s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.18s cubic-bezier(0.4,0.2,0.2,1);
+}
+
+.spo-btn:hover {
+  transform: scale(1.08);
+  border-color: #ff9500 !important;
+  box-shadow: 0 8px 24px rgba(255,149,0,0.25);
+  z-index: 2;
+}
+
+.spo-btn-active {
+  background-color: #ff8c00 !important;
+  border-color: #ff8c00 !important;
+  color: white !important;
+}
+.spo-btn-inactive {
+  background-color: #333333 !important;
+  border-color: #555555 !important;
+  color: #cccccc !important;
+}

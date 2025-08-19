@@ -7,7 +7,12 @@ import activity3 from '../../../assets/images/activity3.png';
 import spaceOutreach01 from '../../../assets/images/SpaceOutreach01.jpg';
 import spaceOutreach03 from '../../../assets/images/SpaceOutreach03.jpg';
 import spaceOutreach07 from '../../../assets/images/SpaceOutreach07.jpg';
+<<<<<<< Updated upstream
 import '../../../Styles/STEMxWebinar.css';
+=======
+import '../../../Styles/SpaceOutreachSection.css';
+// Keeping existing section styles for specific tsw- classes; no inline styles here
+>>>>>>> Stashed changes
 
 const { Title, Text } = Typography;
 
