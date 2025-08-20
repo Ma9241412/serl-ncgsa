@@ -50,7 +50,7 @@ const InventixSummit = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          Inventix Summit ( Roots International Schools and Colleges, Pakistan ) 
+          World Space Week 2020
         </Title>
         
         {/* Space Outreach Image Slider */}

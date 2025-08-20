@@ -50,7 +50,7 @@ const WomenInSpaceFJWU_old = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          Women in Space Technology
+          Human Spaceflight at FJWU
         </Title>
         
         {/* Space Outreach Image Slider */}

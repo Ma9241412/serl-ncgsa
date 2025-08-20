@@ -1,21 +1,20 @@
-import React from 'react';
-import { Typography, Card, Carousel, List, Avatar, Image } from 'antd';
+﻿import React from 'react';
+import { Typography, Card, Image, List, Avatar, Carousel } from 'antd';
 import { ClockCircleOutlined, BookOutlined, ExperimentOutlined, StarOutlined } from '@ant-design/icons';
-import activity1 from '../../assets/images/activity1.png';
-import activity2 from '../../assets/images/activity2.png';
-import activity3 from '../../assets/images/activity3.png';
-import spaceOutreach01 from '../../assets/images/SpaceOutreach01.jpg';
-import spaceOutreach03 from '../../assets/images/SpaceOutreach03.jpg';
-import spaceOutreach07 from '../../assets/images/SpaceOutreach07.jpg';
+import activity1 from '../../../assets/images/activity1.png';
+import activity2 from '../../../assets/images/activity2.png';
+import activity3 from '../../../assets/images/activity3.png';
+import spaceOutreach01 from '../../../assets/images/SpaceOutreach01.jpg';
+import spaceOutreach03 from '../../../assets/images/SpaceOutreach03.jpg';
+import spaceOutreach07 from '../../../assets/images/SpaceOutreach07.jpg';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Text } = Typography;
 
-const SpaceBiblioRendezvousComponent = () => {
-  // Move all variable declarations above the return
+const ShowcaseEvents = () => {
   const heroImages = [
-    { src: activity1, alt: 'IAO Activity 1' },
-    { src: activity2, alt: 'IAO Activity 2' },
-    { src: activity3, alt: 'IAO Activity 3' }
+    { src: activity1, alt: 'Showcase Events Activity 1' },
+    { src: activity2, alt: 'Showcase Events Activity 2' },
+    { src: activity3, alt: 'Showcase Events Activity 3' }
   ];
 
   const spaceOutreachImages = [
@@ -26,32 +25,32 @@ const SpaceBiblioRendezvousComponent = () => {
 
   const activities = [
     {
-      title: 'Intensive Training Sessions For Astronomy Olympiad Competition Preparation',
+      title: 'Public Lectures And Seminars Featuring Leading Space Scientists And Researchers',
       icon: <ClockCircleOutlined />
     },
     {
-      title: 'Advanced Workshops On Theoretical And Observational Astronomy Techniques',
+      title: 'School Competitions And Activities Designed To Engage Students With Space Science',
       icon: <BookOutlined />
     },
     {
-      title: 'Practical Telescope Observation Sessions And Data Analysis Training',
+      title: 'Astronomy Observation Sessions With Professional Telescopes And Expert Guidance',
       icon: <StarOutlined />
     },
     {
-      title: 'International Competition Participation And Student Exchange Programs',
+      title: 'Workshops And Hands-On Activities Exploring Space Technology And Principles',
       icon: <ExperimentOutlined />
     }
   ];
 
   return (
     <>
-      {/* IAO Section */}
+      {/* World Space Week 2020 Section */}
       <Card
         style={{ backgroundColor: '#2a2a2a', border: 'none', borderRadius: '20px' }}
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          Solar Telescopy: Roots IVY International Schools DHA 1
+          World Space Week 2020
         </Title>
         
         {/* Space Outreach Image Slider */}
@@ -84,8 +83,8 @@ const SpaceBiblioRendezvousComponent = () => {
           </Carousel>
         </div>
         
-  <Text style={{ color: '#cccccc', fontSize: '18px' }}>
-          SERL Actively Supports Pakistan's Participation In The International Astronomy Olympiad, Training Talented Students To Compete At The Highest Levels Of Astronomical Knowledge And Problem-Solving.
+        <Text style={{ color: '#cccccc', fontSize: '18px' }}>
+          The 2020 Theme "Satellites Improve Life" Celebrates The Contribution Of Satellites To Human Development And Welfare. Learn How Satellites Help Us With Communication, Navigation, Weather Forecasting, Resource Management, And Disaster Response.
         </Text>
       </Card>
 
@@ -163,5 +162,4 @@ const SpaceBiblioRendezvousComponent = () => {
   );
 };
 
-export default React.memo(SpaceBiblioRendezvousComponent);
-
+export default ShowcaseEvents;

@@ -50,7 +50,7 @@ const STEMforSpaceVU = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-         STEM for Space Technology- National conference on STEM at COMSTECH by VU
+          World Space Week 2020
         </Title>
         
         {/* Space Outreach Image Slider */}

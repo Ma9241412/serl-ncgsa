@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Col, Space, Typography, Button, Card } from 'antd';
-import HumanSpaceFlightFJWU from './LincolnsCorner/HumanSpaceFlightFJWU';
-import HumanSpaceFlightNLP from './LincolnsCorner/HumanSpaceFlightNLP';
-import WomenInSpaceFJWU_old from './LincolnsCorner/WomenInSpaceFJWU_old';
-import WrightBrothersDayFJWU_new from './LincolnsCorner/WrightBrothersDayFJWU_new';
+import HumanSpaceFlightFJWU from './LincolnsCorner/HumanSpaceFlightFJWU.jsx';
+import HumanSpaceFlightNLP from './LincolnsCorner/HumanSpaceFlightNLP.jsx';
+import WomenInSpaceFJWU_old from './LincolnsCorner/WomenInSpaceFJWU_old.jsx';
+import WrightBrothersDayFJWU_new from './LincolnsCorner/WrightBrothersDayFJWU_new.jsx';
 import '../../Styles/SpaceOutreach.css';
 
 const { Title, Paragraph } = Typography;

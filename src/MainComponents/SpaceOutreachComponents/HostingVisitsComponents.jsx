@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Row, Col, Space, Typography, Button, Card } from 'antd';
-import LtGeneralMohsinQureshi from './HostingVisits/LtGeneralMohsinQureshi';
-import ProfAhsanIqbalChaudhary from './HostingVisits/ProfAhsanIqbalChaudhary';
-import HigherEducationCommission from './HostingVisits/HigherEducationCommission';
-import PakChinaJointResearchCenterInEarthSciences from './HostingVisits/PakChinaJointResearchCenterInEarthSciences';
-import NationalAerospaceScienceAndTechnologyParkNASTPD12 from './HostingVisits/NationalAerospaceScienceAndTechnologyParkNASTPD12';
+import LtGenMohsinQureshi from './HostingVisits/LtGenMohsinQureshi';
+import ProfAhsanIqbal from './HostingVisits/ProfAhsanIqbal';
+import HEC from './HostingVisits/HEC';
+import PakChinaResearchCenter from './HostingVisits/PakChinaResearchCenter';
+import NASTP from './HostingVisits/NASTP';
 import '../../Styles/SpaceOutreach.css';
 
 const { Title, Paragraph } = Typography;
 
 const hostingVisitsList = [
-  { key: 'lt-general-mohsin-qureshi', label: 'Lt. General Mohsin Qureshi', component: <LtGeneralMohsinQureshi /> },
-  { key: 'prof-ahsan-iqbal-chaudhary', label: 'Prof. Ahsan Iqbal Chaudhary', component: <ProfAhsanIqbalChaudhary /> },
-  { key: 'higher-education-commission', label: 'Higher Education Commission', component: <HigherEducationCommission /> },
-  { key: 'pak-china-joint-research-center-in-earth-sciences', label: 'Pak-China Joint Research Center in Earth Sciences', component: <PakChinaJointResearchCenterInEarthSciences /> },
-  { key: 'national-aerospace-science-and-technology-park-nastp-d12', label: 'National Aerospace Science and Technology Park (NASTP) +D12', component: <NationalAerospaceScienceAndTechnologyParkNASTPD12 /> }
+  { key: 'lt-gen-mohsin-qureshi', label: 'Lt. Gen Mohsin Qureshi', component: <LtGenMohsinQureshi /> },
+  { key: 'prof-ahsan-iqbal', label: 'Prof. Ahsan Iqbal', component: <ProfAhsanIqbal /> },
+  { key: 'hec', label: 'Higher Education Commission', component: <HEC /> },
+  { key: 'pak-china-research-center', label: 'Pak-China Research Center', component: <PakChinaResearchCenter /> },
+  { key: 'nastp', label: 'National Aerospace Science and Technology Park (NASTP)', component: <NASTP /> }
 ];
 
 const HostingVisitsComponents = () => {
@@ -36,7 +36,7 @@ const HostingVisitsComponents = () => {
               <Paragraph className="spo-paragraph">
                 Visits from distinguished guests and organizations to our space outreach programs, fostering collaboration and knowledge exchange in the field of space science and technology.
               </Paragraph>
-              <Space size="small">
+              <Space size="small" wrap>
                 {hostingVisitsList.map((visit) => (
                   <Button
                     key={visit.key}

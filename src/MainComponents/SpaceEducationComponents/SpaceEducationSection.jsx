@@ -1,34 +1,32 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { Layout, Row, Col, Typography, Card, Select, Skeleton } from "antd";
 import { DownOutlined } from "@ant-design/icons";
-import '../../Styles/SpaceOutreachSection.css'
-const WorldSpaceWeekComponents = React.lazy(() =>
-  import("./WorldSpaceWeekComponents")
+import '../../Styles/SpaceEducationSection.css'
+const SpaceSummerSchool = React.lazy(() =>
+  import("./SpaceSummerSchoolComponent")
 );
-const SpaceFestivalsComponent = React.lazy(() =>
-  import("./SpaceFestivalsComponent")
+const SpaceDestinationSchool = React.lazy(() =>
+  import("./SpaceDestinationSchoolComponent")
 );
-const SpaceMediaComponent = React.lazy(() => import("./SpaceMediaComponent"));
-const LincolnsCornerComponent = React.lazy(() =>
-  import("./LincolnsCornerComponent")
+const BeaconhouseNotionofAcademia = React.lazy(() =>
+  import("./BeaconhouseNotionofAcademiaComponent")
 );
-const AstronomyOutreachComponent = React.lazy(() =>
-  import("./AstronomyOutreachComponent")
+const AstronomyCampComponent = React.lazy(() =>
+  import("./AstronomyCampComponent")
 );
-const SpaceBiblioRendezvousComponent = React.lazy(() =>
-  import("./SpaceBiblioRendezvousComponent")
+const CanSatDesignandDevelopment= React.lazy(() =>
+  import("./CanSatDesignandDevelopmentComponent")
 );
-const TalksSessionsComponent = React.lazy(() =>
-  import("./TalksSessionsComponent")
+const GeographicInformationSystem = React.lazy(() =>
+  import("./GeographicInformationSystemComponent")
 );
-const HostingVisitsComponent = React.lazy(() =>
-  import("./HostingVisitsComponents")
+const GlobalNavigationSatelliteSystem = React.lazy(() =>
+  import("./GlobalNavigationSatelliteSystemComponent")
 );
-const ShowcasingComponent = React.lazy(() => import("./ShowcasingComponent"));
-const SchoolVisitsComponent = React.lazy(() =>
-  import("./SchoolVisitsComponent")
+const NASASpaceApplicationsChallengeComponent = React.lazy(() =>
+  import("./NASASpaceApplicationsChallengeComponent")
 );
-const ForumComponent = React.lazy(() => import("./ForumComponent"));
+const QuadcoptersDesigningRotorcraftComponent = React.lazy(() => import("./QuadcoptersDesigningRotorcraftComponent"));
 import '../../Styles/SpaceOutreachSection.css';
 
 const { Title } = Typography;
@@ -36,154 +34,86 @@ const { Option } = Select;
 
 const { Content } = Layout;
 
-const SpaceOutreachSection = () => {
+const SpaceEducationSection = () => {
   const programData = {
-    "world-space-week": { title: "World Space Week", years: ["2020", "2021", "2022", "2023", "2024"] },
-    "space-festivals": { title: "Space Festivals", events: ["lahore-science-mela", "steam-mela", "space-expo", "pakistan-learning-festival"] },
-    "space-media": { title: "Space Media", events: ["space-film-festival", "jahan-aur-bhi-hain"] },
-    "lincolns-corner": { title: "Lincoln's Corner", events: ["human-spaceflight-fjwu", "human-spaceflight-nlp", "women-in-space-fjwu", "wright-brothers-day-fjwu"] },
-    "astronomy-outreach": { title: "Astronomy Outreach", events: [
-      "iao",
-      "solar-telescopy-aerospace-hercules-workshop",
-      "solar-telescopy-ai-and-robotics-summer-camp",
-      "solar-telescopy-roots-ivy-international-schools-dha-1"
-    ] },
-    "space-biblio-rendezvous": { title: "Space Biblio Rendezvous", isStandalone: true },
-    "talks-sessions": { title: "Talks & Sessions", events: [
-      "stemx-webinar","the-space-talk-podcast","space-tech-edu-landscape","cyber-threats-aerospace","space-data-emergency","tech-nexus-security","stem-for-space-vu","space-tech-sdgs","women-in-space-contributions","women-in-space-sector","floating-satellite-platform","careers-in-space","telescope-peep-sky","stem-panel-symposium-bna","academia-industry-uow","iac-baku-research","ai-future-panel-nust","space-sci-comm-case-study","space-talk-reza-shirazi","gnss-stemx","space-tech-rendezvous"
-    ] },
-    "hosting-visits": { title: "Hosting Visits", events: [
-      "hec","hosting-visits-list","lt-gen-mohsin-qureshi","nastp","pak-china-research-center","prof-ahsan-iqbal"
-    ] },
-    showcasing: { title: "Showcasing", events: ["ice2025", "beaconhouse", "vc-forum-2023", "aptex2025"] },
-    "school-visits": { title: "School Visits", events: ["space-debris-headstart", "gcu-lahore", "inventix-summit"] },
-    forum: { title: "Forum", events: ["space-forum-2020","space-forum-2021","careers-in-space-forum","step-forum","forum-360-stem","space-forum-2022"] }
+    "space-summer-school": { title: "Space Summer School" },
+    "space-destination-school": { title: "Space Destination School" },
+    "beaconhouse-notion-of-academia": { title: "Beaconhouse Notion of Academia" },
+    "astronomy-camp": { title: "Astronomy Camp" },
+    "cansat-design-and-development": { title: "CanSat Design and Development" },
+    "geographic-information-system": { title: "Geographic Information System" },
+    "global-navigation-satellite-system": { title: "Global Navigation Satellite System" },
+    "nasa-space-applications-challenge": { title: "NASA Space Applications Challenge" },
+    "quadcopters-designing-rotorcraft": { title: "Quadcopters Designing Rotorcraft" }
   };
 
-  const [selectedProgram, setSelectedProgram] = useState("world-space-week");
-  const [selectedYear, setSelectedYear] = useState(
-    programData["world-space-week"].years[0]
-  );
-  const [selectedEvent, setSelectedEvent] = useState("");
+  const [selectedProgram, setSelectedProgram] = useState("space-summer-school");
 
   const handleProgramChange = (value) => {
     setSelectedProgram(value);
-    if (value === "world-space-week") {
-      const firstYear = programData[value].years[0];
-      setSelectedYear(firstYear);
-      setSelectedEvent("");
-    } else if (programData[value].isStandalone) {
-      setSelectedEvent("");
-      setSelectedYear("");
-    } else {
-      const firstEvent = programData[value].events[0];
-      setSelectedEvent(firstEvent);
-      setSelectedYear("");
-    }
   };
-
-  useEffect(() => {
-    if (
-      selectedProgram !== "world-space-week" &&
-      !programData[selectedProgram].isStandalone &&
-      !selectedEvent
-    ) {
-      const firstEvent = programData[selectedProgram].events[0];
-      setSelectedEvent(firstEvent);
-    }
-  }, [selectedProgram, selectedEvent]);
 
   const renderSelectedProgram = () => {
     switch (selectedProgram) {
-      case "world-space-week":
+      case "space-summer-school":
         return (
-          <WorldSpaceWeekComponents
-            selectedYear={selectedYear}
-            availableYears={programData[selectedProgram].years}
-            onYearChange={setSelectedYear}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <SpaceSummerSchool />
+          </Suspense>
         );
-      case "space-festivals":
+      case "space-destination-school":
         return (
-          <SpaceFestivalsComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <SpaceDestinationSchool />
+          </Suspense>
         );
-      case "space-media":
+      case "beaconhouse-notion-of-academia":
         return (
-          <SpaceMediaComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <BeaconhouseNotionofAcademia />
+          </Suspense>
         );
-      case "lincolns-corner":
+      case "astronomy-camp":
         return (
-          <LincolnsCornerComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <AstronomyCampComponent />
+          </Suspense>
         );
-      case "astronomy-outreach":
+      case "cansat-design-and-development":
         return (
-          <AstronomyOutreachComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <CanSatDesignandDevelopment />
+          </Suspense>
         );
-      case "space-biblio-rendezvous":
-        return <SpaceBiblioRendezvousComponent />;
-      case "talks-sessions":
+      case "geographic-information-system":
         return (
-          <TalksSessionsComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <GeographicInformationSystem />
+          </Suspense>
         );
-      case "hosting-visits":
+      case "global-navigation-satellite-system":
         return (
-          <HostingVisitsComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <GlobalNavigationSatelliteSystem />
+          </Suspense>
         );
-      case "showcasing":
+      case "nasa-space-applications-challenge":
         return (
-          <ShowcasingComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <NASASpaceApplicationsChallengeComponent />
+          </Suspense>
         );
-      case "school-visits":
+      case "quadcopters-designing-rotorcraft":
         return (
-          <SchoolVisitsComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
-        );
-      case "forum":
-        return (
-          <ForumComponent
-            selectedEvent={selectedEvent}
-            availableEvents={programData[selectedProgram].events}
-            onEventChange={setSelectedEvent}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <QuadcoptersDesigningRotorcraftComponent />
+          </Suspense>
         );
       default:
         return (
-          <WorldSpaceWeekComponents
-            selectedYear={selectedYear}
-            availableYears={programData["world-space-week"].years}
-            onYearChange={setSelectedYear}
-          />
+          <Suspense fallback={<div className="sos-skeleton"><Skeleton active paragraph={{ rows: 8 }} /></div>}>
+            <SpaceSummerSchool />
+          </Suspense>
         );
     }
   };
@@ -193,7 +123,7 @@ const SpaceOutreachSection = () => {
       <Content>
         {/* Hero Section */}
         <div className="sos-hero-card">
-          <h1 className="sos-hero-title">SPACE OUTREACH</h1>
+          <h1 className="sos-hero-title">SPACE EDUCATION</h1>
         </div>
 
         {/* Navigate To Program Section */}
@@ -203,7 +133,7 @@ const SpaceOutreachSection = () => {
               <Title level={3} className="sos-nav-title">Navigate To Program</Title>
               <div className="sos-nav-underline"></div>
               <Row gutter={[16, 16]} className="sos-nav-btn-row" style={{ marginTop: '24px' }}>
-                {['world-space-week', 'space-festivals', 'space-media', 'lincolns-corner', 'astronomy-outreach', 'hosting-visits'].map((key) => (
+                {['space-summer-school', 'space-destination-school', 'beaconhouse-notion-of-academia', 'astronomy-camp'].map((key) => (
                   <Col key={key}>
                     <button
                       onClick={() => handleProgramChange(key)}
@@ -215,7 +145,7 @@ const SpaceOutreachSection = () => {
                 ))}
               </Row>
               <Row gutter={[16, 16]} className="sos-nav-btn-row" style={{ marginTop: '8px' }}>
-                {['space-biblio-rendezvous', 'talks-sessions', 'showcasing', 'school-visits', 'forum'].map((key) => (
+                {['cansat-design-and-development', 'geographic-information-system', 'global-navigation-satellite-system', 'nasa-space-applications-challenge', 'quadcopters-designing-rotorcraft'].map((key) => (
                   <Col key={key}>
                     <button
                       onClick={() => handleProgramChange(key)}
@@ -241,4 +171,4 @@ const SpaceOutreachSection = () => {
   );
 };
 
-export default React.memo(SpaceOutreachSection);
+export default React.memo(SpaceEducationSection);

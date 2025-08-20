@@ -19,9 +19,9 @@ const AstronomyOutreachComponent = ({ selectedEvent, availableEvents, onEventCha
 
   const eventTitles = {
     'iao': 'IAO',
-    'solar-telescopy-aerospace-hercules-workshop': 'Solar Telescopy: Aerospace Hercules Workshop',
-    'solar-telescopy-ai-and-robotics-summer-camp': 'Solar Telescopy: AI and Robotics Summer camp',
-    'solar-telescopy-roots-ivy-international-schools-dha-1': 'Solar Telescopy: Roots IVY International Schools DHA 1'
+    'solar-telescopy-aerospace-hercules-workshop': 'Solar Telescopy Aerospace Hercules Workshop',
+    'solar-telescopy-ai-and-robotics-summer-camp': 'Solar Telescopy AI and Robotics Summer camp',
+    'solar-telescopy-roots-ivy-international-schools-dha-1': 'Solar Telescopy Roots IVY International Schools DHA 1'
   };
 
   const renderEventComponent = () => {

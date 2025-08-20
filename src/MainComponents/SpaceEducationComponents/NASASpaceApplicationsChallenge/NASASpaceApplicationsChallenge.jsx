@@ -1,16 +1,16 @@
 import React from 'react';
 import { Typography, Card, Carousel, List, Avatar, Image } from 'antd';
 import { ClockCircleOutlined, BookOutlined, ExperimentOutlined, StarOutlined } from '@ant-design/icons';
-import activity1 from '../../assets/images/activity1.png';
-import activity2 from '../../assets/images/activity2.png';
-import activity3 from '../../assets/images/activity3.png';
-import spaceOutreach01 from '../../assets/images/SpaceOutreach01.jpg';
-import spaceOutreach03 from '../../assets/images/SpaceOutreach03.jpg';
-import spaceOutreach07 from '../../assets/images/SpaceOutreach07.jpg';
+import activity1 from '../../../assets/images/activity1.png';
+import activity2 from '../../../assets/images/activity2.png';
+import activity3 from '../../../assets/images/activity3.png';
+import spaceOutreach01 from '../../../assets/images/SpaceOutreach01.jpg';
+import spaceOutreach03 from '../../../assets/images/SpaceOutreach03.jpg';
+import spaceOutreach07 from '../../../assets/images/SpaceOutreach07.jpg';
 
 const { Title, Paragraph, Text } = Typography;
 
-const SpaceBiblioRendezvousComponent = () => {
+const NASASpaceApplicationsChallengeComponent = () => {
   // Move all variable declarations above the return
   const heroImages = [
     { src: activity1, alt: 'IAO Activity 1' },
@@ -51,7 +51,7 @@ const SpaceBiblioRendezvousComponent = () => {
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          Solar Telescopy: Roots IVY International Schools DHA 1
+          NASA Space Applications Challenge
         </Title>
         
         {/* Space Outreach Image Slider */}
@@ -163,5 +163,5 @@ const SpaceBiblioRendezvousComponent = () => {
   );
 };
 
-export default React.memo(SpaceBiblioRendezvousComponent);
+export default NASASpaceApplicationsChallengeComponent;
 

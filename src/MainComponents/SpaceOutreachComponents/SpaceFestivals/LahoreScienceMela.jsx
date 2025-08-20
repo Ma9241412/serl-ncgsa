@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, Card, Image, List, Avatar, Carousel } from 'antd';
-import '../../../Styles/SpaceOutreach.css';
 import { ClockCircleOutlined, BookOutlined, ExperimentOutlined, StarOutlined } from '@ant-design/icons';
 import activity1 from '../../../assets/images/activity1.png';
 import activity2 from '../../../assets/images/activity2.png';
@@ -45,48 +44,62 @@ const LahoreScienceMela = () => {
 
   return (
     <>
-      <Card className="soc-card">
-        <Title level={3} className="soc-title-3">
+      <Card
+        style={{ backgroundColor: '#2a2a2a', border: 'none', borderRadius: '20px' }}
+        bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
+      >
+        <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
           Lahore Science Mela
         </Title>
 
-        <div className="soc-slider">
-          <Carousel autoplay autoplaySpeed={3000} dots dotPosition="bottom" className="soc-carousel">
+        <div style={{ backgroundColor: '#1a1a1aff', borderRadius: '12px', padding: '6px', marginBottom: '20px' }}>
+          <Carousel autoplay autoplaySpeed={3000} dots dotPosition="bottom" style={{ borderRadius: '8px', overflow: 'hidden' }}>
             {spaceOutreachImages.map((image, index) => (
               <div key={index}>
-                <Image src={image.src} alt={image.alt} className="soc-slide-image" preview={false} />
+                <div style={{
+                  height: '500px',
+                  backgroundImage: `url(${image.src})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  borderRadius: '8px'
+                }} />
               </div>
             ))}
           </Carousel>
         </div>
 
-        <Text className="soc-text">
+        <Text style={{ color: '#cccccc', fontSize: '18px' }}>
           Lahore Science Mela celebrates curiosity and learning by bringing together the wonders of science and technology for students, teachers, and the general public. The event features demonstrations, workshops, and engaging science stalls.
         </Text>
       </Card>
 
       <div>
-        <Title level={2} className="soc-title-2">
+        <Title level={2} style={{ color: 'white', marginBottom: '8px', fontSize: '32px' }}>
           Activities
         </Title>
-        <div className="soc-underline-small" />
+        <div style={{ width: '60px', height: '4px', backgroundColor: '#ff8c00', marginBottom: '24px' }} />
         <List
           dataSource={activities}
           renderItem={(item) => (
-            <List.Item className="soc-list-item">
+            <List.Item style={{ border: 'none', padding: '16px 0' }}>
               <List.Item.Meta
-                avatar={<Avatar icon={item.icon} className="soc-avatar" size="large" />}
-                title={<Text className="soc-item-title">{item.title}</Text>}
+                avatar={<Avatar icon={item.icon} style={{ backgroundColor: 'transparent', color: 'white', fontSize: '20px' }} size="large" />}
+                title={<Text style={{ color: 'white', fontSize: '20px', lineHeight: '1.5', fontWeight: '400' }}>{item.title}</Text>}
               />
             </List.Item>
           )}
         />
       </div>
 
-      <div className="soc-gallery">
-        {heroImages.map((image, index) => (
-          <Image key={index} src={image.src} alt={image.alt} className="soc-gallery-image" preview={false} />
-        ))}
+      <div style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '0 20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', width: '95%', maxWidth: '1200px' }}>
+          {heroImages.map((image, index) => (
+            <div key={index} style={{ width: 'calc(33.33% - 10px)', height: '450px', borderRadius: '20px', overflow: 'hidden' }}>
+              <Image src={image.src} alt={image.alt} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px' }} />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

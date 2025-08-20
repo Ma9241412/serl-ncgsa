@@ -32,8 +32,8 @@ const AppRouter = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/space-outreach" element={<SpaceOutreachScreen />} />
+            <Route path="/space-education" element={<SpaceEducationScreen />} />
             <Route path="/capacity-building" element={<CapacityBuildingScreen />} />
-            {/* Add more routes here as needed */}
           </Routes>
         </Suspense>
       </Layout>

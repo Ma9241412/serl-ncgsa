@@ -12,9 +12,9 @@ const { Title, Text } = Typography;
 
 const WrightBrothersDayFJWU_new = () => {
   const heroImages = [
-    { src: activity1, alt: 'Human Spaceflight FJWU Activity 1' },
-    { src: activity2, alt: 'Human Spaceflight FJWU Activity 2' },
-    { src: activity3, alt: 'Human Spaceflight FJWU Activity 3' }
+    { src: activity1, alt: 'Wright Brothers Day FJWU Activity 1' },
+    { src: activity2, alt: 'Wright Brothers Day FJWU Activity 2' },
+    { src: activity3, alt: 'Wright Brothers Day FJWU Activity 3' }
   ];
 
   const spaceOutreachImages = [
@@ -25,135 +25,64 @@ const WrightBrothersDayFJWU_new = () => {
 
   const activities = [
     {
-      title: 'Interactive Lectures On Human Spaceflight History And Future Missions',
+      title: 'Lectures On The Wright Brothers And The History Of Aviation',
       icon: <ClockCircleOutlined />
     },
     {
-      title: 'Workshops On Space Medicine And Life Support Systems For Human Missions',
+      title: 'Workshops On Aircraft Design And Flight Principles',
       icon: <BookOutlined />
     },
     {
-      title: 'Student Research Projects On Human Factors In Space Exploration',
+      title: 'Student Projects On Innovations In Aerospace Engineering',
       icon: <StarOutlined />
     },
     {
-      title: 'Career Guidance Sessions For Women In Aerospace Engineering',
+      title: 'Career Guidance For Aspiring Pilots And Aerospace Engineers',
       icon: <ExperimentOutlined />
     }
   ];
 
   return (
     <>
-      {/* Human Spaceflight FJWU Section */}
       <Card
         style={{ backgroundColor: '#2a2a2a', border: 'none', borderRadius: '20px' }}
         bodyStyle={{ padding: '24px', backgroundColor: '#2a2a2a', borderRadius: '20px' }}
       >
         <Title level={3} style={{ color: 'white', marginBottom: '8px', fontSize: '28px' }}>
-          International Wright Brother's Day
+          Wright Brothers Day FJWU
         </Title>
-        
-        {/* Space Outreach Image Slider */}
-        <div style={{ 
-          backgroundColor: '#1a1a1aff', 
-          borderRadius: '12px', 
-          padding: '6px',
-          marginBottom: '20px'
-        }}>
-          <Carousel 
-            autoplay 
-            autoplaySpeed={3000}
-            dots={true}
-            dotPosition="bottom"
-            style={{ borderRadius: '8px', overflow: 'hidden' }}
-          >
+        <div style={{ backgroundColor: '#1a1a1aff', borderRadius: '12px', padding: '6px', marginBottom: '20px' }}>
+          <Carousel autoplay autoplaySpeed={3000} dots={true} dotPosition="bottom" style={{ borderRadius: '8px', overflow: 'hidden' }}>
             {spaceOutreachImages.map((image, index) => (
               <div key={index}>
-                <div style={{ 
-                  height: '500px',
-                  backgroundImage: `url(${image.src})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  borderRadius: '8px'
-                }}>
-                </div>
+                <div style={{ height: '500px', backgroundImage: `url(${image.src})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: '8px' }}></div>
               </div>
             ))}
           </Carousel>
         </div>
-        
         <Text style={{ color: '#cccccc', fontSize: '18px' }}>
-          SERL's collaboration with Fatima Jinnah Women University (FJWU) focuses on human spaceflight education and research, inspiring female students to pursue careers in aerospace engineering and space sciences.
+          Celebrating the legacy of the Wright Brothers and the spirit of innovation in aviation at FJWU.
         </Text>
       </Card>
-
-      {/* Activities Section */}
       <div>
         <Title level={2} style={{ color: 'white', marginBottom: '8px', fontSize: '32px' }}>
           Activities
         </Title>
-        <div style={{
-          width: '60px',
-          height: '4px',
-          backgroundColor: '#ff8c00',
-          marginBottom: '24px'
-        }}></div>
-        <List
-          dataSource={activities}
-          renderItem={(item) => (
-            <List.Item style={{ border: 'none', padding: '16px 0' }}>
-              <List.Item.Meta
-                avatar={
-                  <Avatar 
-                    icon={item.icon} 
-                    style={{ backgroundColor: 'transparent', color: 'white', fontSize: '20px' }}
-                    size="large"
-                  />
-                }
-                title={
-                  <Text style={{ color: 'white', fontSize: '20px', lineHeight: '1.5', fontWeight: '400' }}>
-                    {item.title}
-                  </Text>
-                }
-              />
-            </List.Item>
-          )}
-        />
+        <div style={{ width: '60px', height: '4px', backgroundColor: '#ff8c00', marginBottom: '24px' }}></div>
+        <List dataSource={activities} renderItem={(item) => (
+          <List.Item style={{ border: 'none', padding: '16px 0' }}>
+            <List.Item.Meta
+              avatar={<Avatar icon={item.icon} style={{ backgroundColor: 'transparent', color: 'white', fontSize: '20px' }} size="large" />}
+              title={<Text style={{ color: 'white', fontSize: '20px', lineHeight: '1.5', fontWeight: '400' }}>{item.title}</Text>}
+            />
+          </List.Item>
+        )} />
       </div>
-
-      {/* Photo Gallery */}
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        width: '100%',
-        padding: '0 20px'
-      }}>
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          gap: '15px',
-          width: '95%',
-          maxWidth: '1200px'
-        }}>
+      <div style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '0 20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', width: '95%', maxWidth: '1200px' }}>
           {heroImages.map((image, index) => (
-            <div key={index} style={{ 
-              width: 'calc(33.33% - 10px)',
-              height: '450px', 
-              borderRadius: '20px',
-              overflow: 'hidden'
-            }}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'cover',
-                  borderRadius: '20px'
-                }}
-                fallback="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
-              />
+            <div key={index} style={{ width: 'calc(33.33% - 10px)', height: '450px', borderRadius: '20px', overflow: 'hidden' }}>
+              <Image src={image.src} alt={image.alt} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px' }} />
             </div>
           ))}
         </div>
