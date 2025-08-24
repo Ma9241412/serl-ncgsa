@@ -1,7 +1,9 @@
 import React, { useState, useEffect, Suspense } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Layout, Row, Col, Typography, Card, Select, Skeleton } from "antd";
 import { DownOutlined } from "@ant-design/icons";
-import '../../Styles/SpaceOutreachSection.css'
+import '../../Styles/SpaceOutreachSection.css';
 const WorldSpaceWeekComponents = React.lazy(() =>
   import("./WorldSpaceWeekComponents")
 );
@@ -37,6 +39,9 @@ const { Option } = Select;
 const { Content } = Layout;
 
 const SpaceOutreachSection = () => {
+  useEffect(() => {
+    AOS.init({ duration:3000});
+  }, []);
   const programData = {
     "world-space-week": { title: "World Space Week", years: ["2020", "2021", "2022", "2023", "2024"] },
     "space-festivals": { title: "Space Festivals", events: ["lahore-science-mela", "steam-mela", "space-expo", "pakistan-learning-festival"] },
@@ -193,7 +198,7 @@ const SpaceOutreachSection = () => {
       <Content>
         {/* Hero Section */}
         <div className="sos-hero-card">
-          <h1 className="sos-hero-title">SPACE OUTREACH</h1>
+          <h1 className="sos-hero-title" data-aos="fade-left">SPACE OUTREACH</h1>
         </div>
 
         {/* Navigate To Program Section */}

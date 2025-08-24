@@ -19,54 +19,56 @@ const SpaceOutreach = () => {
   ];
 
   return (
-  <Row className="cb-wrapper" justify="start">
-  <Row justify="start" className="cb-row-text">
-  <Col xs={24} lg={24} className="cb-text-col">
-          <Title level={2} className="cb-title">
-            Capacity <span className="cb-title-highlight">Building</span>
-          </Title>
-          <Paragraph className="cb-paragraph">
-            SERL’s capacity-building initiatives focus on empowering students, educators, professionals, and institutions by enhancing expertise and advancing knowledge in space science and technology, contributing to a nationally cohesive framework for space science education.
-          </Paragraph>
+    <div className="so-wrapper">
+      <Row justify="start">
+        <Col xs={24} lg={24}>
+          <div className="so-row-text">
+            <div className="so-text-col">
+              <Title level={2} className="so-title">
+                Capacity <span className="so-title-highlight">Building</span>
+              </Title>
+              <Paragraph className="so-paragraph">
+                SERL’s capacity-building initiatives focus on empowering students, educators, professionals, and institutions by enhancing expertise and advancing knowledge in space science and technology, contributing to a nationally cohesive framework for space science education.
+              </Paragraph>
+            </div>
+          </div>
         </Col>
-      </Row>
-
-  <Row justify="start" className="cb-row-carousel">
-  <Col xs={24} lg={24} className="cb-carousel-col">
-          <div className="cb-carousel-wrapper">
-            <Carousel 
-              ref={carouselRef}
-              autoplay={autoplayEnabled}
-              autoplaySpeed={3000}
-              dots={false}
-              infinite
-              speed={1000}
-              effect="scroll"
-              slidesToShow={isMobile ? 1 : 3}
-              slidesToScroll={1}
-              pauseOnHover={true}
-              centerMode={false}
-            >
-              {images.map((image, index) => (
-                <img key={index} src={image.src} alt={image.alt} className="cb-slide-img" />
-              ))}
-            </Carousel>
+        <Col xs={24} lg={24}>
+          <div className="so-row-carousel">
+            <div className="so-carousel-col">
+              <div className="so-carousel-wrapper">
+                <Carousel 
+                  ref={carouselRef}
+                  autoplay={autoplayEnabled}
+                  autoplaySpeed={3000}
+                  dots={false}
+                  infinite
+                  speed={1000}
+                  effect="scroll"
+                  slidesToShow={isMobile ? 1 : 3}
+                  slidesToScroll={1}
+                  pauseOnHover={true}
+                  centerMode={false}
+                >
+                  {images.map((image, index) => (
+                    <img key={index} src={image.src} alt={image.alt} />
+                  ))}
+                </Carousel>
+              </div>
+            </div>
+          </div>
+        </Col>
+        <Col xs={24} lg={24}>
+          <div className="so-row-button" style={{ textAlign: "left" }}>
+            <div className="so-button-col">
+              <Button type="primary" size="large" className="so-button">
+                For More Details
+              </Button>
+            </div>
           </div>
         </Col>
       </Row>
-
-  <Row className="cb-row-button">
-  <Col xs={24} lg={20} className="cb-button-col">
-          <Button 
-            type="primary"
-            size="large"
-            className="cb-button"
-          >
-            For More Details
-          </Button>
-        </Col>
-      </Row>
-    </Row>
+    </div>
   );
 };
 

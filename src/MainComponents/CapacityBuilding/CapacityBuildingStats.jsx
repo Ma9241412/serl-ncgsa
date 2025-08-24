@@ -20,21 +20,26 @@ const CapacityBuildingStats = () => {
   ];
 
   return (
-      <>
-        <div className="cbs-content-wrapper">
-          <Row justify="start" className="cbs-row-text">
-            <Col xs={24} lg={24} className="cbs-text-col">
-              <Title level={2} className="cbs-title">
-                Capacity <span className="cbs-title-highlight">Building</span>
-              </Title>
-              <Paragraph className="cbs-paragraph">
-                SERL’s capacity-building initiatives focus on empowering students, educators, professionals, and institutions by enhancing expertise and advancing knowledge in space science and technology, contributing to a nationally cohesive framework for space science education.
-              </Paragraph>
-            </Col>
-          </Row>
-        </div>
-        <StatsSection />
-      </>
+    <>
+      <div className="section-container">
+        <Title level={2} className="cbs-title">
+          Capacity <span className="cbs-title-highlight">Building</span>
+        </Title>
+        <Paragraph className="cbs-paragraph">
+          The National Center of GIS and Space Applications (NCGSA) is committed
+          to advancing capacity building through high-impact, experiential learning. 
+          Our comprehensive portfolio of workshops and training programs is designed 
+          to deliver practical, hands-on exposure across key domains including space 
+          science, satellite technology, geographic information systems (GIS), and 
+          related disciplines. These programs are strategically developed for students,
+          educators, researchers, industry stakeholders, and professionals, equipping
+          participants with specialized skills and applied knowledge to drive innovation 
+          and contribute effectively to Pakistan’s growing space and geospatial technology
+          ecosystem.
+        </Paragraph>
+      </div>
+      <StatsSection />
+    </>
   );
 }
 

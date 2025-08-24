@@ -71,54 +71,60 @@ const StatsSection = () => {
     }, [isActive, targetNumber, duration]);
     const formatNumber = (num) => num.toLocaleString();
     return (
-      <span className="stats-count">
-        <span className="stats-count-number">{formatNumber(count)}</span>
-        <span className="stats-count-suffix">{suffix}</span>
-      </span>
+      <Typography.Text className="stats-count" strong>
+        <Typography.Text className="stats-count-number" strong>
+          {formatNumber(count)}
+        </Typography.Text>
+        <Typography.Text className="stats-count-suffix" type="secondary">
+          {suffix}
+        </Typography.Text>
+      </Typography.Text>
     );
   };
 
   return (
-    <Card ref={sectionRef} bordered={false} className="stats-section-wrapper">
-      <Row 
-        className="stats-cont" 
-        gutter={[24, 24]} 
-        justify="center"
-        align="middle"
-      >
-        {stats.map((stat, index) => {
-          const IconComponent = stat.icon;
-          const isStatVisible = animatedStats.includes(index);
-          return (
-            <Col 
-              key={index}
-              xs={24} 
-              sm={12} 
-              md={8}
-              lg={4}
-              xl={4}
-              className="stats-item-col"
-            >
-              <Card bordered={false} className={`stats-card ${isStatVisible ? 'visible' : ''}`}>
-                <div className={`stats-icon ${isStatVisible ? 'visible' : ''} delay-${index}`}>
-                  <IconComponent />
-                </div>
-                <Title level={2} className="stats-count-title">
-                  <AnimatedCounter 
-                    targetNumber={stat.number} 
-                    suffix={stat.suffix}
-                    isActive={isStatVisible}
-                  />
-                </Title>
-                <Title level={5} className="stats-label-title">
-                  {stat.label}
-                </Title>
-              </Card>
-            </Col>
-          );
-        })}
-      </Row>
-    </Card>
+    <div className="section-container">
+      <Card ref={sectionRef} bordered={false} className="stats-section-wrapper">
+        <Row 
+          className="stats-cont" 
+          gutter={[24, 24]} 
+          justify="center"
+          align="middle"
+        >
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            const isStatVisible = animatedStats.includes(index);
+            return (
+              <Col 
+                key={index}
+                xs={24} 
+                sm={12} 
+                md={8}
+                lg={4}
+                xl={4}
+                className="stats-item-col"
+              >
+                <Card bordered={false} className={`stats-card ${isStatVisible ? 'visible' : ''}`}>
+                  <div className={`stats-icon ${isStatVisible ? 'visible' : ''} delay-${index}`}>
+                    <IconComponent />
+                  </div>
+                  <Title level={2} className="stats-count-title">
+                    <AnimatedCounter 
+                      targetNumber={stat.number} 
+                      suffix={stat.suffix}
+                      isActive={isStatVisible}
+                    />
+                  </Title>
+                  <Title level={5} className="stats-label-title">
+                    {stat.label}
+                  </Title>
+                </Card>
+              </Col>
+            );
+          })}
+        </Row>
+      </Card>
+    </div>
   );
 };
 

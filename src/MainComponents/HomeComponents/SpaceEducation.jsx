@@ -26,23 +26,23 @@ const SpaceOutreach = () => {
 
 
   return (
-  <Row className="se-wrapper" justify="start">
-  <Col xs={24} lg={24} className="se-text-col">
-  <Row justify="start" className="se-row-text">
-          <Col xs={24} lg={24} className="se-text-col">
-            <Title className="se-title">
-              Space <span className="se-title-highlight">Education</span>
+    <div className="so-wrapper">
+      <Row justify="start">
+        <Row justify="start" className="so-row-text">
+          <Col xs={24} lg={24} className="so-text-col">
+            <Title level={2} className="so-title">
+              Space <span className="so-title-highlight">Education</span>
             </Title>
-            <Paragraph className="se-paragraph">
+            <Paragraph className="so-paragraph">
               SERL addresses the gap in space awareness and education at national level by implementing interactive, creative and innovative pedagogical methods on the grass root level. Through its dynamic STEM and STEAM initiatives including workshops, teacher trainings, specialized schools, competitions, seminars, webinars, and national summits, SERL attracts a diverse community of students, professionals and educators.
             </Paragraph>
           </Col>
         </Row>
 
-  <Row justify="start" className="se-row-carousel">
-          <Col xs={24} lg={24} className="se-carousel-col">
-            <div className="se-carousel-wrapper">
-              <Carousel
+        <Row justify="start" className="so-row-carousel">
+          <Col xs={24} lg={24} className="so-carousel-col">
+            <div className="so-carousel-wrapper">
+              <Carousel 
                 ref={carouselRef}
                 autoplay
                 autoplaySpeed={3000}
@@ -56,22 +56,22 @@ const SpaceOutreach = () => {
                 centerMode={false}
               >
                 {images.map((image, index) => (
-                  <img key={index} src={image.src} alt={image.alt} className="se-slide-img" />
+                  <img key={index} src={image.src} alt={image.alt} />
                 ))}
               </Carousel>
             </div>
           </Col>
         </Row>
 
-  <Row className="se-row-button" justify="start">
-    <Col xs={24} lg={24} className="se-button-col" style={{ textAlign: "left" }}>
-      <Button type="primary" size="large" className="se-button">
-        For More Details
-      </Button>
-    </Col>
-  </Row>
-      </Col>
-    </Row>
+        <Row className="so-row-button" justify="start">
+          <Col xs={24} lg={24} className="so-button-col" style={{ textAlign: "left" }}>
+            <Button type="primary" size="large" className="so-button">
+              For More Details
+            </Button>
+          </Col>
+        </Row>
+      </Row>
+    </div>
   );
 };
 
