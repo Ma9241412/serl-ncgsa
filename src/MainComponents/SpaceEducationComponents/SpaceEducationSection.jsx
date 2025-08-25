@@ -126,38 +126,36 @@ const SpaceEducationSection = () => {
         </div>
 
         {/* Navigate To Program Section */}
-        <Row justify="center">
-          <Col xs={24} lg={24} xl={24}>
-            <Card bordered={false} className="sos-nav-card">
-              <Title level={3} className="sos-nav-title">Navigate To Program</Title>
-              <div className="sos-nav-underline"></div>
-              <Row gutter={[16, 16]} className="sos-nav-btn-row" style={{ marginTop: '24px' }}>
-                {['space-summer-school', 'space-destination-school', 'beaconhouse-notion-of-academia', 'astronomy-camp'].map((key) => (
-                  <Col key={key}>
-                    <button
-                      onClick={() => handleProgramChange(key)}
-                      className={`sos-nav-btn${selectedProgram === key ? ' sos-nav-btn-active' : ''}`}
-                    >
-                      {programData[key].title}
-                    </button>
-                  </Col>
-                ))}
-              </Row>
-              <Row gutter={[16, 16]} className="sos-nav-btn-row" style={{ marginTop: '8px' }}>
-                {['cansat-design-and-development', 'geographic-information-system', 'global-navigation-satellite-system', 'nasa-space-applications-challenge', 'quadcopters-designing-rotorcraft'].map((key) => (
-                  <Col key={key}>
-                    <button
-                      onClick={() => handleProgramChange(key)}
-                      className={`sos-nav-btn${selectedProgram === key ? ' sos-nav-btn-active' : ''}`}
-                    >
-                      {programData[key].title}
-                    </button>
-                  </Col>
-                ))}
-              </Row>
-            </Card>
-          </Col>
-        </Row>
+        <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+          <Card className="sos-nav-card">
+            <Title className="sos-nav-title">Navigate To Program</Title>
+            <div className="sos-nav-underline"></div>
+            <div className="sos-nav-btn-row" style={{ marginTop: '24px', display: 'flex', gap: '16px', justifyContent: 'center' }}>
+              {['space-summer-school', 'space-destination-school', 'beaconhouse-notion-of-academia', 'astronomy-camp'].map((key) => (
+                <div key={key}>
+                  <button
+                    onClick={() => handleProgramChange(key)}
+                    className={`sos-nav-btn${selectedProgram === key ? ' sos-nav-btn-active' : ''}`}
+                  >
+                    {programData[key].title}
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div className="sos-nav-btn-row" style={{ marginTop: '8px', display: 'flex', gap: '16px', justifyContent: 'center' }}>
+              {['cansat-design-and-development', 'geographic-information-system', 'global-navigation-satellite-system', 'nasa-space-applications-challenge', 'quadcopters-designing-rotorcraft'].map((key) => (
+                <div key={key}>
+                  <button
+                    onClick={() => handleProgramChange(key)}
+                    className={`sos-nav-btn${selectedProgram === key ? ' sos-nav-btn-active' : ''}`}
+                  >
+                    {programData[key].title}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
 
         {/* Dynamic Content Based on Selection */}
         <div className="sos-dynamic">

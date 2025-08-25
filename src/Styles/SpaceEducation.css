@@ -10,9 +10,21 @@
   background-color: transparent !important;
   border-radius: 30px !important;
   border: 2px solid #ff9500 !important;
-  max-width: 1200px !important;
+  max-width: 1400px !important;
   width: 100%;
-  margin: 0 auto;
+  margin: auto auto;
+}
+@media (max-width: 1440px) {
+  .spo-card {
+    background-color: transparent !important;
+    border-radius: 30px !important;
+    border: 2px solid #ff9500 !important;
+    max-width: 1400px !important;
+    width: 100%;
+    margin: auto auto;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
 }
 
 .spo-card .ant-card-body {

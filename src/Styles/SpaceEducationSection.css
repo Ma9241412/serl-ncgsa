@@ -1,216 +1,287 @@
-.sos-bg {
-  background-image: url("../assets/images/mainbg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 70vh !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .sos-bg {
+    background-image: url("../assets/images/mainbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70vh !important;
+  }
+
+  /* Hero */
+  .sos-hero-card {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    background: transparent;
+    width: 100%;
+    min-height: inherit;
+  }
+  .sos-hero-card .ant-card-body {
+    padding: 0;
+  }
+  .sos-hero-row {
+    width: 100%;
+  }
+  .sos-hero-inner {
+    background: transparent;
+  }
+  .sos-hero-inner .ant-card-body {
+    padding: 0;
+  }
+  .sos-hero-center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .sos-hero-title-wrap {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sos-hero-title {
+    color: #fff !important;
+    font-size: 9.2rem !important;
+    font-weight: 600 !important;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  /* Navigation card */
+  .sos-nav-card {
+  min-width: 1400px !important;
+  box-sizing: border-box !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Hero */
-.sos-hero-card {
-  position: relative;
-  height: auto;
-  overflow: hidden;
-  background: transparent;
-  width: 100%;
-  min-height: inherit;
-}
-.sos-hero-card .ant-card-body {
-  padding: 0;
-}
-.sos-hero-row {
-  width: 100%;
-}
-.sos-hero-inner {
-  background: transparent;
-}
-.sos-hero-inner .ant-card-body {
-  padding: 0;
-}
-.sos-hero-center {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-.sos-hero-title-wrap {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.sos-hero-title {
-  color: #fff !important;
-  font-size: 9.2rem !important;
-  font-weight: 600 !important;
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  text-align: center;
-  line-height: 1.1;
+@media (max-width: 992px) {
+  .sos-nav-card {
+    min-width: unset !important;
+    width: 100% !important;
+    max-width: unset !important;
+    box-sizing: border-box !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+  .sos-nav-btn {
+    min-width: 100px !important;
+    font-size: 0.9rem !important;
+    height: 40px !important;
+  }
 }
 
-/* Navigation card */
-.sos-nav-card {
-  border-radius: 20px !important;
-  border: none !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-  max-width: 1400px;
-  width: 100%;
-  margin: auto auto;
-}
-.sos-nav-card .ant-card-body {
-  padding: 22px 22px;
+  .sos-nav-card .ant-card-body {
   background-color: #1a1a1a;
   border-radius: 20px;
-}
-.sos-nav-title {
-  color: #ffffff !important;
-  margin-bottom: 8px !important;
-  font-size: 30px !important;
-  font-weight: 700 !important;
-}
-.sos-nav-underline {
-  width: 80px;
-  height: 3px;
-  background-color: #ff8c00;
-  margin-bottom: 32px;
-}
+  padding: 24px 22px !important;
+  min-height: 80px !important;
+  }
+  .sos-nav-title {
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+  }
+  .sos-nav-underline {
+    width: 80px;
+    height: 3px;
+    background-color: #ff8c00;
+    margin-bottom: 32px;
+  }
 
-/* Select styling to match inline */
-.sos-select {
-  width: 100%;
-  height: 55px;
-}
-.sos-select .ant-select-selector {
-  height: 55px !important;
-  background-color: #1a1a1a !important;
-  border: 1px solid #555 !important;
-  color: white !important;
-}
-.sos-select .ant-select-selector:hover {
-  border-color: #ff8c00 !important;
-}
-.ant-select-focused .ant-select-selector {
-  border-color: #ff8c00 !important;
-  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2) !important;
-}
-.sos-select .ant-select-selection-item {
-  color: white !important;
-  line-height: 53px !important;
-}
-.sos-select .ant-select-arrow {
-  color: #ff8c00 !important;
-}
-.sos-select-icon {
-  color: #ff8c00;
-  font-size: 16px;
-}
+  /* Select styling to match inline */
+  .sos-select {
+    width: 100%;
+    height: 55px;
+  }
+  .sos-select .ant-select-selector {
+    height: 55px !important;
+    background-color: #1a1a1a !important;
+    border: 1px solid #555 !important;
+    color: white !important;
+  }
+  .sos-select .ant-select-selector:hover {
+    border-color: #ff8c00 !important;
+  }
+  .ant-select-focused .ant-select-selector {
+    border-color: #ff8c00 !important;
+    box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2) !important;
+  }
+  .sos-select .ant-select-selection-item {
+    color: white !important;
+    line-height: 53px !important;
+  }
+  .sos-select .ant-select-arrow {
+    color: #ff8c00 !important;
+  }
+  .sos-select-icon {
+    color: #ff8c00;
+    font-size: 16px;
+  }
 
-/* Dropdown panel and scrollbar */
-.ant-select-dropdown {
-  background-color: #1a1a1a !important;
-  border: 1px solid #555 !important;
-}
-.ant-select-item-option {
-  background-color: #1a1a1a !important;
-  color: white !important;
-}
-.ant-select-item-option:hover {
-  background-color: #333333 !important;
-}
-.ant-select-item-option-selected {
-  background-color: #ff8c00 !important;
-  color: white !important;
-}
-.ant-select-dropdown::-webkit-scrollbar {
-  width: 8px !important;
-}
-.ant-select-dropdown::-webkit-scrollbar-track {
-  background: #333333 !important;
-  border-radius: 4px !important;
-}
-.ant-select-dropdown::-webkit-scrollbar-thumb {
-  background: #666666 !important;
-  border-radius: 4px !important;
-}
-.ant-select-dropdown::-webkit-scrollbar-thumb:hover {
-  background: #888888 !important;
-}
+  /* Dynamic section */
+  .sos-dynamic {
+    background: #000000;
+  }
+  .sos-skeleton {
+    padding: 40px 0;
+    text-align: center;
+  }
 
-/* Dynamic section */
-.sos-dynamic {
-  background: #000000;
-}
-.sos-skeleton {
-  padding: 40px 0;
-  text-align: center;
-}
-
-/* Navigation buttons */
-.sos-nav-btn {
-  min-width: 150px;
-  height: 50px;
-  border: 1px solid #555555;
-  border-radius: 6px;
-  background: transparent;
-  color: #cccccc;
-  font-weight: 500;
-  transition: all 0.2s;
-  cursor: pointer;
-  outline: none;
-  font-size: 1.1rem;
-}
-.sos-nav-btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  border-color: #ff8c00 !important;
-  box-shadow: 0 4px 16px rgba(255,140,0,0.15);
-}
-.sos-nav-btn:active,
-.sos-nav-btn-active {
-  background-color: #ff8c00 !important;
-  border-color: #ff8c00 !important;
-  color: #fff !important;
-}
-.sos-nav-btn-row {
+  /* Navigation buttons */
+  .sos-nav-btn {
+    min-width: 150px;
+    height: 50px;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    background: transparent;
+    color: #cccccc;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.1rem;
+  }
+  .sos-nav-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    border-color: #ff8c00 !important;
+    box-shadow: 0 4px 16px rgba(255,140,0,0.15);
+  }
+  .sos-nav-btn:active,
+  .sos-nav-btn-active {
+    background-color: #ff8c00 !important;
+    border-color: #ff8c00 !important;
+    color: #fff !important;
+  }
+  .sos-nav-btn-row {
   display: flex !important;
   justify-content: center !important;
-  gap: 3px !important;
-}
-
-@media (max-width: 1200px) {
-  .sos-hero-title {
-    font-size: 2rem !important;
-  }
-}
+  gap: 4px !important;
 @media (max-width: 992px) {
   .sos-nav-card .ant-card-body {
-    padding: 40px 20px;
+    padding: 18px 22px !important;
+    min-height: 60px !important;
   }
-  .sos-hero-title {
-    font-size: 4rem;
+  .sos-nav-btn-row {
+    gap: 6px !important;
+  }
+  .sos-nav-btn {
+    min-width: 90px !important;
+    font-size: 0.85rem !important;
+    height: 32px !important;
+    padding: 0 8px !important;
   }
 }
 @media (max-width: 768px) {
-  .sos-hero-title {
-    font-size: 4rem;
+  .sos-nav-card .ant-card-body {
+    padding: 12px 22px !important;
+    min-height: 40px !important;
   }
-  .sos-bg {
-    min-height: 20vh !important;
+  .sos-nav-btn-row {
+    gap: 4px !important;
   }
-  .sos-hero-card {
-    min-height: 20vh !important;
-    height: auto !important;
+  .sos-nav-btn {
+    width: calc(50% - 8px) !important;
+    font-size: 0.8rem !important;
+    height: 28px !important;
+    padding: 0 6px !important;
   }
 }
 @media (max-width: 480px) {
-  .sos-hero-title {
-    font-size: 2.8rem;
-    padding: 0 10px;
+  .sos-nav-card .ant-card-body {
+    padding: 8px 22px !important;
+    min-height: 32px !important;
+  }
+  .sos-nav-btn-row {
+    gap: 2px !important;
+  }
+  .sos-nav-btn {
+    width: 100% !important;
+    font-size: 0.75rem !important;
+    height: 24px !important;
+    padding: 0 4px !important;
   }
 }
+  }
+
+  @media (max-width: 1200px) {
+    .sos-hero-title {
+      font-size: 2rem !important;
+    }
+  }
+  @media (max-width: 992px) {
+    /* Keep hero readable and apply fixed 22px side padding to nav card */
+    .sos-hero-title {
+      font-size: 4rem;
+    }
+    .sos-nav-card .ant-card-body {
+      /* top/bottom preserve some spacing, left/right fixed to 22px as requested */
+      padding: 40px 22px;
+    }
+    /* Allow nav buttons to wrap and have a slightly smaller min width */
+    .sos-nav-btn-row {
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+    }
+    .sos-nav-btn {
+      min-width: 140px;
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .sos-hero-title {
+      font-size: 4rem;
+    }
+    .sos-bg {
+      min-height: 20vh !important;
+    }
+    .sos-hero-card {
+      min-height: 20vh !important;
+      height: auto !important;
+    }
+
+    /* On tablets, enforce 22px side padding and present buttons in two columns */
+    .sos-nav-card .ant-card-body {
+      padding: 24px 22px;
+    }
+
+    .sos-nav-btn-row {
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .sos-nav-btn {
+      /* make buttons occupy ~50% width so they appear in two clean columns */
+      width: calc(50% - 12px);
+      min-width: unset;
+      box-sizing: border-box;
+    }
+  }
+  @media (max-width: 480px) {
+    .sos-hero-title {
+      font-size: 2.8rem;
+      padding: 0 10px;
+    }
+
+    /* On small phones, keep 22px padding and stack buttons full-width */
+    .sos-nav-card .ant-card-body {
+      padding: 22px !important;
+    }
+
+    .sos-nav-btn-row {
+      gap: 10px !important;
+      flex-direction: column !important;
+    }
+
+    .sos-nav-btn {
+      width: 100% !important;
+      min-width: unset !important;
+      box-sizing: border-box;
+    }
+  }
