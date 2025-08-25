@@ -119,7 +119,6 @@ const SpaceEducationSection = () => {
   };
 
   return (
-    <Layout className="sos-bg">
       <Content>
         {/* Hero Section */}
         <div className="sos-hero-card">
@@ -127,8 +126,8 @@ const SpaceEducationSection = () => {
         </div>
 
         {/* Navigate To Program Section */}
-        <Row justify="center" className="sos-nav-section">
-          <Col xs={24} lg={24} xl={23}>
+        <Row justify="center">
+          <Col xs={24} lg={24} xl={24}>
             <Card bordered={false} className="sos-nav-card">
               <Title level={3} className="sos-nav-title">Navigate To Program</Title>
               <div className="sos-nav-underline"></div>
@@ -167,7 +166,6 @@ const SpaceEducationSection = () => {
           </Suspense>
         </div>
       </Content>
-    </Layout>
   );
 };
 

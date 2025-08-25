@@ -8,6 +8,7 @@ const About = lazy(() => import("../screens/About"));
 const SpaceOutreachScreen = lazy(() => import("../screens/SpaceOutreachScreen"));
 const SpaceEducationScreen = lazy(() => import("../screens/SpaceEducationScreen"));
 const CapacityBuildingScreen = lazy(() => import("../screens/CapacityBuildingScreen"));
+const ResourcesPage = lazy(() => import("../screens/ResourcesPage"));
 
 const AppRouter = () => {
   return (
@@ -34,6 +35,7 @@ const AppRouter = () => {
             <Route path="/space-outreach" element={<SpaceOutreachScreen />} />
             <Route path="/space-education" element={<SpaceEducationScreen />} />
             <Route path="/capacity-building" element={<CapacityBuildingScreen />} />
+            <Route path="/resources" element={<ResourcesPage />} />
           </Routes>
         </Suspense>
       </Layout>

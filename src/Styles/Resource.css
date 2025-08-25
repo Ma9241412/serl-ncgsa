@@ -1,0 +1,121 @@
+
+.nasa-btn .ant-typography {
+  font-weight: 600 !important;
+  color: #000 !important;
+  font-size: 1.2rem !important;
+}
+@media (max-width: 768px) {
+  .nasa-btn .ant-typography {
+    font-size: 0.95rem !important;
+  }
+}
+.section-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1440px) {
+  .section-container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+.resource-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  white-space: normal;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .resource-title {
+    font-size: 1.5rem;
+  }
+  .resource-paragraph {
+    font-size: 0.9rem;
+  }
+}
+
+.resource-paragraph {
+  text-align: center;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .resource-paragraph {
+    font-size: 0.95rem;
+  }
+}
+
+.resource-card {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: 2px solid #ff9500 !important;
+  border-radius: 12px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1440px), (max-width: 768px), (max-width: 480px) {
+  .resource-card {
+    width: calc(100% - 44px);
+    margin-left: 22px !important;
+    margin-right: 22px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.resource-card .ant-card-body {
+  padding: 40px 0 !important;
+}
+
+@media (max-width: 1440px), (max-width: 768px), (max-width: 480px) {
+  .resource-card {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+  .resource-card .ant-card-body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .resource-title {
+    font-size: 1.2rem;
+  }
+  .resource-paragraph {
+    font-size: 0.8rem;
+  }
+}
+
+
+.nasa-btn {
+  background-color: #ff9500 !important;
+  border-color: #ff9500 !important;
+  color: #000 !important;
+  font-weight: 600;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+@media (max-width: 768px) {
+  .nasa-btn {
+    max-width: 200px;
+  }
+}

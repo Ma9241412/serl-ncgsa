@@ -42,7 +42,7 @@ const SpaceOutreach = () => {
         <Col xs={24} lg={24}>
           <Slider {...settings}>
             {images.map((image, index) => (
-              <div key={index} className="about-vision-slide">
+              <div key={index}>
                 <Image
                   preview={false}
                   src={image.src}
