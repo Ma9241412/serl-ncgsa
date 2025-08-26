@@ -121,6 +121,7 @@ const Header = ({ activeNavItem = "HOME" }) => {
                 text="CONTACT US"
                 variant="primary"
                 size={screens.xl ? "medium" : "small"}
+                onClick={() => window.location.href = '/contact'}
               />
             </div>
           </Col>

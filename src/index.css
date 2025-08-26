@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
 }
+/* .body {
+
+} */
 .home-cont {
   width: 100%;
   max-width: 1200px;
@@ -9,7 +14,7 @@
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 20px;
+
   background-color: black;
 }
 html,
@@ -21,10 +26,7 @@ body {
   overflow-x: hidden; /* Prevent horizontal overflow/white space */
 }
 
-.body {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-}
+
 
 #root {
   width: 100%;
@@ -132,4 +134,18 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.global-layout {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1440px) {
+  .global-layout {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
 }
