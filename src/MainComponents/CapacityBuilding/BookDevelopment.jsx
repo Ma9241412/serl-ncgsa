@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Collapse, Row, Col, Image, Typography } from 'antd';
 import Carousel from 'antd/es/carousel';

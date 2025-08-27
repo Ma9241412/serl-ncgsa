@@ -1,20 +1,33 @@
-import React from 'react';
-import { Typography, Card } from 'antd';
+import React from "react";
+import GetInTouch from "../MainComponents/ContactUs/GetInTouch";
+import InfoBox from "../MainComponents/ContactUs/InfoBox";
+import CollaboratorsPartners from "../MainComponents/ContactUs/CollaboratorsPartners";
+import mainhomebg from "../assets/images/homemainbg.jpg";
 
-const { Title, Paragraph } = Typography;
+const ContactUsPage = () => {
+  return (
+    <>
+      <div
+        style={{
+          backgroundImage: `url(${mainhomebg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          minHeight: "100vh",
+        }}
+      >
+        <div className="global-layout">
+            <div
+                style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+            >
+            <GetInTouch />
+            <InfoBox />
+            <CollaboratorsPartners />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-const ContactUs = () => (
-  <Card style={{ maxWidth: 500, margin: '40px auto', textAlign: 'center' }}>
-    <Title level={2}>Contact Us</Title>
-    <Paragraph>
-      For any queries, suggestions, or feedback, please reach out to us at:
-    </Paragraph>
-    <Paragraph>
-      <strong>Email:</strong> info@serl-ist.pk<br/>
-      <strong>Phone:</strong> +92-51-1234567<br/>
-      <strong>Address:</strong> Institute of Space Technology, Islamabad
-    </Paragraph>
-  </Card>
-);
-
-export default ContactUs;
+export default ContactUsPage;

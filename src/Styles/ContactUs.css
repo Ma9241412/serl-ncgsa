@@ -1,0 +1,86 @@
+.contact-hero-bg {
+  background-image: url("../assets/images/mainbg.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-hero-title {
+  color: #fff !important;
+  font-size: 9.2rem !important;
+  font-weight: 600 !important;
+  text-align: center;
+}
+.contact-main-title{
+   font-size: 100px !important;
+   color: #ffffff !important;
+   font-weight: 700;
+ 
+}
+.contact-title{
+   font-size: 42px !important;
+   color: #ffffff !important;
+   font-weight: 700;
+   padding-left: 16px;
+}
+.contact-text{
+   font-size: 22px !important;
+   color: #ffffff !important;
+   padding-left: 16px;
+}
+.underline{
+  width: 220px;
+  height: 6px;
+  background: #ff9500;
+  margin-left: 15px;
+}
+.icons-styles{
+  font-size: 32px;
+  color: #ffffff;
+  padding-left: 200px;
+}
+.icons-styles:hover {
+  color: #ff9500 !important;
+}
+.ant-input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid #fff !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.ant-input:focus {
+  border-bottom: 2px solid #ff9500 !important;
+  box-shadow: none !important;
+}
+.contact-button{
+  background: #ff9500;
+  border: none;
+  height: 45px;
+  min-width: 200px;
+  font-weight: bold;
+  color: #000;
+  font-size: 18px;
+  justify-content: flex-start;
+  display: flex;
+  margin-left: 14px;
+  margin-top: 14px;
+}
+.award-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 12px;
+  height: 180px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.award-image {
+  object-fit: cover;
+
+}
