@@ -100,8 +100,5 @@ const AdvancedSearchForm = () => {
   );
 };
 
-const InfoBox = () => {
-  return <AdvancedSearchForm />;
-};
 
 export default InfoBox;

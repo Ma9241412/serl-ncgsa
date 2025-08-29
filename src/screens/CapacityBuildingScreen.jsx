@@ -11,8 +11,10 @@ const sectionStyle = {
 };
 
 const CapacityBuildingScreen = () => (
-  <div className="mainhomebg-bg">
+<>
     <CapacityBuilding />
+
+  <div className="mainhomebg-bg">
     <CapacityBuildingStats />
     <TeacherTrainingWorkshop />
     <div style={sectionStyle}>
@@ -24,7 +26,7 @@ const CapacityBuildingScreen = () => (
     <div style={sectionStyle}>
       <ProfessionalsTraining />
     </div>
-  </div>
+  </div></>
 );
 
 export default CapacityBuildingScreen;

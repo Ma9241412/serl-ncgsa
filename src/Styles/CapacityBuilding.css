@@ -15,14 +15,11 @@
 /* About Section */
 .cb-bg {
   background-color: #000;
-  background-image: url("../assets/images/mainbg.jpg");
-  background-size: cover;
-  background-position: center;
+  background-image: url("../assets/images/mainbg.jpg") !important;
+  background-size:cover;
   background-repeat: no-repeat;
   min-height: 70vh !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 }
 .cb-col {
   width: 100%;

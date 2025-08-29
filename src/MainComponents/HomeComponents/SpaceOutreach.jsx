@@ -30,13 +30,7 @@ const SpaceOutreach = () => {
           Space <Text className="so-title-highlight">Outreach</Text>
         </Title>
         <Paragraph className="so-paragraph">
-          The Space Education Research Lab (SERL) is committed to promote space
-          science & technology by engaging school, college & university
-          students, educators, professionals, and communities through nationwide
-          outreach, hands-on learning, and educational support. With the
-          national-level engagement and powerful outreach, SERL strives to
-          nurture space-literate and future-ready society prepared to lead and
-          innovate in the evolving space sector.
+          SERL’s Space Outreach program is designed to bring space science and technology closer to students, educators, and the general public. Through workshops, interactive sessions, science fairs, and hands-on projects, participants gain exposure to satellite systems, remote sensing, and GIS applications. These initiatives aim to spark curiosity, enhance understanding of space technology, and encourage young minds to pursue careers in STEM fields. SERL also collaborates with schools, universities, and local organizations to ensure that outreach programs reach diverse communities across the country.
         </Paragraph>
       </Col>
       <Col>

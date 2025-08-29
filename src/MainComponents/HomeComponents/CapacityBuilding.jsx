@@ -30,13 +30,7 @@ const CapacityBuilding = () => {
           Capacity <Text className="so-title-highlight">Building</Text>
         </Title>
         <Paragraph className="so-paragraph">
-          The Space Education Research Lab (SERL) is committed to promote space
-          science & technology by engaging school, college & university
-          students, educators, professionals, and communities through nationwide
-          outreach, hands-on learning, and educational support. With the
-          national-level engagement and powerful outreach, SERL strives to
-          nurture space-literate and future-ready society prepared to lead and
-          innovate in the evolving space sector.
+          SERL’s Capacity Building initiatives aim to develop human resources with the expertise required for a robust space technology ecosystem. Through targeted training programs, internships, collaborative research projects, and mentorship, participants gain hands-on experience in satellite systems, GIS, remote sensing, and data-driven applications. The programs are structured to enhance technical knowledge, research capabilities, and leadership skills, ensuring participants are prepared to meet the growing demands of the space sector. SERL also partners with universities, research centers, and industry leaders to ensure that training remains relevant and impactful, fostering a generation of professionals capable of advancing Pakistan’s space research and technology initiatives.
         </Paragraph>
       </Col>
       <Col>

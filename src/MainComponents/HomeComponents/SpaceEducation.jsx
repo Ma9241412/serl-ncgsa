@@ -30,13 +30,7 @@ const SpaceEducation = () => {
           Space <Text className="so-title-highlight">Education</Text>
         </Title>
         <Paragraph className="so-paragraph">
-          The Space Education Research Lab (SERL) is committed to promote space
-          science & technology by engaging school, college & university
-          students, educators, professionals, and communities through nationwide
-          outreach, hands-on learning, and educational support. With the
-          national-level engagement and powerful outreach, SERL strives to
-          nurture space-literate and future-ready society prepared to lead and
-          innovate in the evolving space sector.
+          SERL’s Space Education programs provide students and enthusiasts with comprehensive learning opportunities in space science, satellite technology, and geospatial sciences. Our curriculum includes lectures, workshops, laboratory exercises, and online courses that cover remote sensing, GIS mapping, satellite communications, and data analysis. By integrating theoretical knowledge with hands-on practice, participants develop technical skills, problem-solving abilities, and research competence. These programs are designed to prepare the next generation of space scientists and engineers, equipping them to contribute effectively to national and international space initiatives.
         </Paragraph>
       </Col>
       <Col>

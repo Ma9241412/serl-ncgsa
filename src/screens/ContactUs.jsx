@@ -3,10 +3,12 @@ import GetInTouch from "../MainComponents/ContactUs/GetInTouch";
 import InfoBox from "../MainComponents/ContactUs/InfoBox";
 import CollaboratorsPartners from "../MainComponents/ContactUs/CollaboratorsPartners";
 import mainhomebg from "../assets/images/homemainbg.jpg";
+import HeroContact from "../MainComponents/ContactUs/HeroContact";
 
 const ContactUsPage = () => {
   return (
     <>
+      <HeroContact />
       <div
         style={{
           backgroundImage: `url(${mainhomebg})`,

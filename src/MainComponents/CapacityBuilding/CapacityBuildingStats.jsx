@@ -22,7 +22,7 @@ const CapacityBuildingStats = () => {
   return (
     <>
       <div className="section-container">
-        <Title level={2} className="cbs-title">
+        <Title className="cbs-title">
           Capacity <span className="cbs-title-highlight">Building</span>
         </Title>
         <Paragraph className="cbs-paragraph">

@@ -17,18 +17,15 @@
    font-size: 100px !important;
    color: #ffffff !important;
    font-weight: 700;
- 
 }
 .contact-title{
    font-size: 42px !important;
    color: #ffffff !important;
    font-weight: 700;
-   padding-left: 16px;
 }
 .contact-text{
-   font-size: 22px !important;
+   font-size: 26px !important;
    color: #ffffff !important;
-   padding-left: 16px;
 }
 .underline{
   width: 220px;
@@ -43,6 +40,10 @@
 }
 .icons-styles:hover {
   color: #ff9500 !important;
+}
+.icons-space{
+  margin-right: 30px;
+  margin-top: 100px;
 }
 .ant-input {
   background: transparent !important;
@@ -66,7 +67,6 @@
   font-size: 18px;
   justify-content: flex-start;
   display: flex;
-  margin-left: 14px;
   margin-top: 14px;
 }
 .award-card {
@@ -78,8 +78,210 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 10px 10px 0 !important;
 }
 
 .award-image {
   object-fit: cover;
 }
+.ant-form {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}
+.ant-row {
+  margin-left: 0 !important;
+  margin-right: 34px !important;
+}
+.ant-col {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Preserve input underline and spacing */
+.input-underline {
+  border-bottom: 2px solid #fff !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: 12px;
+}
+.input-underline:focus {
+  border-bottom: 2px solid #ff9500 !important;
+  box-shadow: none !important;
+}
+.ant-input,
+.ant-input-textarea {
+  font-size: 20px !important;
+}
+
+/* Responsive styles for Contact Us and all screens */
+@media (max-width: 1200px) {
+  .contact-hero-title {
+    font-size: 6.2rem !important;
+  }
+  .contact-main-title {
+    font-size: 60px !important;
+  }
+  .contact-title {
+    font-size: 32px !important;
+  }
+  .contact-text {
+    font-size: 18px !important;
+  }
+  .underline {
+    width: 160px;
+    height: 5px;
+  }
+  .award-card {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-bg {
+    min-height: 40vh !important;
+    padding: 0 10px;
+  }
+  .contact-hero-title {
+    font-size: 3.8rem !important;
+  }
+  .contact-main-title {
+    font-size: 32px !important;
+  }
+  .contact-title {
+    font-size: 22px !important;
+    padding-left: 8px;
+  }
+  .contact-text {
+    font-size: 14px !important;
+    padding-left: 8px;
+  }
+  .underline {
+    width: 80px;
+    height: 3px;
+    margin-left: 8px;
+  }
+  .icons-styles {
+    font-size: 22px;
+    padding-left: 40px;
+  }
+  .award-card {
+    width: 90px;
+    height: 90px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-bg {
+    min-height: 20vh !important;
+    padding: 0 4px;
+  }
+  .contact-hero-title {
+    font-size: 3.8rem !important;
+  }
+  .contact-main-title {
+    font-size: 26px !important;
+  }
+  .contact-title {
+    font-size: 20px !important;
+    padding-left: 2px;
+  }
+  .contact-text {
+    font-size: 9px !important;
+  }
+  .underline {
+    width: 40px;
+    height: 2px;
+    margin-left: 2px;
+  }
+  .contact-button {
+  background: #ff9500;
+  border: none;
+  height: 20px;
+  min-width: 12px;
+  font-weight: bold;
+  color: #000;
+  font-size: 9px;
+  justify-content: flex-start;
+  display: flex;
+  margin-left: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  justify-content: center !important;
+  }
+  .icons-styles {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+  .icons-space{
+    margin-right: 10px !important;
+    margin-top: 0px !important;
+  }
+  .award-card {
+    width: 80px;
+    height: 80px;
+    padding: 2px;
+  }
+  .award-image {
+    height: 50px !important;
+    width: 50px !important;
+  }
+  .ant-input,
+  .ant-input-textarea {
+    font-size: 9px !important;
+    height: 22px !important;
+    padding: 0 !important;
+  }
+  .ant-form-item-label {
+    margin-bottom: 0px !important;
+    padding-bottom: 0 !important;
+  }
+  .ant-form-item {
+    margin-bottom: 0px !important;
+  }
+  .input-underline {
+    border-bottom-width: 1px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .ant-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .ant-form {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  /* Narrow for name, email, phone */
+  .ant-input.input-underline:not([rows]) {
+    max-width: 100px !important;
+  }
+  /* Wide for message textarea */
+  .ant-input.input-underline[rows],
+  .ant-input-textarea.input-underline {
+    max-width: 4000px !important;
+    min-width: 120px !important;
+  }
+  .ant-col {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    margin-bottom: 0 !important;
+  }
+  .ant-form-item {
+    margin-bottom: 0px !important;
+  }
+}
+.awards-row .award-card:last-child {
+  margin-right: 0 !important;
+}
+
