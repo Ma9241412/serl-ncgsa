@@ -1,171 +1,94 @@
-.sos-bg {
-  background-color: #000000;
-  min-height: 100vh;
-}
-
 /* Hero */
-.sos-hero-card {
-  position: relative;
-  height: 80vh;
-  overflow: hidden;
-  background: transparent;
-}
-.sos-hero-card .ant-card-body {
-  padding: 0;
-}
-.sos-hero-card {
-  background-image: url("../assets/images/homemainbg.jpg");
+.cb-bg {
+  background-color: #000;
+  background-image: url("../assets/images/mainbg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 80vh !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.sos-hero-row {
+.cb-col {
   width: 100%;
 }
-.sos-hero-inner {
-  background: transparent;
-}
-.sos-hero-inner .ant-card-body {
-  padding: 0;
-}
-.sos-hero-center {
+.cb-space {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
 }
-.sos-hero-title-wrap {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.sos-hero-title {
-  color: #ffffff;
-  font-size: 9.2rem;
-  font-weight: 600;
+.cb-title {
+  color: #fff !important;
+  font-size: 7rem !important;
+  font-weight: 600 !important;
   margin: 0;
-  font-family: Inter, sans-serif;
   text-align: center;
+  line-height: 1.1;
+}
+@media (max-width: 1200px) {
+  .cb-title {
+    font-size: 7rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .cb-title {
+    font-size: 4rem;
+  }
+  .cb-bg {
+    min-height: 20vh !important;
+  }
+}
+@media (max-width: 480px) {
+  .cb-title {
+    font-size: 2.8rem;
+    padding: 0 10px;
+  }
 }
 
+
 /* Navigation card */
-.sos-nav-section {
-  padding: 60px 0;
-  background: transparent;
-}
 .sos-nav-card {
   background-color: #1a1a1a !important;
   border-radius: 20px !important;
   border: none !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
+  padding: 0px 24px 24px 24px;
 }
-.sos-nav-card .ant-card-body {
-  padding: 60px 60px;
-  background-color: #1a1a1a;
-  border-radius: 20px;
-}
+
 .sos-nav-title {
   color: #ffffff !important;
   margin-bottom: 8px !important;
   font-size: 30px !important;
   font-weight: 700 !important;
 }
+
 .sos-nav-underline {
   width: 80px;
   height: 3px;
   background-color: #ff8c00;
-  margin-bottom: 32px;
 }
 
-/* Select styling to match inline */
-.sos-select {
-  width: 100%;
-  height: 55px;
-}
-.sos-select .ant-select-selector {
-  height: 55px !important;
-  background-color: #1a1a1a !important;
-  border: 1px solid #555 !important;
-  color: white !important;
-}
-.sos-select .ant-select-selector:hover {
-  border-color: #ff8c00 !important;
-}
-.ant-select-focused .ant-select-selector {
-  border-color: #ff8c00 !important;
-  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2) !important;
-}
-.sos-select .ant-select-selection-item {
-  color: white !important;
-  line-height: 53px !important;
-}
-.sos-select .ant-select-arrow {
-  color: #ff8c00 !important;
-}
-.sos-select-icon {
-  color: #ff8c00;
-  font-size: 16px;
-}
+@media (max-width: 768px) {
+  .sos-nav-card {
+    padding: 0px 12px 12px 12px;
+  }
 
-/* Dropdown panel and scrollbar */
-.ant-select-dropdown {
-  background-color: #1a1a1a !important;
-  border: 1px solid #555 !important;
-}
-.ant-select-item-option {
-  background-color: #1a1a1a !important;
-  color: white !important;
-}
-.ant-select-item-option:hover {
-  background-color: #333333 !important;
-}
-.ant-select-item-option-selected {
-  background-color: #ff8c00 !important;
-  color: white !important;
-}
-.ant-select-dropdown::-webkit-scrollbar {
-  width: 8px !important;
-}
-.ant-select-dropdown::-webkit-scrollbar-track {
-  background: #333333 !important;
-  border-radius: 4px !important;
-}
-.ant-select-dropdown::-webkit-scrollbar-thumb {
-  background: #666666 !important;
-  border-radius: 4px !important;
-}
-.ant-select-dropdown::-webkit-scrollbar-thumb:hover {
-  background: #888888 !important;
-}
+  .sos-nav-title {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+  }
 
-/* Dynamic section */
-.sos-dynamic {
-  background: #000000;
-}
-.sos-skeleton {
-  padding: 40px 0;
-  text-align: center;
+  .sos-nav-underline {
+    width: 60px;
+    height: 2px;
+  }
 }
 
 /* Navigation buttons */
 .sos-nav-btn {
-  min-width: 150px;
-  height: 50px;
+  max-width: 300px;
   border: 1px solid #555555;
   border-radius: 6px;
   background: transparent;
-  color: #cccccc;
-  font-weight: 500;
   transition: all 0.2s;
   cursor: pointer;
   outline: none;

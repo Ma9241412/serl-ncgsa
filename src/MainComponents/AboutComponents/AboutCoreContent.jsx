@@ -1,41 +1,38 @@
-import React, { Suspense } from "react";
-import { Skeleton, Layout } from "antd";
-import '../../Styles/About.css';
+import React from "react";
+import VisionSection from "./VisionSection";
+import ContributionSection from "./ContributionSection";
+import MissionSection from "./MissionSection";
+import ModusOperandiSection from "./ModusOperandiSection";
+import SpaceDomainsSection from "./SpaceDomainsSection";
+import AwardsSection from "./AwardsSection";
+import homemainbg from '../../assets/images/homemainbg.jpg';
 
-const VisionSection = React.lazy(() => import("./VisionSection"));
-const ContributionSection = React.lazy(() => import("./ContributionSection"));
-const MissionSection = React.lazy(() => import("./MissionSection"));
-const ModusOperandiSection = React.lazy(() => import("./ModusOperandiSection"));
-const SpaceDomainsSection = React.lazy(() => import("./SpaceDomainsSection"));
-const AwardsSection = React.lazy(() => import("./AwardsSection"));
-
-const { Content } = Layout;
-
-const AboutCoreContent = () => {
+const SpaceComponent = () => {
   return (
-    <Layout className="about-core-bg">
-      <Content className="about-core-content">
-        <Suspense fallback={<div className="about-skel"><Skeleton active paragraph={{ rows: 6 }} /></div>}>
-          <VisionSection />
-        </Suspense>
-        <Suspense fallback={<div className="about-skel"><Skeleton active paragraph={{ rows: 6 }} /></div>}>
-          <ContributionSection />
-        </Suspense>
-        <Suspense fallback={<div className="about-skel"><Skeleton active paragraph={{ rows: 6 }} /></div>}>
-          <MissionSection />
-        </Suspense>
-        <Suspense fallback={<div className="about-skel"><Skeleton active paragraph={{ rows: 6 }} /></div>}>
-          <ModusOperandiSection />
-        </Suspense>
-        <Suspense fallback={<div className="about-skel"><Skeleton active paragraph={{ rows: 6 }} /></div>}>
-          <SpaceDomainsSection />
-        </Suspense>
-        <Suspense fallback={<div className="about-skel"><Skeleton active paragraph={{ rows: 6 }} /></div>}>
-          <AwardsSection />
-        </Suspense>
-      </Content>
-    </Layout>
+    <>
+      <div
+        style={{
+          backgroundImage: `url(${homemainbg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          minHeight: "100vh",
+        }}
+      >
+        <div className="global-layout">
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+          >
+            <VisionSection />
+            <ContributionSection />
+            <MissionSection />
+            <ModusOperandiSection />
+            <SpaceDomainsSection />
+            <AwardsSection />
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
-
-export default React.memo(AboutCoreContent);
+export default React.memo(SpaceComponent);

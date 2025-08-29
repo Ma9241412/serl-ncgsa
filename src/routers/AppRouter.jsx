@@ -1,45 +1,29 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Spin } from "antd";
 import Layout from "../components/layouts/layout";
 
-const Home = lazy(() => import("../screens/Home"));
-const About = lazy(() => import("../screens/About"));
-const SpaceOutreachScreen = lazy(() => import("../screens/SpaceOutreachScreen"));
-const SpaceEducationScreen = lazy(() => import("../screens/SpaceEducationScreen"));
-const CapacityBuildingScreen = lazy(() => import("../screens/CapacityBuildingScreen"));
-const ResourcesPage = lazy(() => import("../screens/ResourcesPage"));
-const ContactUs = lazy(() => import("../screens/ContactUs"));
+import Home from "../screens/Home";
+import About from "../screens/About";
+import SpaceOutreachScreen from "../screens/SpaceOutreachScreen";
+import SpaceEducationScreen from "../screens/SpaceEducationScreen";
+import CapacityBuildingScreen from "../screens/CapacityBuildingScreen";
+import ResourcesPage from "../screens/ResourcesPage";
+import ContactUs from "../screens/ContactUs";
 
 const AppRouter = () => {
   return (
     <Router>
       <Layout>
-        <Suspense
-          fallback={
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "80px 0",
-              }}
-            >
-              <Spin size="large" />
-            </div>
-          }
-        >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/space-outreach" element={<SpaceOutreachScreen />} />
-            <Route path="/space-education" element={<SpaceEducationScreen />} />
-            <Route path="/capacity-building" element={<CapacityBuildingScreen />} />
-            <Route path="/resources" element={<ResourcesPage />} />
-            <Route path="/contact" element={<ContactUs />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/space-outreach" element={<SpaceOutreachScreen />} />
+          <Route path="/space-education" element={<SpaceEducationScreen />} />
+          <Route path="/capacity-building" element={<CapacityBuildingScreen />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Routes>
       </Layout>
     </Router>
   );

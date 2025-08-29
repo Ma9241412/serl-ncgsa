@@ -25,16 +25,14 @@ const SpaceOutreach = () => {
     speed: 500,
     slidesToShow: isMobile ? 1 : 3,
     centerMode: true,
-    centerPadding: '0px'
   };
 
   return (
-    <div className="about-vision-wrapper">
       <Row justify="center">
-        <Col xs={24} lg={24}>
-          <Title level={2} className="about-vision-title">Vision</Title>
-          <div className="section-underline" />
-          <Paragraph className="about-vision-paragraph">
+        <Col>
+          <Title className="sub-title">Vision</Title>
+          <div className="yellow-thin-underline" />
+          <Paragraph className="main-paragraph">
             In pursuit of achieving United Nations Sustainable Development Goals (SDGs) through space technology, particularly focusing on their relevance to developing countries, our dedicated team of researchers embarked on a pioneering endeavor to establish Space Education Research Lab (SERL) in 2020 at a public university, the Institute of Space Technology at Islamabad, Pakistan. SERL envisions to foster space awareness, education, and outreach across schools, colleges, and universities, building a resilient pipeline of talent for the growing space ecosystem. With a commitment to expanding the frontiers of space knowledge, SERL actively drives the dissemination of space education through space-related festivities to raise awareness about space technology and its applications among the broader community.
           </Paragraph>
         </Col>
@@ -54,7 +52,6 @@ const SpaceOutreach = () => {
           </Slider>
         </Col>
       </Row>
-    </div>
   );
 };
 

@@ -6,11 +6,7 @@ const HeroSection = () => {
   const { Title } = Typography;
   return (
     <Row className="about-bg" align="middle" justify="center" >
-      <Col xs={24} md={20} lg={16} xl={12} className="about-col">
-        <Space direction="vertical" align="center" className="about-space">
-          <Title className="about-title">ABOUT</Title>
-        </Space>
-      </Col>
+          <Title className="main-title">ABOUT</Title>
     </Row>
   );
 };

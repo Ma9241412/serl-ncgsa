@@ -1,24 +1,9 @@
-.spo-wrapper {
-  padding: 20px 0 0 0;
-  background-image: url("../assets/images/homemainbg.jpg") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 .spo-card {
   background-color: transparent !important;
   border-radius: 30px !important;
   border: 2px solid #ff9500 !important;
-  max-width: 1200px !important;
   width: 100%;
   margin: 0 auto;
-}
-
-.spo-card .ant-card-body {
-  padding: 15px 40px 0 40px;
-  background-color: transparent;
-  border-radius: 30px;
 }
 .spo-space {
   width: 100%;
@@ -36,11 +21,6 @@
   max-width: 1200px;
   height: 2px;
   background-color: white;
-  margin-bottom: 24px;
-}
-.spo-paragraph {
-  font-size: 18px;
-  color: #cccccc;
   margin-bottom: 24px;
 }
 .spo-btn {
@@ -65,4 +45,134 @@
   background-color: #333333 !important;
   border-color: #555555 !important;
   color: #cccccc !important;
+}
+
+/* World Space Week 2020 Section */
+.wsw-card {
+  background-color: #2a2a2a !important;
+  border: none !important;
+  border-radius: 20px !important;
+}
+.wsw-card .ant-card-body {
+  padding: 24px !important;
+  background-color: #2a2a2a !important;
+  border-radius: 20px !important;
+}
+.wsw-title {
+  color: white !important;
+  margin-bottom: 8px !important;
+  font-size: 28px !important;
+}
+@media (max-width: 480px) {
+  .wsw-title {
+    font-size: 18px !important;
+  }
+} 
+.wsw-slider-wrapper {
+  background-color: #1a1a1aff !important;
+  border-radius: 12px !important;
+  padding: 6px !important;
+  margin-bottom: 20px !important;
+}
+@media (max-width: 480px) {
+  .wsw-slider-wrapper {
+    padding: 3px !important;
+  }
+}
+.wsw-carousel {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+.wsw-desc {
+  color: #cccccc !important;
+  font-size: 18px !important;
+  border-radius: 8px !important;
+}
+@media (max-width: 480px) {
+  .wsw-slider-img {
+    height: 70px !important;
+  }
+}
+.wsw-desc {
+  color: #cccccc !important;
+  font-size: 18px !important;
+}
+@media (max-width: 480px) {
+  .wsw-desc {
+    font-size: 7px !important;
+  }
+}
+/* Activities Section */
+.wsw-activities-title {
+  color: white !important;
+  margin-bottom: 8px !important;
+  font-size: 32px !important;
+}
+@media (max-width: 480px) {
+  .wsw-activities-title {
+    font-size: 18px !important;
+  }
+}
+
+.wsw-activities-underline {
+  width: 60px !important;
+  height: 4px !important;
+  background-color: #ff8c00 !important;
+  margin-bottom: 24px !important;
+}
+@media (max-width: 480px) {
+  .wsw-activities-underline {
+    height: 2px !important;
+    width: 30px !important;
+    margin-bottom: 7px !important;
+  }
+}
+.wsw-activity-avatar {
+  background-color: transparent !important;
+  color: white !important;
+  font-size: 24px;
+}
+@media (max-width: 480px) {
+  .wsw-activity-avatar {
+    font-size: 12px !important;
+  }
+}
+.wsw-activity-title {
+  color: white !important;
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+}
+@media (max-width: 480px) {
+  .wsw-activity-title {
+    font-size: 12px !important;
+    line-height: 1 !important;
+  }
+}
+
+/* Photo Gallery */
+.wsw-gallery-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  padding: 0 20px !important;
+}
+.wsw-gallery {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 15px !important;
+  width: 95% !important;
+  max-width: 1200px !important;
+}
+.wsw-gallery-img-wrapper {
+  width: calc(33.33% - 10px) !important;
+  height: 450px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+.wsw-gallery-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 20px !important;
 }

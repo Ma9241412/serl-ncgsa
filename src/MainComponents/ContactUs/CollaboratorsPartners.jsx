@@ -13,6 +13,7 @@ const CollaboratorsPartners = () => (
       <div className="underline" />
     </Space>
     <AwardsSlider />
+    
   </>
 );
 

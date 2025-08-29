@@ -1,4 +1,3 @@
-// src/components/layouts/header.jsx
 import React, { useState, useEffect } from "react";
 import { Layout, Row, Col, Grid } from "antd";
 import Logo from "../ui/logo";

@@ -22,24 +22,20 @@ const SpaceOutreach = () => {
   ];
 
   return (
-    <Row className="modus-wrapper" justify="start">
-      <Row justify="start" className="modus-row-text">
-        <Col xs={24} lg={23} className="modus-text-col">
-          <Title level={2} className="modus-title">Modus Operandi</Title>
-          <div className="section-underline" />
-          <Paragraph className="modus-paragraph">
+    <>
+          <Title className="sub-title">Modus Operandi</Title>
+          <div className="yellow-thin-underline" />
+          <Paragraph className="main-paragraph">
             At SERL, we operate through a structured and dynamic approach that integrates hands-on engagement, interdisciplinary content, and real-world applications to cultivate curiosity and competence in space sciences.
           </Paragraph>
-        </Col>
-      </Row>
 
-      <Row gutter={[0, 48]} className="modus-cards-row">
+
         {cardData.filter(card => !card.extra || showAll).map((card, index) => (
           <Col xs={24} lg={24} key={index}>
-            <Card bordered={false} className="modus-card" hoverable data-delay={card.delay}>
+            <Card bordered={false} className="modus-card" data-delay={card.delay}>
               <div className="modus-card-content">
                 <div className="modus-card-text">
-                  <Title level={3} className="modus-card-title">{card.title}</Title>
+                  <Title className="modus-card-title">{card.title}</Title>
                   <Paragraph className="modus-card-desc">{card.description}</Paragraph>
                 </div>
                 <div className="modus-card-image-wrap">
@@ -49,15 +45,15 @@ const SpaceOutreach = () => {
             </Card>
           </Col>
         ))}
-      </Row>
+   
 
-      <Row justify="end" className="modus-row-button">
+      <Row justify="center" className="modus-row-button">
         <Button type="link" onClick={handleViewAll} className="modus-viewall-btn">
           {showAll ? "Show Less" : "View All"}
           <span className={`modus-viewall-caret ${showAll ? 'rotated' : ''}`}>▼</span>
         </Button>
       </Row>
-    </Row>
+      </>
   );
 };
 

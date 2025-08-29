@@ -23,21 +23,17 @@ const SpaceOutreach = () => {
   ];
 
   return (
-    <Row className="mission-wrapper" justify="start">
-      <Row justify="start" className="mission-row-text">
-        <Col xs={24} lg={23} className="mission-text-col">
-          <Title level={2} className="mission-title">Mission</Title>
-          <div className="section-underline" />
-          <Paragraph className="mission-paragraph">
+    <>
+          <Title className="sub-title">Mission</Title>
+          <div className="yellow-thin-underline" />
+          <Paragraph className="main-paragraph">
             To develop innovative and sustainable interactive learning methods and strategies for Space Science and Technology awareness, education and popularization by unification of scientific and pedagogical methodologies especially for the school, college & university students and for early career researchers & academicians. The five major objectives are mentioned below:
           </Paragraph>
-        </Col>
-      </Row>
 
-      <Row gutter={[0, 0]} justify="space-between" className="mission-cards-row">
+      <Row justify="space-between" className="mission-cards-row">
         {missionCards.map((card, index) => (
           <Col xs={24} lg={4} key={index} className="mission-card-col">
-            <Card bordered={false} className="mission-card" hoverable>
+            <Card bordered={false} className="mission-card">
               <div className="mission-card-top">{card.icon}</div>
               <div className="mission-card-bottom">
                 <Typography.Text className="mission-card-title">{card.title}</Typography.Text>
@@ -47,7 +43,7 @@ const SpaceOutreach = () => {
           </Col>
         ))}
       </Row>
-    </Row>
+      </>
   );
 };
 

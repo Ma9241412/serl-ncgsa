@@ -31,14 +31,12 @@ const WorldSpaceWeekComponents = ({ selectedYear, availableYears, onYearChange }
   };
 
   return (
-    <Row className="spo-wrapper" justify="center">
-      <Col xs={24} lg={24} xl={24}>
+      <Col>
         <Card bordered={false} className="spo-card">
           <Space direction="vertical" size="large" className="spo-space">
-            <div className="spo-header">
-              <Title level={1} className="spo-title">World Space Week</Title>
+              <Title className="spo-title">World Space Week</Title>
               <div className="spo-underline" />
-              <Paragraph className="spo-paragraph">
+              <Paragraph className="main-paragraph">
                 Annual Celebration Of Space Science And Technology Contributions To Improving Human Conditions. World Space Week Is An International
                 Celebration Of Science And Technology, And Their Contribution To The Betterment Of The Human Condition.
               </Paragraph>
@@ -54,12 +52,10 @@ const WorldSpaceWeekComponents = ({ selectedYear, availableYears, onYearChange }
                   </Button>
                 ))}
               </Space>
-            </div>
             {renderYearComponent()}
           </Space>
         </Card>
       </Col>
-    </Row>
   );
 };
 

@@ -8,7 +8,7 @@ const { useBreakpoint } = Grid;
 const Logo = ({ size = 'default', variant = 'serl' }) => {
   const [imageError, setImageError] = useState(false);
   const screens = useBreakpoint();
-  const isMobile = !screens.md;
+  const isMobile = !screens.md; 
 
   const getSizeConfig = () => {
     const sizes = {

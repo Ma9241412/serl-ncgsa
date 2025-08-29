@@ -11,13 +11,11 @@ const SpaceOutreach = () => {
   const isMobile = !screens.lg;
 
   return (
-<div className='contrib-wrapper'>
-  <Row
->
+  <Row>
   <Col xs={24} lg={12}>
-    <Title level={2} className="contrib-title">Contribution</Title>
-    <div className="section-underline" />
-    <Paragraph className="contrib-paragraph">
+    <Title className="sub-title">Contribution</Title>
+    <div className="yellow-thin-underline" />
+    <Paragraph className="main-paragraph">
       In pursuit of achieving United Nations Sustainable Development Goals (SDGs) 
       through space technology, particularly focusing on their relevance to 
       developing countries, our dedicated team of researchers embarked on a 
@@ -38,14 +36,11 @@ const SpaceOutreach = () => {
         <Image
         preview={false}
           src={contributionImg}
-          alt="SERL Contribution Framework"
-          className="contrib-image"
         />
       </Card>
     </div>
   </Col>
 </Row>
-</div>
   );
 };
 
