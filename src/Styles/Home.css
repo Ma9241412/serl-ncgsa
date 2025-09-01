@@ -111,92 +111,62 @@
     font-size: 0.9rem !important;
   }
 }
-.stats-cont {
+/* .stats-wrapper {
   max-width: 1400px;
-  width: 100%;
-}
-.stats-item-col {
-  text-align: center;
+  padding: 40px 20px;
+} */
+
+/* .stats-item-col {
   display: flex;
   justify-content: center;
-}
+} */
+
 .stats-card {
-  background: transparent;
-  border-radius: 16px;
-  width: 250px;
-  height: 180px;
-  text-align: center;
-  backdrop-filter: blur(10px);
+  background: white !important;
+  border-radius: 16px !important;
+  width: 240px !important;
+  height: 180px !important;
+  text-align: center !important;
+  backdrop-filter: blur(10px) !important;
   border: 2px solid #ff9500;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(10px) scale(0.98);
-  margin-top: 38px;
+  transition: all 0.4s ease;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-}
-
-.stats-card:hover {
-  transform: scale(1);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
-  border: 1px solid #ff9500;
-}
-
-.stats-card .ant-card-body {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
-.delay-0 {
-  transition-delay: 100ms;
+
+.stats-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 149, 0, 0.4);
 }
-.delay-1 {
-  transition-delay: 300ms;
-}
-.delay-2 {
-  transition-delay: 500ms;
-}
-.delay-3 {
-  transition-delay: 700ms;
-}
-.delay-4 {
-  transition-delay: 900ms;
-}
+
 .stats-icon .anticon {
-  font-size: 2.7rem;
-  color: #ffffff;
-  transition: all 0.3s ease;
-  padding-bottom: 10px;
+  font-size: 2.5rem;
+  color: #ff9500;
+  margin-bottom: 10px;
 }
+
 .stats-count-title {
-  font-size: 2.2rem !important;
+  font-size: 2rem !important;
   font-weight: 700 !important;
-  margin-bottom: 8px !important;
-  font-family: Arial, sans-serif !important;
-  letter-spacing: 0.5px !important;
   margin: 0 !important;
   color: #ffffff !important;
 }
+
+.stats-count-suffix {
+  color: #ff9500 !important;
+  margin-left: 4px !important;
+}
+
 .stats-label-title {
   font-size: 1rem !important;
   font-weight: 400 !important;
   color: rgba(255, 255, 255, 0.85) !important;
   margin: 0 !important;
   margin-top: 8px !important;
-  font-family: Arial, sans-serif !important;
-  line-height: 1.4 !important;
-  text-align: center !important;
-}
-.stats-count-number {
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-}
-.stats-count-suffix {
-  color: #ff9500;
-  font-family: Arial, sans-serif;
+  text-align: center;
 }
 .so-title {
   color: #ffffff !important;

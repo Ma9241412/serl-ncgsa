@@ -13,13 +13,11 @@ const SpaceComponent = () => {
           backgroundImage: `url(${homemainbg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          minHeight: "100vh",
         }}
       >
         <div className="global-layout">
           <div
-            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+            style={{ display: "flex", flexDirection: "column",}}
           >
             <StatsSection />
             <SpaceOutreach />
