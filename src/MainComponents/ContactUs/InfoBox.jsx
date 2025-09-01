@@ -7,7 +7,7 @@ const AdvancedSearchForm = () => {
 
   const formStyle = {
     maxWidth: "none",
-    background: "#f5f5f5", // fallback for token.colorFillAlter
+    background: "transparent", // fallback for token.colorFillAlter
     borderRadius: 8,         // fallback for token.borderRadiusLG
     padding: 24,
   };

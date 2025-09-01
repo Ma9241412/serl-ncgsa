@@ -99,6 +99,10 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+.ant-card {
+  background: transparent !important;
+  box-shadow: none !important;
+}
 
 /* Preserve input underline and spacing */
 .input-underline {
@@ -285,4 +289,3 @@
 .awards-row .award-card:last-child {
   margin-right: 0 !important;
 }
-
