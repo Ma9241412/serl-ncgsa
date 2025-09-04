@@ -4,7 +4,7 @@ import SpaceOutreachSection from '../MainComponents/SpaceOutreachComponents/Spac
 
 const SpaceOutreachScreen = () => {
   return (
-    <div>
+    <div >
       <SpaceOutreachSection/>
     </div>
   );

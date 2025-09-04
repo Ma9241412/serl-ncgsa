@@ -258,7 +258,6 @@ const SpaceOutreachSection = () => {
   };
 
   return (
-    <Layout className="sos-bg">
       <Content>
         {/* Hero Section */}
         <Row className="cb-bg" align="middle" justify="center">
@@ -268,9 +267,10 @@ const SpaceOutreachSection = () => {
             </Space>
           </Col>
         </Row>
-        <div className="global-layout">
+       <div className="outreach-bg">
+         <div className="standard-layout">
           {/* Navigate To Program Section */}
-          <Col>
+          <Col xs={24} md={20} lg={24} xl={24}>
             <Card bordered={false} className="sos-nav-card">
               <Title className="sos-nav-title">
                 Navigate To Program
@@ -340,8 +340,8 @@ const SpaceOutreachSection = () => {
             </Suspense>
           </div>
         </div>
+       </div>
       </Content>
-    </Layout>
   );
 };
 

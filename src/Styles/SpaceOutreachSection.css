@@ -1,7 +1,7 @@
 /* Hero */
 .cb-bg {
   background-color: #000;
-  background-image: url("../assets/images/mainbg.jpg");
+  /* background-image: url("../assets/images/mainbg.jpg"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,12 +10,7 @@
   align-items: center;
   justify-content: center;
 }
-.cb-col {
-  width: 100%;
-}
-.cb-space {
-  width: 100%;
-}
+
 .cb-title {
   color: #fff !important;
   font-size: 7rem !important;
@@ -44,14 +39,21 @@
   }
 }
 
+.outreach-bg{
+  background-image: url("../assets/images/mainbg.jpg");
+   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
+}
 /* Navigation card */
 .sos-nav-card {
-  background-color: #1a1a1a !important;
+  background-color: transparent !important;
   border-radius: 20px !important;
   border: none !important;
   width: 100%;
-  padding: 0px 24px 24px 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .sos-nav-title {
@@ -97,7 +99,7 @@
 .sos-nav-btn:hover {
   transform: translateY(-4px) scale(1.05);
   border-color: #ff8c00 !important;
-  box-shadow: 0 4px 16px rgba(255,140,0,0.15);
+  box-shadow: 0 4px 16px rgba(255,140,0,0.1sos-nav-btn-row5);
 }
 .sos-nav-btn:active,
 .sos-nav-btn-active {
@@ -109,6 +111,7 @@
   display: flex !important;
   justify-content: center !important;
   gap: 3px !important;
+  
 }
 
 @media (max-width: 992px) {

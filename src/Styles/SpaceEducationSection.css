@@ -7,50 +7,17 @@
   }
 
   /* Hero */
-  .sos-hero-card {
-    position: relative;
-    height: auto;
-    overflow: hidden;
-    background: transparent;
-    width: 100%;
-    min-height: inherit;
-  }
-  .sos-hero-card .ant-card-body {
-    padding: 0;
-  }
-  .sos-hero-row {
-    width: 100%;
-  }
-  .sos-hero-inner {
-    background: transparent;
-  }
-  .sos-hero-inner .ant-card-body {
-    padding: 0;
-  }
-  .sos-hero-center {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  .sos-hero-title-wrap {
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  
+ 
   .sos-hero-title {
-    color: #fff !important;
-    font-size: 9.2rem !important;
-    font-weight: 600 !important;
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    text-align: center;
-    line-height: 1.1;
-  }
+     color: #fff !important;
+  font-size: 9rem !important;
+  font-weight: 600 !important;
+  margin-top: 0px;
+  padding: 180px;
+  text-align: center;
+  line-height: 1.1;
+}
 
   /* Navigation card */
   .sos-nav-card {

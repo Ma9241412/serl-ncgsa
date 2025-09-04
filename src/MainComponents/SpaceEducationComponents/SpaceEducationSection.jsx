@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense } from "react";
-import { Layout, Row, Col, Typography, Card, Select, Skeleton } from "antd";
+import { Layout, Row, Col, Typography, Card, Select, Skeleton, Space } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import '../../Styles/SpaceEducationSection.css'
 const SpaceSummerSchool = React.lazy(() =>
@@ -120,13 +120,17 @@ const SpaceEducationSection = () => {
 
   return (
       <Content>
-        {/* Hero Section */}
-        <div className="sos-hero-card">
+        <div className="sos-bg">
+
+        
           <h1 className="sos-hero-title">SPACE EDUCATION</h1>
+
+            
+
         </div>
 
         {/* Navigate To Program Section */}
-        <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+        <div className="standard-layout">
           <Card className="sos-nav-card">
             <Title className="sos-nav-title">Navigate To Program</Title>
             <div className="sos-nav-underline"></div>

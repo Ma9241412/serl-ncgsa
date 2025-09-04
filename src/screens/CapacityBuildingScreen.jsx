@@ -14,7 +14,7 @@ const CapacityBuildingScreen = () => (
 <>
     <CapacityBuilding />
 
-  <div className="mainhomebg-bg">
+  <div className="mainhomebg-bg ">
     <CapacityBuildingStats />
     <TeacherTrainingWorkshop />
     <div style={sectionStyle}>
