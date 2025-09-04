@@ -57,9 +57,15 @@ const AppFooter = () => {
             </Paragraph>
             <div style={{ marginTop: 15 }}>
               <Space size="middle">
-                <FacebookFilled style={{ fontSize: 20, color: "#fff" }} />
-                <InstagramFilled style={{ fontSize: 20, color: "#fff" }} />
-                <LinkedinFilled style={{ fontSize: 20, color: "#fff" }} />
+                <a href="https://www.facebook.com/SpaceOutreach" target="_blank" rel="noopener noreferrer">
+                  <FacebookFilled style={{ fontSize: 20, color: "#fff" }} />
+                </a>
+                <a href="https://www.instagram.com/serl.ncgsa/?hl=en" target="_blank" rel="noopener noreferrer">
+                  <InstagramFilled style={{ fontSize: 20, color: "#fff" }} />
+                </a>
+                <a href="https://www.linkedin.com/company/serl-ncgsa" target="_blank" rel="noopener noreferrer">
+                  <LinkedinFilled style={{ fontSize: 20, color: "#fff" }} />
+                </a>
               </Space>
             </div>
           </Col>
@@ -160,12 +166,21 @@ const AppFooter = () => {
               </div>
             </Space>
             <Space style={{ marginTop: "20px" }} size="middle">
-              <FacebookFilled style={{ fontSize: 20, color: "#fff" }} />
-              <LinkedinFilled style={{ fontSize: 20, color: "#fff" }} />
-              <InstagramFilled style={{ fontSize: 20, color: "#fff" }} />
-              <YoutubeFilled style={{ fontSize: 20, color: "#fff" }} />
-              <SendOutlined style={{ fontSize: 20, color: "#fff" }} />
-              <WhatsAppOutlined style={{ fontSize: 20, color: "#fff" }} />
+                                <a href="https://www.facebook.com/ncgsa.ist" target="_blank" rel="noopener noreferrer">
+                    <FacebookFilled style={{ fontSize: 20, color: "#fff" }} />
+                  </a>
+                  <a href="https://www.instagram.com/ncgsa.ist/?hl=en" target="_blank" rel="noopener noreferrer">
+                    <InstagramFilled style={{ fontSize: 20, color: "#fff" }} />
+                  </a>
+                  <a href="https://www.linkedin.com/company/ncgsa/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
+                    <LinkedinFilled style={{ fontSize: 20, color: "#fff" }} />
+                  </a>
+                  <a href="https://www.youtube.com/@SPACEEDNCGSA" target="_blank" rel="noopener noreferrer">
+                    <YoutubeFilled style={{ fontSize: 20, color: "#fff" }} />
+                  </a>
+                  <a href="https://wa.me/923342949667?text=Hello%20Sir%2C%20I%20hope%20you%E2%80%99re%20doing%20well.%20I%20just%20wanted%20to%20ask%20for%20some%20information%20regarding%20NCGSA." target="_blank" rel="noopener noreferrer">
+                    <WhatsAppOutlined style={{ fontSize: 20, color: "#fff" }} />
+                  </a>
             </Space>
           </Space>
           </Col>
