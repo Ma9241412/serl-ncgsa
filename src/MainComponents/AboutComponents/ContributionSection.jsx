@@ -11,8 +11,8 @@ const SpaceOutreach = () => {
   const isMobile = !screens.lg;
 
   return (
-  <Row>
-  <Col xs={24} lg={12}>
+  <Row justify="center" gutter={[32, 32]}>
+  <Col xs={24} lg={15}>
     <Title className="sub-title">Contribution</Title>
     <div className="yellow-thin-underline" />
     <Paragraph className="main-paragraph">
@@ -30,7 +30,7 @@ const SpaceOutreach = () => {
     </Paragraph>
   </Col>
   
-  <Col xs={24} lg={12}>
+  <Col xs={24} lg={9}>
     <div className="contrib-image-offset" style={{ textAlign: 'center' }}>
       <Card bordered={false} className="contrib-image-card">
         <Image

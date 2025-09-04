@@ -24,8 +24,8 @@ const SpaceEducation = () => {
   ];
 
   return (
-    <Row justify="start">
-      <Col>
+    <Row gutter={[32, 32]} align="middle">
+      <Col xs={24} md={12} lg={24}>
         <Title className="so-title">
           Space <Text className="so-title-highlight">Education</Text>
         </Title>
@@ -33,24 +33,35 @@ const SpaceEducation = () => {
           SERL’s Space Education programs provide students and enthusiasts with comprehensive learning opportunities in space science, satellite technology, and geospatial sciences. Our curriculum includes lectures, workshops, laboratory exercises, and online courses that cover remote sensing, GIS mapping, satellite communications, and data analysis. By integrating theoretical knowledge with hands-on practice, participants develop technical skills, problem-solving abilities, and research competence. These programs are designed to prepare the next generation of space scientists and engineers, equipping them to contribute effectively to national and international space initiatives.
         </Paragraph>
       </Col>
-      <Col>
-        <div
-          onMouseEnter={() => setAutoplayEnabled(false)}
-          onMouseLeave={() => setAutoplayEnabled(true)}
-        >
-          <Carousel
-            autoplay={autoplayEnabled}
-            autoplaySpeed={3000}
-            dots={false}
-            speed={1000}
-            slidesToShow={isMobile ? 1 : 3}
-          >
-            {images.map((image, index) => (
-              <img key={index} src={image.src} alt={image.alt} />
-            ))}
-          </Carousel>
-        </div>
-      </Col>
+            <Col xs={24} md={12} lg={24}>
+              <div
+                onMouseEnter={() => setAutoplayEnabled(false)}
+                onMouseLeave={() => setAutoplayEnabled(true)}
+              >
+                <Carousel
+                  autoplay={autoplayEnabled}
+                  autoplaySpeed={2000}
+                  dots={true}
+                  speed={1000}
+                  slidesToShow={isMobile ? 1 : 3}
+                >
+                  {images.map((image, index) => (
+                    <div key={index}>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        style={{
+                          width: "100%",
+                          height: isMobile ? "200px" : "350px",
+                          objectFit: "contain",
+                          borderRadius: "12px",
+                        }}
+                      />
+                    </div>
+                  ))}
+                </Carousel>
+              </div>
+            </Col>
       <Col>
         <Button type="primary" size="large" className="so-button">
           Read More

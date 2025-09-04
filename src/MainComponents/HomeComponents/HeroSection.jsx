@@ -8,7 +8,8 @@ const { useBreakpoint } = Grid;
 const HeroSection = () => {
   const isMobile = !Grid.useBreakpoint().lg;
   return (
-    <Card
+
+     <Card
       className="hero-bg-card"
       bordered={false}
     >
@@ -57,6 +58,7 @@ const HeroSection = () => {
         </Col>
       </Row>
     </Card>
+
   );
 };
 

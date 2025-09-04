@@ -20,7 +20,7 @@ const stats = [
 ];
 
 const StatsSection = () => (
-  <div style={{ padding: "0x 20px" }}>
+  <div style={{ padding: "20px" }}>
     {/* Add gutter here for spacing */}
     <Row gutter={[32, 32]} justify="center">
       {stats.map((stat, index) => (

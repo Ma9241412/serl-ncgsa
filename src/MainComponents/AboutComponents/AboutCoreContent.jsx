@@ -19,7 +19,7 @@ const SpaceComponent = () => {
           minHeight: "100vh",
         }}
       >
-        <div className="global-layout">
+        <div className="standard-layout">
           <div
             style={{ display: "flex", flexDirection: "column", gap: "20px" }}
           >

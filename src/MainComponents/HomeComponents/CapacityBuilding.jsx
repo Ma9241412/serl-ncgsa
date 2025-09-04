@@ -24,8 +24,8 @@ const CapacityBuilding = () => {
   ];
 
   return (
-    <Row justify="start">
-      <Col>
+    <Row gutter={[32, 32]} align="middle">
+      <Col xs={24} md={12} lg={24}>
         <Title className="so-title">
           Capacity <Text className="so-title-highlight">Building</Text>
         </Title>
@@ -33,24 +33,35 @@ const CapacityBuilding = () => {
           SERL’s Capacity Building initiatives aim to develop human resources with the expertise required for a robust space technology ecosystem. Through targeted training programs, internships, collaborative research projects, and mentorship, participants gain hands-on experience in satellite systems, GIS, remote sensing, and data-driven applications. The programs are structured to enhance technical knowledge, research capabilities, and leadership skills, ensuring participants are prepared to meet the growing demands of the space sector. SERL also partners with universities, research centers, and industry leaders to ensure that training remains relevant and impactful, fostering a generation of professionals capable of advancing Pakistan’s space research and technology initiatives.
         </Paragraph>
       </Col>
-      <Col>
-        <div
-          onMouseEnter={() => setAutoplayEnabled(false)}
-          onMouseLeave={() => setAutoplayEnabled(true)}
-        >
-          <Carousel
-            autoplay={autoplayEnabled}
-            autoplaySpeed={3000}
-            dots={false}
-            speed={1000}
-            slidesToShow={isMobile ? 1 : 3}
-          >
-            {images.map((image, index) => (
-              <img key={index} src={image.src} alt={image.alt} />
-            ))}
-          </Carousel>
-        </div>
-      </Col>
+    <Col xs={24} md={12} lg={24}>
+            <div
+              onMouseEnter={() => setAutoplayEnabled(false)}
+              onMouseLeave={() => setAutoplayEnabled(true)}
+            >
+              <Carousel
+                autoplay={autoplayEnabled}
+                autoplaySpeed={2000}
+                dots={true}
+                speed={1000}
+                slidesToShow={isMobile ? 1 : 3}
+              >
+                {images.map((image, index) => (
+                  <div key={index}>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      style={{
+                        width: "100%",
+                        height: isMobile ? "200px" : "350px",
+                        objectFit: "contain",
+                        borderRadius: "12px",
+                      }}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+          </Col>
       <Col>
         <Button type="primary" size="large" className="so-button">
           Read More

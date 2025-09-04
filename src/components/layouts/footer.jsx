@@ -24,7 +24,7 @@ const AppFooter = () => {
       }}
     >
       <div
-        className="global-layout"
+        className="standard-layout"
         style={{
           backgroundColor: "#232121",
           paddingInline: "20px",
@@ -142,7 +142,8 @@ const AppFooter = () => {
         {/* Bottom Section */}
         <Row gutter={[32, 32]} justify="space-between" align="middle">
           <Col xs={24} md={12}>
-            <Space size={10} align="center">
+          <Space direction="vertical" align="start">
+              <Space size={10} align="center">
               <Image src={logo} alt="NCGSA" style={{ marginBottom: 10 }} />
               <div>
                 <Text className="footer-text" style={{ color: "#fff" }} strong>
@@ -166,6 +167,7 @@ const AppFooter = () => {
               <SendOutlined style={{ fontSize: 20, color: "#fff" }} />
               <WhatsAppOutlined style={{ fontSize: 20, color: "#fff" }} />
             </Space>
+          </Space>
           </Col>
 
           <Col xs={24} sm={12} md={6}>

@@ -10,11 +10,10 @@
   background-size: cover;
   background-position: center;
 }
-.hero-bg-card .ant-card-body {
-  padding: 0;
-}
+
 .hero-row {
-  max-width: 1200px;
+    max-width: 1500px;
+
   margin: 0 auto;
 }
 .hero-desc-card {
@@ -22,12 +21,13 @@
   border-radius: 10px;
   width: 100%;
   text-align: justify;
-  padding: 20px 25px 10px 25px;
 }
 .hero-desc-paragraph {
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 2;
+  font-family: "Inter", sans-serif;
+
 }
 .hero-readmore-btn {
   background-color: #f59e0b !important;
@@ -37,10 +37,12 @@
   border: none;
 }
 .hero-title {
-  font-size: 2.4rem !important;
+  font-size: 2.5rem !important;
   color: white !important;
   text-align: left !important;
   margin: 0% !important;
+  font-family: "Inter", sans-serif;
+
 }
 .big-title {
   font-size: 11.7rem !important;
@@ -49,6 +51,8 @@
   margin: 0% !important;
   white-space: nowrap !important;
   line-height: 1 !important;
+    font-family: "Inter", sans-serif;
+
 }
 /* @media (max-width: 1200px) {
   font-size: 8rem !important;
@@ -57,16 +61,20 @@
  font-size : 4rem !important;
 } */
 .hero-desc {
-  font-size: 1.8rem !important;
+  font-size: 1.9rem !important;
   color: white !important;
   text-align: left !important;
   margin: 0% !important;
+    font-family: "Inter", sans-serif;
+
 }
 .hero-para {
-  font-size: 1.44rem !important;
+  font-size: 1.52rem !important;
   color: #1890ff !important;
   text-align: left !important;
   margin: 0% !important;
+    font-family: "Inter", sans-serif;
+
 }
 @media (max-width: 768px) {
   .big-title {
@@ -207,6 +215,7 @@
   color: #000000 !important;
   font-weight: bold !important;
   border-radius: 6px !important;
+  margin-bottom: 20px;
 }
 @media (max-width: 768px) {
   .so-button {
